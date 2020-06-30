@@ -17,6 +17,10 @@
 
 - Postgres
 
+## Project Resources
+
+- [Database Schema](https://kitt.lewagon.com/db/9884)
+
 ### Useful Tools & Gems
 
 - [table_print](http://tableprintgem.com/)
@@ -28,4 +32,5 @@
 `asdf install`
 
 ## Resources
+
 - [Switching to asdf Version Manager](https://sidneyliebrand.io/blog/switching-to-asdf-version-manager)
