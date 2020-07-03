@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "recipes#index"
 
-  root to: "pages#index"
+  resources :recipes, except: :index
 end
