@@ -1,0 +1,8 @@
+<h1>Add a Measure for <%= @recipe.title %></h1>
+
+<%= form_with model: @measure, url: [@recipe, @measure] do |f| %>
+  <%= f.text_field :quantity %>
+  <%= f.select :unit_id, options_for_select(Unit.all.collect { |u| [ u.name, u.id ] }) %>
+  <%= f.select :ingredient_id, options_for_select(Ingredient.all.collect { |i| [ i.name, i.id ] }) %>
+  <%= f.submit %>
+<% end %>
