@@ -2,6 +2,9 @@
 
 <ul>
   <% @recipes.each do |recipe| %>
-    <li><%= recipe.title %></li>
+    <li>
+      <%= recipe.title %>
+      <%= link_to "delete", recipe_path(recipe), method: :delete %>
+    </li>
   <% end %>
 </ul>
