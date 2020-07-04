@@ -8,6 +8,11 @@ class IngredientsController < ApplicationController
     @ingredient.save
   end
 
+  def destroy
+    @ingredient = Ingredient.find(params[:id])
+    @ingredient.destroy
+  end
+
   private
 
   def ingredient_params

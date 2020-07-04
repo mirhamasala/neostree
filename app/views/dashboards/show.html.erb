@@ -8,4 +8,13 @@
       <%= link_to "delete", unit_path(unit), method: :delete %>
     </li>
   <% end %>
+
+<h2>All Ingredients</h2>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li>
+      <%= ingredient.name %>
+      <%= link_to "delete", ingredient_path(ingredient), method: :delete %>
+    </li>
+  <% end %>
 </ul>

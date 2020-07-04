@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   resources :recipes, except: :index
   resources :units, only: [:new, :create, :destroy]
-  resources :ingredients, only: [:new, :create]
+  resources :ingredients, only: [:new, :create, :destroy]
   resource :dashboard, only: :show, as: :dashboard
 end
