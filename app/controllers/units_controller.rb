@@ -8,6 +8,11 @@ class UnitsController < ApplicationController
     @unit.save
   end
 
+  def destroy
+    @unit = Unit.find(params[:id])
+    @unit.destroy
+  end
+
   private
 
   def unit_params
