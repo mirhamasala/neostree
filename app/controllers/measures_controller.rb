@@ -12,6 +12,12 @@ class MeasuresController < ApplicationController
     redirect_to recipe_path(@recipe)
   end
 
+  def destroy
+    @measure = Measure.find(params[:id])
+    @measure.destroy
+    redirect_back(fallback_location:"/")
+  end
+
   private
 
   def measure_params

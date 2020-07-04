@@ -7,6 +7,7 @@
       <%= measure.quantity %>
       <%= measure.unit.name %>
       <%= measure.ingredient.name %>
+      <%= link_to "delete", measure_path(measure), method: :delete %>
     </li>
   <% end %>
 </ul>

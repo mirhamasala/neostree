@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :measures, only: [:new, :create]
   end
   resources :steps, only: [:destroy]
+  resources :measures, only: [:destroy]
   resources :units, only: [:new, :create, :destroy]
   resources :ingredients, only: [:new, :create, :destroy]
   resource :dashboard, only: :show, as: :dashboard
