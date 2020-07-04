@@ -1,0 +1,11 @@
+<h1>Dashboard</h1>
+
+<h2>All Units</h2>
+<ul>
+  <% @units.each do |unit| %>
+    <li>
+      <%= unit.name %>
+      <%= link_to "delete", unit_path(unit), method: :delete %>
+    </li>
+  <% end %>
+</ul>
