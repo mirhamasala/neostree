@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: measures
+#
+#  id            :bigint           not null, primary key
+#  quantity      :integer
+#  unit_id       :bigint           not null
+#  ingredient_id :bigint           not null
+#  recipe_id     :bigint           not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe Measure, type: :model do
