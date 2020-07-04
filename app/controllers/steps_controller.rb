@@ -12,6 +12,11 @@ class StepsController < ApplicationController
     redirect_to recipe_path(@recipe)
   end
 
+  def destroy
+    @step = Step.find(params[:id])
+    @step.destroy
+  end
+
   private
 
   def steps_params
