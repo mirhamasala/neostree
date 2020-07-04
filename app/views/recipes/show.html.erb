@@ -1,5 +1,20 @@
 <h1><%= @recipe.title %></h1>
 
+<h2>Ingredients</h2>
+<ul>
+  <% @recipe.measures.each do |measure| %>
+    <li>
+      <%= measure.quantity %>
+      <%= measure.unit.name %>
+      <%= measure.ingredient.name %>
+      <%= link_to "delete", measure_path(measure), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a measure", new_recipe_measure_path(@recipe) %>
+
+<h2>Steps</h2>
 <ol>
   <% @recipe.steps.each do |step| %>
     <li>
