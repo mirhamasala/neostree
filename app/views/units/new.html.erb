@@ -1,6 +1,12 @@
-<h1>Add a New Unit</h1>
+<%= form_with model: @unit, class: "form" do |f| %>
+  <h2 class="form__header">Add a new unit</h2>
 
-<%= form_with model: @unit do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+  <div class="form__grid">
+    <div>
+      <%= f.text_label :name %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <%= f.submit %></div>
 <% end %>
