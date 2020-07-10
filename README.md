@@ -21,6 +21,8 @@
 
 - [Database Schema](https://kitt.lewagon.com/db/9884)
 
+- [https://neos-brunches.herokuapp.com/]
+
 ### Useful Tools & Gems
 
 - [table_print](http://tableprintgem.com/)
