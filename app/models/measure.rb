@@ -1,5 +1,8 @@
 class Measure < ApplicationRecord
   validates :quantity, presence: true
+  validates :unit_id, presence: true
+  validates :ingredient_id, presence: true
+  validates :recipe_id, presence: true
 
   belongs_to :unit
   belongs_to :ingredient
