@@ -11,6 +11,7 @@ class IngredientsController < ApplicationController
   def destroy
     @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
+    redirect_back(fallback_location: dashboard_path)
   end
 
   private
