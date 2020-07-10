@@ -1,6 +1,7 @@
 <h1>Create a Step for <%= @recipe.title %></h1>
 
 <%= form_with model: @step, url: [@recipe, @step] do |f| %>
+  <%= f.number_field :position, min: 1, value: @recipe.next_step %>
   <%= f.text_area :description %>
   <%= f.submit %>
 <% end %>
