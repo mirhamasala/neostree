@@ -17,7 +17,7 @@ https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
 * Import custom components before
 * @import "tailwindcss/utilities"
 */
-// @import "components/index";
+@import "components/index";
 
 /**
 * Injects all of Tailwind's utility classes, generated based on your
