@@ -1,8 +1,22 @@
-<h1>Add a Measure for <%= @recipe.title %></h1>
+<%= form_with model: @measure, url: [@recipe, @measure], class: "form" do |f| %>
+  <h2 class="form__header">Add a measure for <%= @recipe.title %></h2>
 
-<%= form_with model: @measure, url: [@recipe, @measure] do |f| %>
-  <%= f.text_field :quantity %>
-  <%= f.select :unit_id, options_for_select(Unit.all.collect { |u| [ u.name, u.id ] }) %>
-  <%= f.select :ingredient_id, options_for_select(Ingredient.all.collect { |i| [ i.name, i.id ] }) %>
+  <div class="form__grid">
+    <div>
+      <%= f.label :quantity %>
+      <%= f.text_field :quantity %>
+    </div>
+
+    <div>
+      <%= f.label :unit %>
+      <%= f.select :unit_id, options_for_select(Unit.all.collect { |u| [ u.name, u.id ] }) %>
+    </div>
+
+    <div>
+      <%= f.label :ingredient %>
+      <%= f.select :ingredient_id, options_for_select(Ingredient.all.collect { |i| [ i.name, i.id ] }) %>
+    </div>
+  </div>
+
   <%= f.submit %>
 <% end %>

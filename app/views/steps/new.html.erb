@@ -1,7 +1,17 @@
-<h1>Create a Step for <%= @recipe.title %></h1>
+<%= form_with model: @step, url: [@recipe, @step], class: "form" do |f| %>
+  <h2 class="form__header">Create a Step for <%= @recipe.title %></h2>
 
-<%= form_with model: @step, url: [@recipe, @step] do |f| %>
-  <%= f.number_field :position, min: 1, value: @recipe.next_step %>
-  <%= f.text_area :description %>
+  <div class="form__grid">
+    <div>
+      <%= f.label :position%>
+      <%= f.number_field :position, min: 1, value: @recipe.next_step %>
+    </div>
+
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+  </div>
+
   <%= f.submit %>
 <% end %>

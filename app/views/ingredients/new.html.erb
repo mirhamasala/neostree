@@ -1,6 +1,12 @@
-<h1>A New Ingredient</h1>
+<%= form_with model: @ingredient, class: "form" do |f| %>
+  <h2 class="form__header">Add a new ingredient</h2>
 
-<%= form_with model: @ingredient do |f| %>
-  <%= f.text_field :name %>
+  <div class="form__grid">
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
   <%= f.submit %>
 <% end %>
