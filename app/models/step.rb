@@ -1,5 +1,7 @@
 class Step < ApplicationRecord
+  validates :position, presence: true, uniqueness: { scope: :recipe_id }
   validates :description, presence: true
+  validates :recipe_id, presence: true
 
   belongs_to :recipe
 end
