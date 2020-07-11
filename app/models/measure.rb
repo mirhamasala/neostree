@@ -14,7 +14,7 @@ end
 # Table name: measures
 #
 #  id            :bigint           not null, primary key
-#  quantity      :integer
+#  quantity      :float
 #  unit_id       :bigint
 #  ingredient_id :bigint           not null
 #  recipe_id     :bigint           not null
