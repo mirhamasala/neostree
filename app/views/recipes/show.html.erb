@@ -23,6 +23,7 @@
     <ol>
       <% @recipe.steps.each do |step| %>
         <li>
+          <%= "#{step.position}." %>
           <%= step.description %>
           <%= link_to "delete", step_path(step), method: :delete %>
       </ li>
