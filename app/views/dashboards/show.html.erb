@@ -2,18 +2,20 @@
 
 <div class="mb-6">
   <h2 class="subheading">All Units</h2>
-  <ul>
+  <ul class="mb-4">
     <% @units.each do |unit| %>
       <li>
         <%= unit.name %>
         <%= link_to "delete", unit_path(unit), method: :delete %>
       </li>
     <% end %>
+  </ul>
+  <%= link_to "Add a new unit", new_unit_path %>
 </div>
 
 <div>
   <h2 class="subheading">All Ingredients</h2>
-  <ul>
+  <ul class="mb-4">
     <% @ingredients.each do |ingredient| %>
       <li>
         <%= ingredient.name %>
@@ -21,4 +23,5 @@
       </li>
     <% end %>
   </ul>
+  <%= link_to "Add a new ingredient", new_ingredient_path %>
 </div>
