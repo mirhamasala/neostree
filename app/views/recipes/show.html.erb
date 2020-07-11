@@ -1,6 +1,6 @@
-<h1><%= @recipe.title %></h1>
+<h1 class="page-title"><%= @recipe.title %></h1>
 
-<h2>Ingredients</h2>
+<h2 class="subheading">Ingredients</h2>
 <ul>
   <% @recipe.measures.each do |measure| %>
     <li>
@@ -14,7 +14,7 @@
 
 <%= link_to "Add a measure", new_recipe_measure_path(@recipe) %>
 
-<h2>Steps</h2>
+<h2 class="subheading">Steps</h2>
 <ol>
   <% @recipe.steps.each do |step| %>
     <li>
