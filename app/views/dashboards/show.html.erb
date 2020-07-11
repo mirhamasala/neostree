@@ -1,20 +1,24 @@
 <h1 class="page-title">Dashboard</h1>
 
-<h2 class="subheading">All Units</h2>
-<ul>
-  <% @units.each do |unit| %>
-    <li>
-      <%= unit.name %>
-      <%= link_to "delete", unit_path(unit), method: :delete %>
-    </li>
-  <% end %>
+<div class="mb-6">
+  <h2 class="subheading">All Units</h2>
+  <ul>
+    <% @units.each do |unit| %>
+      <li>
+        <%= unit.name %>
+        <%= link_to "delete", unit_path(unit), method: :delete %>
+      </li>
+    <% end %>
+</div>
 
-<h2 class="subheading">All Ingredients</h2>
-<ul>
-  <% @ingredients.each do |ingredient| %>
-    <li>
-      <%= ingredient.name %>
-      <%= link_to "delete", ingredient_path(ingredient), method: :delete %>
-    </li>
-  <% end %>
-</ul>
+<div>
+  <h2 class="subheading">All Ingredients</h2>
+  <ul>
+    <% @ingredients.each do |ingredient| %>
+      <li>
+        <%= ingredient.name %>
+        <%= link_to "delete", ingredient_path(ingredient), method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+</div>

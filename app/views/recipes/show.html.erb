@@ -1,27 +1,31 @@
 <h1 class="page-title"><%= @recipe.title %></h1>
 
-<h2 class="subheading">Ingredients</h2>
-<ul>
-  <% @recipe.measures.each do |measure| %>
-    <li>
-      <%= measure.quantity %>
-      <%= measure.unit.name %>
-      <%= measure.ingredient.name %>
-      <%= link_to "delete", measure_path(measure), method: :delete %>
-    </li>
+<div class="mb-6">
+  <h2 class="subheading">Ingredients</h2>
+  <ul>
+    <% @recipe.measures.each do |measure| %>
+      <li>
+        <%= measure.quantity %>
+        <%= measure.unit.name %>
+        <%= measure.ingredient.name %>
+        <%= link_to "delete", measure_path(measure), method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Add a measure", new_recipe_measure_path(@recipe) %>
+</div>
+
+<div>
+  <h2 class="subheading">Steps</h2>
+  <ol>
+    <% @recipe.steps.each do |step| %>
+      <li>
+        <%= step.description %>
+        <%= link_to "delete", step_path(step), method: :delete %>
+    </ li>
   <% end %>
-</ul>
+  </ol>
 
-<%= link_to "Add a measure", new_recipe_measure_path(@recipe) %>
-
-<h2 class="subheading">Steps</h2>
-<ol>
-  <% @recipe.steps.each do |step| %>
-    <li>
-      <%= step.description %>
-      <%= link_to "delete", step_path(step), method: :delete %>
-    </li>
-  <% end %>
-</ol>
-
-<%= link_to "Add recipe step", new_recipe_step_path(@recipe) %>
+  <%= link_to "Add recipe step", new_recipe_step_path(@recipe) %>
+</div>
