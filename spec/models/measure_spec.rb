@@ -4,7 +4,7 @@
 #
 #  id            :bigint           not null, primary key
 #  quantity      :integer
-#  unit_id       :bigint           not null
+#  unit_id       :bigint
 #  ingredient_id :bigint           not null
 #  recipe_id     :bigint           not null
 #  created_at    :datetime         not null

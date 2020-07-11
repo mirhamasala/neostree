@@ -7,7 +7,7 @@
       <% @recipe.measures.each do |measure| %>
         <li>
           <%= measure.quantity %>
-          <%= measure.unit.name %>
+          <%= measure.unit.name if measure.unit %>
           <%= measure.ingredient.name %>
           <%= link_to "delete", measure_path(measure), method: :delete %>
         </li>

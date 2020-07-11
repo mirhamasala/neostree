@@ -9,7 +9,7 @@
 
     <div>
       <%= f.label :unit %>
-      <%= f.select :unit_id, options_for_select(Unit.all.collect { |u| [ u.name, u.id ] }) %>
+      <%= f.collection_select :unit_id, Unit.all.alphabetize, :id, :name, { include_blank: true } %>
     </div>
 
     <div>
