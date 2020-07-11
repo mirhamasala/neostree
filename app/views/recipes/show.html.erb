@@ -2,6 +2,9 @@
 
 <div class="mb-6">
   <div class="mb-4">
+    <%= link_to "Link", @recipe.link, target: "_blank" if @recipe.link %>
+  </div>
+  <div class="mb-4">
     <h2 class="subheading">Ingredients</h2>
     <ul>
       <% @recipe.measures.each do |measure| %>
