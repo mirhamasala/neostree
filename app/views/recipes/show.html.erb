@@ -2,6 +2,7 @@
 
 <div class="mb-6">
   <div class="mb-4">
+    <%= link_to "Edit recipe", edit_recipe_path(@recipe), class: "block mb-1" %>
     <%= link_to "Link", @recipe.link, target: "_blank" if @recipe.link %>
   </div>
   <div class="mb-4">
