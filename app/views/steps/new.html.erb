@@ -1,5 +1,5 @@
 <%= form_with model: @step, url: [@recipe, @step], class: "form" do |f| %>
-  <h2 class="form__header">Create a Step for <%= @recipe.title %></h2>
+  <h2 class="form__header">Add a cooking step for <%= @recipe.title %></h2>
 
   <div class="form__grid">
     <div>
@@ -13,5 +13,5 @@
     </div>
   </div>
 
-  <%= f.submit %>
+  <%= f.submit "Add step" %>
 <% end %>

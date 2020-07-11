@@ -17,12 +17,12 @@
       <% end %>
     </ul>
   </div>
-  <%= link_to "Add a measure", new_recipe_measure_path(@recipe) %>
+  <%= link_to "Add an ingredient", new_recipe_measure_path(@recipe) %>
 </div>
 
 <div>
   <div class="mb-4">
-    <h2 class="subheading">Steps</h2>
+    <h2 class="subheading">Instructions</h2>
     <ol>
       <% @recipe.steps.each do |step| %>
         <li>
@@ -33,5 +33,5 @@
     <% end %>
     </ol>
   </div>
-  <%= link_to "Add recipe step", new_recipe_step_path(@recipe) %>
+  <%= link_to "Add a step", new_recipe_step_path(@recipe) %>
 </div>

@@ -1,5 +1,5 @@
 <%= form_with model: @measure, url: [@recipe, @measure], class: "form" do |f| %>
-  <h2 class="form__header">Add a measure for <%= @recipe.title %></h2>
+  <h2 class="form__header">Add an ingredient for <%= @recipe.title %></h2>
 
   <div class="form__grid">
     <div>
@@ -18,5 +18,5 @@
     </div>
   </div>
 
-  <%= f.submit %>
+  <%= f.submit "Add ingredient" %>
 <% end %>
