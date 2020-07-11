@@ -1,5 +1,11 @@
 class Unit < ApplicationRecord
   validates :name, presence: true, uniqueness: true
+
+  def name=(new_name)
+    return unless new_name
+
+    write_attribute(:name, new_name.downcase.singularize)
+  end
 end
 
 # == Schema Information
