@@ -3,7 +3,12 @@ class Ingredient < ApplicationRecord
 
   def name=(new_name)
     return unless new_name
+
     write_attribute(:name, new_name.downcase.singularize)
+  end
+
+  def self.alphabetize
+    order(name: :asc)
   end
 end
 
