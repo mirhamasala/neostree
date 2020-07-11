@@ -21,7 +21,7 @@
 
 - [Database Schema](https://kitt.lewagon.com/db/9884)
 
-- [https://neos-brunches.herokuapp.com/]
+- https://neos-brunches.herokuapp.com/
 
 ### Useful Tools & Gems
 
@@ -36,3 +36,5 @@
 ## Resources
 
 - [Switching to asdf Version Manager](https://sidneyliebrand.io/blog/switching-to-asdf-version-manager)
+
+- [Visual Studio Code CSS linting with Tailwind](https://www.meidev.co/blog/visual-studio-code-css-linting-with-tailwind/)
