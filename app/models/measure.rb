@@ -7,6 +7,10 @@ class Measure < ApplicationRecord
   belongs_to :unit, optional: true
   belongs_to :ingredient
   belongs_to :recipe
+
+  def to_s
+    DisplayMeasure.new(quantity, unit, ingredient).to_s
+  end
 end
 
 # == Schema Information

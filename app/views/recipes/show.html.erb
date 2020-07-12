@@ -10,9 +10,7 @@
     <ul>
       <% @recipe.measures.each do |measure| %>
         <li>
-          <%= measure.quantity %>
-          <%= measure.unit.name.pluralize(measure.quantity.ceil) if measure.unit %>
-          <%= measure.ingredient.name.pluralize(measure.quantity.ceil) %>
+          <%= measure %>
           <%= link_to "delete", measure_path(measure), method: :delete %>
         </li>
       <% end %>
