@@ -1,6 +1,4 @@
 <%= form_with model: @recipe, class: "form" do |f| %>
-  <h2 class="form__header">Add a new recipe</h2>
-
   <div class="form__grid">
     <div>
       <%= f.label :title %>
@@ -13,5 +11,5 @@
     </div>
   </div>
 
-  <%= f.submit "Add recipe" %>
+  <%= f.submit %>
 <% end %>
