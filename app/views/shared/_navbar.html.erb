@@ -1,9 +1,7 @@
-<nav class="mb-6 border-b border-sunny-up-400">
+<nav class="mb-6 border-b border-sand-100">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <%= link_to root_path, class: "block" do %>
-        <svg class="h-12 w-auto text-sunny-up-300" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 11.905c-21.006 0-38.095 17.089-38.095 38.095 0 21.005 17.089 38.095 38.095 38.095S88.095 71.006 88.095 50 71.006 11.905 50 11.905zm0 74.19c-19.903 0-36.095-16.192-36.095-36.095S30.097 13.905 50 13.905 86.095 30.097 86.095 50 69.903 86.095 50 86.095z"/><path d="M45 29.598c-8.156 0-14.768 6.612-14.768 14.768S36.844 59.135 45 59.135s14.768-6.612 14.768-14.768S53.156 29.598 45 29.598zm-6.085 12.527c-.309 2.199.061 6.017-2.497 5.037-2.072-.79-2.267-3.932-1.654-6.613.903-3.917 3.8-6.933 6.485-5.953.611.284.797.689.929 1.447.495 2.87-2.902 3.147-3.263 6.082z"/></svg>
-      <% end %>
+    <div class="flex items-center justify-between h-12">
+      <%= link_to "Neo's", root_path, class: "font-serif text-2xl text-forrest-500" %>
       <div>
         <%= link_to "Add a new recipe", new_recipe_path %>
         <%= link_to "Dashboard", dashboard_path, class: "ml-4" %>
