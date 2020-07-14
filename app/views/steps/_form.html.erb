@@ -1,0 +1,17 @@
+<%= form_with model: @step, url: [@recipe, @step], class: "form" do |f| %>
+  <h2 class="form__header">Add a cooking step for <%= @step.recipe.title %></h2>
+
+  <div class="form__grid">
+    <div>
+      <%= f.label :position%>
+      <%= f.number_field :position, min: 1, value: @step.recipe.next_step %>
+    </div>
+
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+  </div>
+
+  <%= f.submit "Add step" %>
+<% end %>

@@ -15,6 +15,19 @@ class StepsController < ApplicationController
     end
   end
 
+  def edit
+    @step = Step.find(params[:id])
+  end
+
+  def update
+    @step = Step.find(params[:id])
+    if @step.update(step_params)
+      redirect_to recipe_path(@step.recipe)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @step = Step.find(params[:id])
     @step.destroy
@@ -23,7 +36,7 @@ class StepsController < ApplicationController
 
   private
 
-  def steps_params
+  def step_params
     params.require(:step).permit(:position, :description, :recipe_id)
   end
 end

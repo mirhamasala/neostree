@@ -27,6 +27,7 @@
         <li>
           <%= "#{step.position}." %>
           <%= step.description %>
+          <%= link_to "edit", edit_recipe_step_path(step.recipe, step) %>
           <%= link_to "delete", step_path(step), method: :delete %>
       </ li>
     <% end %>
