@@ -5,6 +5,7 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "sortablejs": "^1.10.2",
     "stimulus": "^1.1.1",
     "stylelint-config-recommended": "^3.0.0",
     "tailwindcss": "^1.4.6",
