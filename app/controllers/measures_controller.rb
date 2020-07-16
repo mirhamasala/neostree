@@ -21,9 +21,14 @@ class MeasuresController < ApplicationController
     redirect_to recipe_path(@measure.recipe)
   end
 
+  def move
+    @measure = Measure.find(params[:id])
+    @measure.insert_at(params[:position].to_i)
+  end
+
   private
 
   def measure_params
-    params.require(:measure).permit(:quantity, :ingredient_id, :unit_id)
+    params.require(:measure).permit(:position, :quantity, :ingredient_id, :unit_id)
   end
 end
