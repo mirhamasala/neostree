@@ -7,9 +7,9 @@
   </div>
   <div class="mb-4">
     <h2 class="subheading">Ingredients</h2>
-    <ul>
-      <% @recipe.measures.each do |measure| %>
-        <li>
+    <ul data-controller="sortable" data-sortable-url="/recipes/:recipe_id/measures/:id/move">
+      <% @recipe.measures.order(position: :asc).each do |measure| %>
+        <li data-id="<%= measure.id %>">
           <%= measure %>
           <%= link_to "delete", measure_path(measure), method: :delete %>
         </li>

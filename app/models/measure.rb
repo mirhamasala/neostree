@@ -1,5 +1,6 @@
 class Measure < ApplicationRecord
   acts_as_list
+
   validates :quantity, presence: true
   validates :unit_id, presence: true, allow_blank: true
   validates :ingredient_id, presence: true
