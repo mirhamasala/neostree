@@ -1,4 +1,6 @@
 class Measure < ApplicationRecord
+  acts_as_list
+
   validates :quantity, presence: true
   validates :unit_id, presence: true, allow_blank: true
   validates :ingredient_id, presence: true
@@ -24,4 +26,5 @@ end
 #  recipe_id     :bigint           not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  position      :integer
 #

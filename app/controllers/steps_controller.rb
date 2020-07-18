@@ -21,6 +21,11 @@ class StepsController < ApplicationController
     redirect_to recipe_path(@step.recipe)
   end
 
+  def move
+    @step = Step.find(params[:id])
+    @step.insert_at(params[:position].to_i)
+  end
+
   private
 
   def steps_params
