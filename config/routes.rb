@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   root to: 'recipes#index'
 
   resources :recipes, except: :index do
-    resources :steps, only: %i[new create]
+    resources :steps, only: %i[new create] do
+      member do
+        patch :move
+      end
+    end
     resources :measures, only: %i[new create] do
       member do
         patch :move

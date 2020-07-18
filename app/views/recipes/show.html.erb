@@ -18,13 +18,12 @@
   </div>
   <%= link_to "Add an ingredient", new_recipe_measure_path(@recipe) %>
 </div>
-
 <div>
   <div class="mb-4">
     <h2 class="subheading">Instructions</h2>
-    <ol>
-      <% @recipe.steps.each do |step| %>
-        <li>
+    <ol data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/move">
+      <% @recipe.steps.order(position: :asc).each do |step| %>
+        <li data-id="<%= step.id %>">
           <%= "#{step.position}." %>
           <%= step.description %>
           <%= link_to "delete", step_path(step), method: :delete %>
