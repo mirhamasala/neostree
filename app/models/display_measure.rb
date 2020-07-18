@@ -14,7 +14,17 @@ class DisplayMeasure
   end
 
   def quantity
-    @quantity
+    if @unit.name == 'cup' || @unit.name == 'teaspoon' || @unit.name == 'tablespoon'
+      if @quantity < 1
+        @quantity.to_s.to_r
+      elsif (@quantity % 2).zero? || @quantity == 1
+        @quantity.to_i
+      else
+        "#{@quantity.to_i} #{@quantity.to_s.to_r - @quantity.to_i}"
+      end
+    else
+      @quantity.to_i
+    end
   end
 
   def unit
