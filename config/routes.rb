@@ -3,14 +3,10 @@ Rails.application.routes.draw do
 
   resources :recipes, except: :index do
     resources :steps, only: %i[new create] do
-      member do
-        patch :move
-      end
+      resource :step_position, only: :update
     end
     resources :measures, only: %i[new create] do
-      member do
-        patch :move
-      end
+      resource :measure_position, only: :update
     end
   end
   resources :steps, only: [:destroy]
