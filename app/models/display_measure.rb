@@ -14,7 +14,7 @@ class DisplayMeasure
   end
 
   def quantity
-    if @unit.name == 'cup' || @unit.name == 'teaspoon' || @unit.name == 'tablespoon'
+    if @unit&.fractionable?
       if @quantity < 1
         @quantity.to_s.to_r
       elsif (@quantity % 1).zero?
@@ -28,7 +28,7 @@ class DisplayMeasure
   end
 
   def unit
-    @unit.name.pluralize(@quantity.ceil) if @unit
+    @unit&.name&.pluralize(@quantity.ceil)
   end
 
   def ingredient
