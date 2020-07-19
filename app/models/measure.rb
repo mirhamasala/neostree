@@ -1,5 +1,5 @@
 class Measure < ApplicationRecord
-  acts_as_list
+  acts_as_list scope: :recipe
 
   validates :quantity, presence: true
   validates :unit_id, presence: true, allow_blank: true
