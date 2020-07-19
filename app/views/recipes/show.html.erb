@@ -7,7 +7,7 @@
   </div>
   <div class="mb-4">
     <h2 class="subheading">Ingredients</h2>
-    <ul data-controller="sortable" data-sortable-url="/recipes/:recipe_id/measures/:id/move">
+    <ul data-controller="sortable" data-sortable-url="/recipes/:recipe_id/measures/:id/measure_position">
       <% @recipe.measures.order(position: :asc).each do |measure| %>
         <li data-id="<%= measure.id %>">
           <%= measure %>
@@ -21,7 +21,7 @@
 <div>
   <div class="mb-4">
     <h2 class="subheading">Instructions</h2>
-    <ol data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/move">
+    <ol data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
       <% @recipe.steps.order(position: :asc).each do |step| %>
         <li data-id="<%= step.id %>">
           <%= "#{step.position}." %>
