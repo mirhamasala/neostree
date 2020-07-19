@@ -7,7 +7,7 @@ module.exports = {
       },
       colors: {
         forrest: {
-          "500": "#58686d",
+          "500": "#57696d",
         },
         sand: {
           "400": "#a19079",
