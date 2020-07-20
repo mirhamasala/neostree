@@ -11,12 +11,12 @@
       <% @recipe.measures.order(position: :asc).each do |measure| %>
         <li data-id="<%= measure.id %>">
           <%= measure %>
-          <%= link_to "delete", measure_path(measure), method: :delete %>
+          <%= link_to "delete", measure_path(measure), method: :delete if current_user&.admin? %>
         </li>
       <% end %>
     </ul>
   </div>
-  <%= link_to "Add an ingredient", new_recipe_measure_path(@recipe) %>
+  <%= link_to "Add an ingredient", new_recipe_measure_path(@recipe) if current_user&.admin? %>
 </div>
 <div>
   <div class="mb-4">
