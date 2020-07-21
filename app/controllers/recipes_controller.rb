@@ -1,14 +1,18 @@
 class RecipesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
-    @recipes = Recipe.all
+    @recipes = policy_scope(Recipe).all
   end
 
   def new
     @recipe = Recipe.new
+    authorize @recipe
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
+    authorize @recipe
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
@@ -18,14 +22,17 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
 
   def update
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
     if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
     else
@@ -35,6 +42,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
     @recipe.destroy
     redirect_to :root
   end
@@ -42,7 +50,8 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :link, :photo,
-      :notes, :prep_time, :cook_time, :servings, :step_id, :measure_id)
+    params.require(:recipe).permit(:title, :link, :photo, :notes,
+                                   :prep_time, :cook_time, :servings,
+                                   :step_id, :measure_id)
   end
 end

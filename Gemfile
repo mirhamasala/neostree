@@ -19,6 +19,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 
+gem 'pundit'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 

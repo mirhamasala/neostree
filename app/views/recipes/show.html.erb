@@ -2,7 +2,7 @@
 
 <div class="mb-6">
   <div class="mb-4">
-    <%= link_to "Edit recipe", edit_recipe_path(@recipe), class: "block mb-1" %>
+    <%= link_to "Edit recipe", edit_recipe_path(@recipe), class: "block mb-1" if current_user&.admin? %>
     <%= link_to "Link", @recipe.link, target: "_blank" if @recipe.link %>
   </div>
   <div class="mb-4">
@@ -11,12 +11,12 @@
       <% @recipe.measures.order(position: :asc).each do |measure| %>
         <li data-id="<%= measure.id %>">
           <%= measure %>
-          <%= link_to "delete", measure_path(measure), method: :delete %>
+          <%= link_to "delete", measure_path(measure), method: :delete if current_user&.admin? %>
         </li>
       <% end %>
     </ul>
   </div>
-  <%= link_to "Add an ingredient", new_recipe_measure_path(@recipe) %>
+  <%= link_to "Add an ingredient", new_recipe_measure_path(@recipe) if current_user&.admin? %>
 </div>
 <div>
   <div class="mb-4">
@@ -26,10 +26,10 @@
         <li data-id="<%= step.id %>">
           <%= "#{step.position}." %>
           <%= step.description %>
-          <%= link_to "delete", step_path(step), method: :delete %>
-      </ li>
-    <% end %>
+          <%= link_to "delete", step_path(step), method: :delete if current_user&.admin? %>
+        </li>
+      <% end %>
     </ol>
   </div>
-  <%= link_to "Add a step", new_recipe_step_path(@recipe) %>
+  <%= link_to "Add a step", new_recipe_step_path(@recipe) if current_user&.admin? %>
 </div>
