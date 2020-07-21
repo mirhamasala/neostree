@@ -1,6 +1,10 @@
 <h1 class="page-title">Dashboard</h1>
 
 <div class="mb-6">
+  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+</div>
+
+<div class="mb-6">
   <h2 class="subheading">All Units</h2>
   <ul class="mb-4">
     <% @units.each do |unit| %>
