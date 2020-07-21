@@ -3,9 +3,15 @@
     <div class="flex items-center justify-between h-12">
       <%= link_to "Neo's", root_path, class: "font-serif text-2xl text-forrest-500" %>
       <div>
-        <% if current_user&.admin? %>
-          <%= link_to "Add a new recipe", new_recipe_path %>
-          <%= link_to "Dashboard", dashboard_path, class: "ml-4" %>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <%= link_to "Add a new recipe", new_recipe_path %>
+            <%= link_to "Dashboard", dashboard_path, class: "ml-4" %>
+          <% else %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          <% end %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path %>
         <% end %>
       </div>
     </div>
