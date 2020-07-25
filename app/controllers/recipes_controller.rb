@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @recipes = policy_scope(Recipe).all
+    @recipes = policy_scope(Recipe).alphabetize
   end
 
   def new

@@ -2,6 +2,10 @@ class Recipe < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   has_many :steps, dependent: :destroy
   has_many :measures, dependent: :destroy
+
+  def self.alphabetize
+    order(title: :asc)
+  end
 end
 
 # == Schema Information
