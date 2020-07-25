@@ -3,7 +3,7 @@
 <ul>
   <% @recipes.each do |recipe| %>
     <li>
-      <%= link_to recipe.title, recipe_path(recipe) %>
+      <%= link_to recipe.title.titleize, recipe_path(recipe) %>
       <%= link_to "delete", recipe_path(recipe), method: :delete if current_user&.admin? %>
     </li>
   <% end %>
