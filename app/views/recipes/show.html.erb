@@ -20,7 +20,7 @@
 </div>
 <div>
   <div class="mb-4">
-    <h2 class="subheading">Instructions</h2>
+    <h2 class="subheading">Directions</h2>
     <ol data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
       <% @recipe.steps.order(position: :asc).each do |step| %>
         <li data-id="<%= step.id %>">
