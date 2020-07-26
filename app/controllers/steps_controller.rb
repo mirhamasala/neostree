@@ -1,15 +1,18 @@
 class StepsController < ApplicationController
   def new
     @recipe = Recipe.find(params[:recipe_id])
+    authorize @recipe
+
     @step = Step.new
-    authorize @step
   end
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
+    authorize @recipe
+
     @step = Step.new(steps_params)
     @step.recipe = @recipe
-    authorize @step
+
     if @step.save
       redirect_to recipe_path(@recipe)
     else
@@ -19,8 +22,10 @@ class StepsController < ApplicationController
 
   def destroy
     @step = Step.find(params[:id])
-    authorize @step
+    authorize @step.recipe
+
     @step.destroy
+
     redirect_to recipe_path(@step.recipe)
   end
 

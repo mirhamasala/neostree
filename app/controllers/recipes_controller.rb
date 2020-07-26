@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     authorize @recipe
+
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
@@ -33,6 +34,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     authorize @recipe
+
     if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
     else
@@ -43,6 +45,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     authorize @recipe
+
     @recipe.destroy
     redirect_to :root
   end

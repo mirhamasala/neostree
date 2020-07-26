@@ -7,6 +7,7 @@ class UnitsController < ApplicationController
   def create
     @unit = Unit.new(unit_params)
     authorize @unit
+
     if @unit.save
       redirect_to dashboard_path
     else
@@ -17,7 +18,9 @@ class UnitsController < ApplicationController
   def destroy
     @unit = Unit.find(params[:id])
     authorize @unit
+
     @unit.destroy
+
     redirect_to dashboard_path
   end
 

@@ -1,8 +1,10 @@
 class StepPositionsController < ApplicationController
   def update
     @step = Step.find(params[:step_id])
+    authorize @step.recipe
+
     @step.insert_at(params[:position].to_i)
-    authorize :step_position
+
     head :ok
   end
 end
