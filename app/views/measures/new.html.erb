@@ -1,7 +1,7 @@
-<%= form_with model: @measure, url: [@recipe, @measure], class: "form" do |f| %>
-  <h2 class="form__header">Add an ingredient for <%= @recipe.title %></h2>
+<h2 class="heading heading--form"><%= t('.heading') %></h2>
 
-  <div class="form__grid">
+<%= form_with model: @measure, url: [@recipe, @measure], class: "form" do |f| %>
+  <div class="form__main">
     <div>
       <%= f.label :quantity %>
       <%= f.number_field :quantity, step: 0.125 %>

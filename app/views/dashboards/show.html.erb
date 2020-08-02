@@ -1,7 +1,7 @@
-<h1 class="page-title"><%= t('.page_title') %></h1>
+<h1 class="heading"><%= t('.heading') %></h1>
 
 <div class="mb-6">
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  <%= link_to t('.link_logout'), destroy_user_session_path, method: :delete %>
 </div>
 
 <div class="mb-6">
@@ -10,7 +10,7 @@
     <% @units.each do |unit| %>
       <li>
         <%= unit.name %>
-        <%= link_to "delete", unit_path(unit), method: :delete %>
+        <%= link_to t('.link_delete'), unit_path(unit), method: :delete %>
       </li>
     <% end %>
   </ul>
@@ -23,7 +23,7 @@
     <% @ingredients.each do |ingredient| %>
       <li>
         <%= ingredient.name %>
-        <%= link_to "delete", ingredient_path(ingredient), method: :delete %>
+        <%= link_to t('.link_delete'), ingredient_path(ingredient), method: :delete %>
       </li>
     <% end %>
   </ul>

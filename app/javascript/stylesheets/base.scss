@@ -25,3 +25,10 @@ input:checked {
   @apply
   bg-forrest-500;
 }
+
+label {
+  @apply
+  block
+  mb-1
+  text-sm
+}

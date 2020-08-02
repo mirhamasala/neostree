@@ -1,7 +1,7 @@
-<%= form_with model: @unit, class: "form" do |f| %>
-  <h2 class="form__header">Add a new unit</h2>
+<h2 class="heading heading--form"><%= t('.heading') %></h2>
 
-  <div class="form__grid">
+<%= form_with model: @unit, class: "form" do |f| %>
+  <div class="form__main">
     <div>
       <%= f.label :name %>
       <%= f.text_field :name %>
