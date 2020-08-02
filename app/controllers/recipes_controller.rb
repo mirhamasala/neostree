@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    10.times { @recipe.steps.build }
     authorize @recipe
   end
 
@@ -55,6 +56,8 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:title, :link, :photo, :notes,
                                    :prep_time, :cook_time, :servings,
-                                   :step_id, :measure_id)
+                                   :step_id, :measure_id,
+                                   steps_attributes:
+                                    [:id, :position, :description, :_destroy])
   end
 end
