@@ -19,7 +19,5 @@ export default class extends Controller {
       type: "PATCH",
       data: data,
     });
-
-    window.location.reload();
   }
 }

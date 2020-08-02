@@ -12,8 +12,7 @@ en:
         link: Link
         title: Title
       step:
-        description: Description
-        position: Position
+        delete: delete
       unit:
         name: Name
         fractionable: Fractionable
@@ -22,8 +21,6 @@ en:
         create: Add ingredient
       recipe:
         create: Add recipe
-      step:
-        create: Add step
       unit:
         create: Add unit
       update: Update
@@ -53,18 +50,14 @@ en:
       link_delete: delete
       link_recipe: Link
       link_ingredient: Add ingredient
-      link_step: Add step
       subheading_ingredients: Ingredients
       subheading_steps: Directions
+    form:
+      directions: Directions
   shared:
     navbar:
       link_new_recipe: Add recipe
       link_dashboard: Dashboard
-  steps:
-    edit:
-      heading: Edit
-    new:
-      heading: Add a cooking step
   units:
     new:
       heading: Add a new unit

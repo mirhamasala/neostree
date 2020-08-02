@@ -1,13 +1,33 @@
 <%= form_with model: @recipe, class: "form" do |f| %>
   <div class="form__main">
+    <!-- Recipe Details -->
     <div>
       <%= f.label :title %>
       <%= f.text_field :title %>
     </div>
-
     <div>
       <%= f.label :link %>
       <%= f.text_field :link %>
+    </div>
+
+    <!-- Directions -->
+    <div>
+      <h3 class="mb-1 text-sm"><%= t('.directions') %></h3>
+      <% if @recipe.steps.exists? %>
+        <div data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
+          <%= f.fields_for :steps, @recipe.steps.order(position: :asc) do |f| %>
+            <%= f.text_area :description, :data => {:id => f.object.id } %>
+            <div class="inline-flex items-base mb-4">
+              <%= f.check_box :_destroy, class:"mr-1" %>
+              <%= f.label :delete %>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <%= f.fields_for :steps do |f| %>
+          <%= f.text_area :description %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 

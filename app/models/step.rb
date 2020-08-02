@@ -1,9 +1,6 @@
 class Step < ApplicationRecord
   acts_as_list scope: :recipe
 
-  validates :description, presence: true
-  validates :recipe_id, presence: true
-
   belongs_to :recipe
 end
 
