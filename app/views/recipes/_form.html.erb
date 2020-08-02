@@ -12,9 +12,11 @@
     <div>
       <h3 class="mb-1 text-sm"><%= t('.directions') %></h3>
       <% if @recipe.steps.exists? %>
-        <%= f.fields_for :steps, @recipe.steps.order(position: :asc) do |f| %>
-          <%= f.text_area :description %>
-        <% end %>
+        <div data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
+          <%= f.fields_for :steps, @recipe.steps.order(position: :asc) do |f| %>
+            <%= f.text_area :description, :data => {:id => f.object.id } %>
+          <% end %>
+        </div>
       <% else %>
         <%= f.fields_for :steps do |f| %>
           <%= f.text_area :description %>
