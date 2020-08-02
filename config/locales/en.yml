@@ -11,6 +11,8 @@ en:
       recipe:
         link: Link
         title: Title
+      step:
+        delete: delete
       unit:
         name: Name
         fractionable: Fractionable
