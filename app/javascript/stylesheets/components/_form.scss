@@ -5,12 +5,6 @@
   rounded-lg;
 }
 
-.form__header {
-  @apply mb-6
-  text-lg;
-}
-
-.form__grid {
-  @apply grid row-gap-6
-  mb-6;
+.form__main {
+  @apply grid row-gap-6 mb-6;
 }

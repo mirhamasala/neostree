@@ -1,10 +1,10 @@
-<h1 class="page-title">Recipes</h1>
+<h1 class="heading"><%= t('.heading') %></h1>
 
 <ul>
   <% @recipes.each do |recipe| %>
     <li>
       <%= link_to recipe.title.titleize, recipe_path(recipe) %>
-      <%= link_to "delete", recipe_path(recipe), method: :delete if current_user&.admin? %>
+      <%= link_to t('.link_delete'), recipe_path(recipe), method: :delete if current_user&.admin? %>
     </li>
   <% end %>
 </ul>

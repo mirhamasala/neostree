@@ -4,6 +4,7 @@ class StepsController < ApplicationController
     authorize @recipe
 
     @step = Step.new
+    @heading = t('.heading')
   end
 
   def create

@@ -1,6 +1,10 @@
-.page-title {
+.heading {
   @apply
   mb-1
   font-serif text-2xl font-medium
   text-sea-800;
+}
+
+.heading--form {
+  @apply px-4
 }

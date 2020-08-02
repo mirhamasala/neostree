@@ -1,12 +1,12 @@
-<%= form_with model: @step, url: [@recipe, @step], class: "form" do |f| %>
-  <h2 class="form__header">Add a cooking step for <%= @recipe.title %></h2>
+<h2 class="heading heading--form"></h2>
 
-  <div class="form__grid">
+<%= form_with model: @step, url: [@recipe, @step], class: "form" do |f| %>
+  <div class="form__main">
     <div>
       <%= f.label :description %>
       <%= f.text_area :description %>
     </div>
   </div>
 
-  <%= f.submit "Add step" %>
+  <%= f.submit %>
 <% end %>
