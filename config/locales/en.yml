@@ -19,6 +19,8 @@ en:
     submit:
       ingredient:
         create: Add ingredient
+      measure:
+        create: Add ingredient
       recipe:
         create: Add recipe
       unit:
@@ -37,7 +39,8 @@ en:
     new:
       heading: Add a new ingredient
   measures:
-    new: Add an ingredient for
+    new:
+      heading: "Add an ingredient for %{title}"
   recipes:
     edit:
       heading: Edit recipe

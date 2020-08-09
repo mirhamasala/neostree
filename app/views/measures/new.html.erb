@@ -1,4 +1,6 @@
-<h2 class="heading heading--form"><%= t('.heading') %></h2>
+<h2 class="heading heading--form">
+  <%= t('.heading', title: @recipe.title) %>
+</h2>
 
 <%= form_with model: @measure, url: [@recipe, @measure], class: "form" do |f| %>
   <div class="form__main">
