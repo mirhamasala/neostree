@@ -5,29 +5,36 @@
       <%= f.label :title %>
       <%= f.text_field :title %>
     </div>
+
     <div>
       <%= f.label :link %>
       <%= f.text_field :link %>
     </div>
 
     <!-- Directions -->
-    <div>
-      <h3 class="mb-1 text-sm"><%= t('.directions') %></h3>
-      <% if @recipe.steps.exists? %>
+    <h3 class="mb-1 text-sm"><%= t('.directions') %></h3>
+    <div data-controller="new-fields">
+      <template data-target="new-fields.template">
+        <%= f.fields_for :steps, Step.new, child_index: 'NEW_RECORD' do |step| %>
+          <%= render "step_fields", f: step %>
+        <% end %>
+      </template>
+
+      <div data-target="new-fields.fieldsContainer">
         <div data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
-          <%= f.fields_for :steps, @recipe.steps.order(position: :asc) do |f| %>
-            <%= f.text_area :description, :data => {:id => f.object.id } %>
-            <div class="inline-flex items-base mb-4">
-              <%= f.check_box :_destroy, class:"mr-1" %>
-              <%= f.label :delete %>
-            </div>
+          <%= f.fields_for :steps, @recipe.steps.order(position: :asc), include_id: false do |step| %>
+            <%= render "step_fields", f: step %>
           <% end %>
         </div>
-      <% else %>
-        <%= f.fields_for :steps do |f| %>
-          <%= f.text_area :description %>
+
+        <% @new_steps.to_i.times do |index| %>
+          <%= f.fields_for :steps, Step.new, child_index: Time.current.to_i + index do |stepField| %>
+            <%= render "step_fields", f: stepField %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+
+      <button type="button" data-action="new-fields#addNewField">Add a step</button>
     </div>
   </div>
 
