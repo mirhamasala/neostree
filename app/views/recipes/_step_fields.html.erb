@@ -1,6 +1,9 @@
 <%= content_tag :div, class: "nested-fields", data: { new_record: f.object.new_record?, id: f.object.id } do %>
-  <%= f.hidden_field :id %>
-  <%= f.text_area :description %>
+
+  <div>
+    <%= f.hidden_field :id %>
+    <%= f.text_area :description %>
+  </div>
 
   <small><%= link_to "Delete", "#", data: { action: "click->new-fields#removeField" } %></small>
   <%= f.hidden_field :_destroy %>

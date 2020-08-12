@@ -28,35 +28,31 @@ en:
       update: Update
   dashboards:
     show:
-      link_ingredient: Add ingredient
+      heading: Dashboard
       link_delete: delete
+      link_ingredient: Add ingredient
       link_logout: Log out
       link_unit: Add unit
-      heading: Dashboard
       subheading_ingredients: All Ingredients
       subheading_units: All Units
   ingredients:
     new:
       heading: Add a new ingredient
-  measures:
-    new:
-      heading: "Add an ingredient for %{title}"
   recipes:
     edit:
       heading: Edit recipe
+    form:
+      measures: Ingredients
+      steps: Directions
     index:
       heading: Recipes
       link_delete: delete
     new:
       heading: Add a new recipe
     show:
-      link_delete: delete
       link_recipe: Link
-      link_ingredient: Add ingredient
-      subheading_ingredients: Ingredients
+      subheading_measures: Ingredients
       subheading_steps: Directions
-    form:
-      directions: Directions
   shared:
     navbar:
       link_new_recipe: Add recipe

@@ -1,8 +1,9 @@
 class Recipe < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   has_many :steps, dependent: :destroy, inverse_of: :recipe
-  has_many :measures, dependent: :destroy
+  has_many :measures, dependent: :destroy, inverse_of: :recipe
 
+  accepts_nested_attributes_for :measures, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :steps, reject_if: :all_blank, allow_destroy: true
 
   def self.alphabetize
