@@ -34,6 +34,7 @@ en:
       link_logout: Log out
       link_unit: Add unit
       subheading_ingredients: All Ingredients
+      subheading_recipes: All Recipes
       subheading_units: All Units
   ingredients:
     new:
@@ -42,14 +43,15 @@ en:
     edit:
       heading: Edit recipe
     form:
-      measures: Ingredients
-      steps: Directions
+      subheading_measures: Ingredients
+      subheading_steps: Cooking Steps
     index:
       heading: Recipes
-      link_delete: delete
     new:
       heading: Add a new recipe
     show:
+      link_edit: edit |
+      link_delete: delete
       link_recipe: Link
       subheading_measures: Ingredients
       subheading_steps: Directions
