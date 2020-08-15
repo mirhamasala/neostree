@@ -1,6 +1,5 @@
 <%= form_with model: @recipe, class: "form" do |f| %>
   <div class="form__main">
-
     <!-- Recipe Details -->
     <div>
       <%= f.label :title %>
@@ -13,7 +12,8 @@
     </div>
 
     <!-- Ingredients -->
-    <h3><%= t('.measures') %></h3>
+    <h2 class="subheading"><%= t('.subheading_measures') %></h2>
+
     <div data-controller="new-fields">
       <template data-target="new-fields.template">
         <%= f.fields_for :measures, Measure.new, child_index: 'NEW_RECORD' do |measure| %>
@@ -39,7 +39,7 @@
     </div>
 
     <!-- Directions -->
-    <h3><%= t('.steps') %></h3>
+    <h2 class="subheading"><%= t('.subheading_steps') %></h2>
     <div data-controller="new-fields">
       <template data-target="new-fields.template">
         <%= f.fields_for :steps, Step.new, child_index: 'NEW_RECORD' do |step| %>
