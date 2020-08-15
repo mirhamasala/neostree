@@ -1,8 +1,11 @@
 <h1 class="heading"><%= @recipe.title.titleize %></h1>
 
 <div class="mb-4">
-  <%= link_to "Edit recipe", edit_recipe_path(@recipe), class: "block mb-1" if current_user&.admin? %>
-  <%= link_to t('.link_recipe'), @recipe.link, target: "_blank" if @recipe.link.present? %>
+  <% if current_user&.admin? %>
+    <%= link_to t('.link_edit'), edit_recipe_path(@recipe)  %>
+    <%= link_to t('.link_delete'), recipe_path(@recipe), method: :delete, class: "inline-block mb-1" %>
+  <% end %>
+  <%= link_to t('.link_recipe'), @recipe.link, target: "_blank", class: "block" if @recipe.link.present? %>
 </div>
 
 <!-- Ingredients -->
