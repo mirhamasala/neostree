@@ -4,7 +4,6 @@
   <% @recipes.each do |recipe| %>
     <li>
       <%= link_to recipe.title.titleize, recipe_path(recipe) %>
-      <%= link_to t('.link_delete'), recipe_path(recipe), method: :delete if current_user&.admin? %>
     </li>
   <% end %>
 </ul>
