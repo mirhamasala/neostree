@@ -7,10 +7,13 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+
     if request.xhr?
       @recipe.steps.new
+      @recipe.measures.new
     else
       @new_steps = 2
+      @new_measures = 3
     end
     authorize @recipe
   end
@@ -61,6 +64,8 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:title, :link, :photo, :notes,
                                    :prep_time, :cook_time, :servings,
                                    :step_id, :measure_id,
+                                   measures_attributes: %i[id position quantity unit_id
+                                                           ingredient_id recipe_id _destroy],
                                    steps_attributes: %i[id position description _destroy])
   end
 end
