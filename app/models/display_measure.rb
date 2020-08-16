@@ -10,7 +10,7 @@ class DisplayMeasure
       quantity,
       unit,
       ingredient
-    ].join(' ')
+    ].compact.join(' ')
   end
 
   def quantity
