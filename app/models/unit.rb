@@ -7,9 +7,7 @@ class Unit < ApplicationRecord
     write_attribute(:name, new_name.downcase.singularize)
   end
 
-  def self.alphabetize
-    order(name: :asc)
-  end
+  scope :alphabetize, -> { order(:name) }
 end
 
 # == Schema Information

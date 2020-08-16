@@ -6,9 +6,7 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :measures, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :steps, reject_if: :all_blank, allow_destroy: true
 
-  def self.alphabetize
-    order(title: :asc)
-  end
+  scope :alphabetize, -> { order(:title) }
 end
 
 # == Schema Information
