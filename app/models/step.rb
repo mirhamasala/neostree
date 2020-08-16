@@ -4,6 +4,8 @@ class Step < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :recipe
+
+  scope :ordered, -> { order(:position) }
 end
 
 # == Schema Information

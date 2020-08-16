@@ -24,7 +24,7 @@
 <div class="mb-4">
   <h2 class="subheading"><%= t('.subheading_steps') %></h2>
   <ol>
-    <% @recipe.steps.order(position: :asc).each do |step| %>
+    <% @recipe.steps.ordered.each do |step| %>
       <li>
         <%= "#{step.position}." %>
         <%= step.description %>
