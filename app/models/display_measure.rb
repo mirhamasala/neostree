@@ -14,7 +14,7 @@ class DisplayMeasure
   end
 
   def quantity
-    if @unit&.fractionable?
+    if !@unit || @unit.fractionable?
       if @quantity < 1
         @quantity.to_s.to_r
       elsif (@quantity % 1).zero?
