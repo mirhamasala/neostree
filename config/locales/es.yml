@@ -1,0 +1,7 @@
+---
+es:
+  recipes:
+    edit:
+      heading: Editar receta
+    index:
+      heading: Recetas
