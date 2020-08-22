@@ -2,7 +2,8 @@
 
 <div class="mb-4">
   <% if current_user&.admin? %>
-    <%= link_to t('.link_edit'), edit_recipe_path(@recipe)  %>
+    <%= link_to t('.link_edit'), edit_recipe_path(@recipe) %>
+    <span>|</span>
     <%= link_to t('.link_delete'), recipe_path(@recipe), method: :delete, class: "inline-block mb-1" %>
   <% end %>
   <%= link_to t('.link_recipe'), @recipe.link, target: "_blank", class: "block" if @recipe.link.present? %>

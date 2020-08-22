@@ -50,7 +50,7 @@ en:
     new:
       heading: Add a new recipe
     show:
-      link_edit: edit |
+      link_edit: edit
       link_delete: delete
       link_recipe: Link
       subheading_measures: Ingredients
