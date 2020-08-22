@@ -9,7 +9,7 @@ en:
         quantity: Quantity
         unit: Unit
       recipe:
-        link: Link
+        link: Source
         title: Title
       step:
         delete: delete
@@ -52,7 +52,7 @@ en:
     show:
       link_edit: edit
       link_delete: delete
-      link_recipe: Link
+      source_recipe: source
       subheading_measures: Ingredients
       subheading_steps: Directions
   shared:

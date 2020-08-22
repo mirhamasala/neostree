@@ -15,7 +15,7 @@ end
 #
 #  id         :bigint           not null, primary key
 #  title      :string
-#  link       :string
+#  source     :string
 #  photo      :string
 #  notes      :text
 #  prep_time  :integer
