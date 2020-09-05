@@ -64,8 +64,8 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:title, :source, :photo, :notes,
                                    :prep_time, :cook_time, :servings,
                                    :step_id, :measure_id,
-                                   measures_attributes: %i[id position quantity unit_id
-                                                           ingredient_id recipe_id _destroy],
+                                   measures_attributes: %i[id ingredient position quantity unit_id
+                                                            recipe_id _destroy],
                                    steps_attributes: %i[id position description _destroy])
   end
 

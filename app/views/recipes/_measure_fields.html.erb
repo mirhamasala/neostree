@@ -14,7 +14,7 @@
   <div class="mr-4">
     <%= f.hidden_field :id %>
     <%= f.label :ingredient %>
-    <%= f.collection_select :ingredient_id, Ingredient.all.alphabetize, :id, :name, { include_blank: true } %>
+    <%= f.text_field :ingredient %>
   </div>
 
   <small><%= link_to "Delete", "#", data: { action: "click->new-fields#removeField" } %></small>
