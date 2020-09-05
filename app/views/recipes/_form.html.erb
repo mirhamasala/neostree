@@ -1,27 +1,27 @@
-<%= form_with model: @recipe, class: "form" do |f| %>
-  <div class="form__main">
+<%= form_with model: @recipe do |f| %>
+  <div class="form-grid">
     <!-- Recipe Details -->
-    <div>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
-
-    <div>
-      <%= f.label :source %>
-      <%= f.text_field :source %>
+    <div class="mb-6">
+      <div class="mb-4">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+      <div>
+        <%= f.label :source %>
+        <%= f.text_field :source %>
+      </div>
     </div>
 
     <!-- Ingredients -->
     <h2 class="subheading"><%= t('.subheading_measures') %></h2>
-
-    <div data-controller="new-fields">
+    <div class="mb-6" data-controller="new-fields">
       <template data-target="new-fields.template">
         <%= f.fields_for :measures, Measure.new, child_index: 'NEW_RECORD' do |measure| %>
           <%= render "measure_fields", f: measure %>
         <% end %>
       </template>
 
-      <div data-target="new-fields.fieldsContainer" data-controller="sortable" data-sortable-url="/recipes/:recipe_id/measures/:id/measure_position">
+      <div class="mb-4" data-target="new-fields.fieldsContainer" data-controller="sortable" data-sortable-url="/recipes/:recipe_id/measures/:id/measure_position">
         <%= f.fields_for :measures, @recipe.measures.order(position: :asc), include_id: false do |measure| %>
           <%= render "measure_fields", f: measure %>
         <% end %>
@@ -33,19 +33,19 @@
         <% end %>
       </div>
 
-      <button type="button" data-action="new-fields#addNewField">Add an ingredient</button>
+      <button type="button" data-action="new-fields#addNewField" class="text-sea-800 underline hover:text-sea-300">Add an ingredient</button>
     </div>
 
     <!-- Directions -->
     <h2 class="subheading"><%= t('.subheading_steps') %></h2>
-    <div data-controller="new-fields">
+    <div class="mb-6" data-controller="new-fields">
       <template data-target="new-fields.template">
         <%= f.fields_for :steps, Step.new, child_index: 'NEW_RECORD' do |step| %>
           <%= render "step_fields", f: step %>
         <% end %>
       </template>
 
-      <div data-target="new-fields.fieldsContainer" data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
+      <div class="mb-4" data-target="new-fields.fieldsContainer" data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
         <%= f.fields_for :steps, @recipe.steps.ordered, include_id: false do |step| %>
           <%= render "step_fields", f: step %>
         <% end %>
@@ -57,9 +57,12 @@
         <% end %>
       </div>
 
-      <button type="button" data-action="new-fields#addNewField">Add a step</button>
+      <button type="button" data-action="new-fields#addNewField" class="text-sea-800 underline hover:text-sea-300">Add a step</button>
     </div>
   </div>
 
-  <%= f.submit %>
+  <div class="flex">
+    <%= f.submit class: "button button--primary button--xl mr-2" %>
+    <%= link_to "Cancel", root_path, class: "button button--white" %>
+  </div>
 <% end %>

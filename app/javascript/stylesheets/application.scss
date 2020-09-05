@@ -18,8 +18,8 @@ https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
 * @import "tailwindcss/utilities"
 */
 
-@import "base";
-
+@import "config/base";
+@import "layouts/index";
 @import "components/index";
 
 /**

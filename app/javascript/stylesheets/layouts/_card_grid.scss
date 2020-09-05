@@ -1,0 +1,15 @@
+.card-grid {
+  @apply grid grid-cols-1 gap-6;
+}
+
+@screen sm {
+  .card-grid  {
+    @apply grid-cols-2;
+  }
+}
+
+@screen md {
+  .card-grid  {
+    @apply grid-cols-3;
+  }
+}

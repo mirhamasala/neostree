@@ -1,0 +1,55 @@
+.button {
+  @apply py-2 px-3
+  border border-stone-100 rounded-md
+  bg-stone-100
+  cursor-pointer
+  transition ease-in-out duration-150;
+}
+
+/*
+.button:hover {
+  @apply opacity-75;
+}
+*/
+
+.button:focus {
+  @apply outline-none shadow-stone-100;
+}
+
+/*
+.button:active {
+  @apply opacity-75;
+}
+*/
+
+.button--primary {
+  @apply text-stone-100 bg-sea-800;
+}
+
+.button--primary:hover {
+  @apply bg-sea-900;
+}
+
+.button--secondary {
+  @apply bg-sea-100;
+}
+
+.button--secondary:hover {
+  @apply bg-sea-200;
+}
+
+.button--white {
+  @apply bg-stone-100 text-stone-900;
+}
+
+.button--white:hover {
+  @apply bg-white;
+}
+
+.button--lg {
+  @apply px-6;
+}
+
+.button--xl {
+  @apply px-12;
+}
