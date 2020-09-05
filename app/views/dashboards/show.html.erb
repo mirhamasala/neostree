@@ -1,8 +1,13 @@
 <div class="flex justify-between">
   <h1 class="heading"><%= t('.heading') %></h1>
 
-  <%= link_to t('.link_logout'), destroy_user_session_path, method: :delete,
-    class: "text-sand-400 text-right hover:text-sand-500" %>
+  <div>
+    <%= link_to t('.link_edit_profile'), edit_user_registration_path,
+      class: "text-sand-400 text-right hover:text-sand-500" %>
+    <span class="text-stone-200">&#124</span>
+    <%= link_to t('.link_logout'), destroy_user_session_path, method: :delete,
+      class: "text-sand-400 text-right hover:text-sand-500" %>
+  </div>
 </div>
 
 <div class="mb-6">
