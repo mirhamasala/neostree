@@ -1,3 +1,5 @@
+input[type="email"],
+input[type="password"],
 input[type="text"],
 textarea,
 select,
@@ -8,17 +10,23 @@ select,
   appearance-none;
 }
 
+input[type="checkbox"] {
+  @apply h-4 w-4
+  border border-stone-100 rounded-sm
+  appearance-none;
+}
+
+input[type="checkbox"]:checked {
+  @apply bg-forrest-500;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
 input[type="text"]:focus,
 textarea:focus,
 select:focus,
 .form-input:focus {
   @apply outline-none shadow-stone-100;
-}
-
-input[type="checkbox"] {
-  @apply h-4 w-4;
-}
-
-input:checked {
-  @apply bg-forrest-500;
 }

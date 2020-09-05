@@ -25,6 +25,7 @@ en:
     show:
       heading: Dashboard
       link_delete: delete
+      link_edit_profile: Edit profile
       link_logout: Log out
       link_unit: Add unit
       subheading_recipes: All Recipes
@@ -33,6 +34,7 @@ en:
     edit:
       heading: Edit recipe
     form:
+      link_cancel: Cancel
       subheading_measures: Ingredients
       subheading_steps: Cooking Steps
     index:
