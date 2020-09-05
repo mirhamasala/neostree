@@ -10,6 +10,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  position      :integer
+#  ingredient    :string
 #
 require 'rails_helper'
 
