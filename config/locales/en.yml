@@ -15,7 +15,6 @@ en:
         delete: delete
       unit:
         name: Name
-        fractionable: Fractionable
     submit:
       ingredient:
         create: Add ingredient
