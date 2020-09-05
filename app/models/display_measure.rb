@@ -20,7 +20,11 @@ class DisplayMeasure
   def unit
     return if @unit.blank?
 
-    @unit&.name&.pluralize(@quantity.ceil)
+    if @quantity.to_i > 1
+      @unit.name.pluralize(@quantity.to_i)
+    else
+      @unit.name
+    end
   end
 
   def ingredient
