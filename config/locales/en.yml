@@ -24,6 +24,7 @@ en:
   dashboards:
     show:
       heading: Dashboard
+      link_cancel: Cancel
       link_delete: delete
       link_edit_profile: Edit profile
       link_logout: Log out
@@ -39,6 +40,8 @@ en:
       subheading_steps: Cooking Steps
     index:
       heading: Recipes
+    measure_fields:
+      link_delete: delete
     new:
       heading: Add a new recipe
     show:
@@ -47,8 +50,12 @@ en:
       source_recipe: source
       subheading_measures: Ingredients
       subheading_steps: Directions
+    step_fields:
+      link_delete: delete
   shared:
     navbar:
+      link_log_in: Log in
+      link_log_out: Log out
       link_new_recipe: Add recipe
       link_dashboard: Dashboard
   units:

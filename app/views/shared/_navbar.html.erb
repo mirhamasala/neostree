@@ -8,10 +8,10 @@
             <%= link_to t('.link_new_recipe'), new_recipe_path, class: "button button--secondary" %>
             <%= link_to t('.link_dashboard'), dashboard_path, class: "ml-4 text-sea-800 hover:text-sea-300" %>
           <% else %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            <%= link_to t('.link_log_out'), destroy_user_session_path, method: :delete, class: "text-sea-800 hover:text-sea-300" %>
           <% end %>
         <% else %>
-          <%= link_to "Log in", new_user_session_path, class: "button button--secondary" %>
+          <%= link_to t('.link_log_in'), new_user_session_path, class: "button button--secondary" %>
         <% end %>
       </div>
     </div>
