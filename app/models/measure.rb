@@ -1,7 +1,7 @@
 class Measure < ApplicationRecord
   acts_as_list scope: :recipe
 
-  validates :ingredient, presence: true
+  # validates :ingredient, presence: true
   validates :unit_id, presence: true, allow_blank: true
 
   belongs_to :unit, optional: true
@@ -16,12 +16,13 @@ end
 #
 # Table name: measures
 #
-#  id         :bigint           not null, primary key
-#  quantity   :string
-#  unit_id    :bigint
-#  recipe_id  :bigint           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  position   :integer
-#  ingredient :string
+#  id            :bigint           not null, primary key
+#  quantity      :string
+#  unit_id       :bigint
+#  recipe_id     :bigint           not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  position      :integer
+#  ingredient_id :integer
+#  ingredient    :string
 #
