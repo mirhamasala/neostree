@@ -1,13 +1,14 @@
 class Measure < ApplicationRecord
   acts_as_list scope: :recipe
 
+  validates :ingredient, presence: true
   validates :unit_id, presence: true, allow_blank: true
 
   belongs_to :unit, optional: true
   belongs_to :recipe
 
   def to_s
-    DisplayMeasure.new(ingredient, quantity, unit).to_s
+    DisplayMeasure.new(quantity, unit, ingredient).to_s
   end
 end
 
