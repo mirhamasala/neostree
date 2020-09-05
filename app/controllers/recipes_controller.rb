@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
 
-    if @recipe.update(recipe_params)
+    if @recipe.update(recipe_params.merge(steps_attributes: reordered_steps))
       redirect_to recipe_path(@recipe)
     else
       render :edit
@@ -67,5 +67,13 @@ class RecipesController < ApplicationController
                                    measures_attributes: %i[id position quantity unit_id
                                                            ingredient_id recipe_id _destroy],
                                    steps_attributes: %i[id position description _destroy])
+  end
+
+  def reordered_steps
+    reordered_steps = recipe_params[:steps_attributes].to_unsafe_h
+    reordered_steps.each_with_index do |array, index|
+      key = array.first
+      reordered_steps[key][:position] = (index + 1)
+    end
   end
 end
