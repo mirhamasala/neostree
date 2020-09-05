@@ -47,18 +47,18 @@
         <% end %>
       </template>
 
-      <div data-target="new-fields.fieldsContainer">
-        <div data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
+      <div>
+        <div data-target="new-fields.fieldsContainer" data-controller="sortable" data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
           <%= f.fields_for :steps, @recipe.steps.ordered, include_id: false do |step| %>
             <%= render "step_fields", f: step %>
           <% end %>
-        </div>
 
-        <% @new_steps.to_i.times do |index| %>
-          <%= f.fields_for :steps, Step.new, child_index: Time.current.to_i + index do |stepField| %>
-            <%= render "step_fields", f: stepField %>
+          <% @new_steps.to_i.times do |index| %>
+            <%= f.fields_for :steps, Step.new, child_index: Time.current.to_i + index do |stepField| %>
+              <%= render "step_fields", f: stepField %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
 
       <button type="button" data-action="new-fields#addNewField">Add a step</button>
