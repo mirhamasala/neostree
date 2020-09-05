@@ -43,7 +43,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
 
-    if @recipe.update(recipe_params.merge(steps_attributes: reordered_steps, measures_attributes: reordered_measures))
+    if @recipe.update(recipe_params.merge(steps_attributes: reordered_steps,
+                                          measures_attributes: reordered_measures))
       redirect_to recipe_path(@recipe)
     else
       render :edit
@@ -61,11 +62,10 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :source, :photo, :notes,
-                                   :prep_time, :cook_time, :servings,
+    params.require(:recipe).permit(:title, :source, :photo, :notes, :prep_time, :cook_time, :servings,
                                    :step_id, :measure_id,
-                                   measures_attributes: %i[id ingredient position quantity unit_id
-                                                            recipe_id _destroy],
+                                   measures_attributes: %i[id position ingredient quantity
+                                                           unit_id recipe_id _destroy],
                                    steps_attributes: %i[id position description _destroy])
   end
 
