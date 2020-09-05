@@ -18,19 +18,6 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="subheading"><%= t('.subheading_ingredients') %></h2>
-  <ul class="mb-4">
-    <% @ingredients.each do |ingredient| %>
-      <li>
-        <%= ingredient.name %>
-        <%= link_to t('.link_delete'), ingredient_path(ingredient), method: :delete %>
-      </li>
-    <% end %>
-  </ul>
-  <%= link_to t('.link_ingredient'), new_ingredient_path %>
-</div>
-
-<div class="mb-6">
   <h2 class="subheading"><%= t('.subheading_recipes') %></h2>
   <ul class="mb-4">
     <% @recipes.each do |recipe| %>

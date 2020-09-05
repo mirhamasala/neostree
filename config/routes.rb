@@ -11,6 +11,5 @@ Rails.application.routes.draw do
     end
   end
   resources :units, only: %i[new create destroy]
-  resources :ingredients, only: %i[new create destroy]
   resource :dashboard, only: :show, as: :dashboard
 end

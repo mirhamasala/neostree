@@ -27,6 +27,6 @@ class UnitsController < ApplicationController
   private
 
   def unit_params
-    params.require(:unit).permit(:name, :fractionable)
+    params.require(:unit).permit(:name)
   end
 end

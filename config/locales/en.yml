@@ -2,8 +2,6 @@
 en:
   helpers:
     label:
-      ingredient:
-        name: Name
       measure:
         ingredient: Ingredient
         quantity: Quantity
@@ -15,10 +13,7 @@ en:
         delete: delete
       unit:
         name: Name
-        fractionable: Fractionable
     submit:
-      ingredient:
-        create: Add ingredient
       measure:
         create: Add ingredient
       recipe:
@@ -30,15 +25,10 @@ en:
     show:
       heading: Dashboard
       link_delete: delete
-      link_ingredient: Add ingredient
       link_logout: Log out
       link_unit: Add unit
-      subheading_ingredients: All Ingredients
       subheading_recipes: All Recipes
       subheading_units: All Units
-  ingredients:
-    new:
-      heading: Add a new ingredient
   recipes:
     edit:
       heading: Edit recipe

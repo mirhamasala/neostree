@@ -2,14 +2,14 @@
 #
 # Table name: measures
 #
-#  id            :bigint           not null, primary key
-#  quantity      :float
-#  unit_id       :bigint
-#  ingredient_id :bigint           not null
-#  recipe_id     :bigint           not null
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  position      :integer
+#  id         :bigint           not null, primary key
+#  quantity   :string
+#  unit_id    :bigint
+#  recipe_id  :bigint           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  position   :integer
+#  ingredient :string
 #
 require 'rails_helper'
 

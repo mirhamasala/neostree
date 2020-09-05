@@ -10,32 +10,20 @@ class DisplayMeasure
       quantity,
       unit,
       ingredient
-    ].compact.join(' ')
+    ].reject(&:blank?).join(' ')
   end
 
   def quantity
-    if !@unit || @unit.fractionable?
-      if @quantity < 1
-        @quantity.to_s.to_r
-      elsif (@quantity % 1).zero?
-        @quantity.to_i
-      else
-        "#{@quantity.to_i} #{@quantity.to_s.to_r - @quantity.to_i}"
-      end
-    else
-      @quantity.to_i
-    end
+    @quantity
   end
 
   def unit
+    return if @unit.blank?
+
     @unit&.name&.pluralize(@quantity.ceil)
   end
 
   def ingredient
-    if @unit
-      @ingredient.name
-    else
-      @ingredient.name.pluralize(@quantity.ceil)
-    end
+    @ingredient
   end
 end

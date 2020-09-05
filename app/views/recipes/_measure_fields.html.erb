@@ -2,7 +2,7 @@
   <div class="mr-4">
     <%= f.hidden_field :id %>
     <%= f.label :quantity %>
-    <%= f.number_field :quantity, step: 0.125 %>
+    <%= f.number_field :quantity %>
   </div>
 
   <div class="mr-4">
@@ -14,7 +14,7 @@
   <div class="mr-4">
     <%= f.hidden_field :id %>
     <%= f.label :ingredient %>
-    <%= f.collection_select :ingredient_id, Ingredient.all.alphabetize, :id, :name, { include_blank: true } %>
+    <%= f.text_field :ingredient %>
   </div>
 
   <small><%= link_to "Delete", "#", data: { action: "click->new-fields#removeField" } %></small>
