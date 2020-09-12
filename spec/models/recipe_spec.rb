@@ -12,6 +12,7 @@
 #  servings   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  intro      :text
 #
 require 'rails_helper'
 
