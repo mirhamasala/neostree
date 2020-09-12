@@ -11,6 +11,16 @@
   <%= link_to t('.source_recipe'), @recipe.source, target: "_blank" if @recipe.source.present? %>
 </div>
 
+<!-- Intro -->
+<% if @recipe.intro.present? %>
+  <div class="mb-4">
+    <div class="pb-4">
+      <p><%= @recipe.intro %></p>
+    </div>
+    <hr />
+  </div>
+<% end %>
+
 <!-- Ingredients -->
 <div class="mb-4">
   <h2 class="subheading"><%= t('.subheading_measures') %></h2>
