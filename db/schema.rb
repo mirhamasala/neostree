@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_05_224429) do
+ActiveRecord::Schema.define(version: 2020_09_12_044710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_09_05_224429) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
     t.string "ingredient"
+    t.string "prep_method"
     t.index ["recipe_id"], name: "index_measures_on_recipe_id"
     t.index ["unit_id"], name: "index_measures_on_unit_id"
   end
