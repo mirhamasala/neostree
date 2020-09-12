@@ -17,6 +17,12 @@
       <%= f.label :ingredient %>
       <%= f.text_field :ingredient %>
     </div>
+
+    <div class="mr-4">
+      <%= f.hidden_field :id %>
+      <%= f.label :prep_method %>
+      <%= f.text_field :prep_method %>
+    </div>
   </div>
 
   <%= link_to t('.link_delete'), "#", data: { action: "click->new-fields#removeField" },
