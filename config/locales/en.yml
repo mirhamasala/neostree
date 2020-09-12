@@ -20,6 +20,7 @@ en:
         prep_method: diced, thawed, etc.
         quantity: 1/4, 2, 300, etc.
       recipe:
+        notes: Add any notes you may have
         title: What's the title of your recipe?
         source: Not your recipe? Add a link here, or leave it blank
       step:
@@ -42,7 +43,6 @@ en:
       link_edit_profile: Edit profile
       link_logout: Log out
       link_unit: Add unit
-      subheading_recipes: All Recipes
       subheading_units: All Units
   recipes:
     edit:
@@ -50,6 +50,7 @@ en:
     form:
       link_cancel: Cancel
       subheading_measures: Ingredients
+      subheading_notes: Recipe Notes
       subheading_steps: Cooking Steps
     index:
       heading: Recipes
@@ -61,6 +62,7 @@ en:
       link_edit: edit
       link_delete: delete
       source_recipe: source
+      subheading_notes: Notes
       subheading_measures: Ingredients
       subheading_steps: Directions
     step_fields:
