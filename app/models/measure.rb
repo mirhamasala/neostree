@@ -2,7 +2,6 @@ class Measure < ApplicationRecord
   acts_as_list scope: :recipe
 
   validates :ingredient, presence: true
-  validates :unit_id, presence: true, allow_blank: true
 
   belongs_to :unit, optional: true
   belongs_to :recipe
