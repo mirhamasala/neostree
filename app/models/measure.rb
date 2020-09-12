@@ -15,12 +15,13 @@ end
 #
 # Table name: measures
 #
-#  id         :bigint           not null, primary key
-#  quantity   :string
-#  unit_id    :bigint
-#  recipe_id  :bigint           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  position   :integer
-#  ingredient :string
+#  id          :bigint           not null, primary key
+#  quantity    :string
+#  unit_id     :bigint
+#  recipe_id   :bigint           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  position    :integer
+#  ingredient  :string
+#  prep_method :string
 #
