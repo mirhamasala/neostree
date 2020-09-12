@@ -8,6 +8,7 @@ en:
         quantity: Quantity
         unit: Unit
       recipe:
+        intro: Intro
         link: Source
         title: Title
       step:
@@ -20,6 +21,7 @@ en:
         prep_method: diced, thawed, etc.
         quantity: 1/4, 2, 300, etc.
       recipe:
+        intro: What's the story behind your recipe?
         notes: Add any notes you may have
         title: What's the title of your recipe?
         source: Not your recipe? Add a link here, or leave it blank
