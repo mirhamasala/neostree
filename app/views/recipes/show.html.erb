@@ -35,3 +35,11 @@
     <% end %>
   </ol>
 </div>
+
+<!-- Recipe Notes -->
+<% if @recipe.notes.present? %>
+  <div class="mb-4">
+    <h2 class="subheading"><%= t('.subheading_notes') %></h2>
+    <p><%= @recipe.notes %></p>
+  </div>
+<% end %>
