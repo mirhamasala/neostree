@@ -69,18 +69,29 @@ class RecipesController < ApplicationController
                                    steps_attributes: %i[id position description _destroy])
   end
 
-  def empty_measure?(measure_hash)
-    measure_hash['ingredient'].empty? &&
-      measure_hash['quantity'].empty? &&
-      measure_hash['unit_id'].empty?
+  def empty_step?(step_hash)
+    step_hash['description'].empty?
   end
 
   def reordered_steps
-    reordered_steps = recipe_params[:steps_attributes] ? recipe_params[:steps_attributes].to_unsafe_h : {}
+    return {} unless recipe_params[:steps_attributes]
+
+    reordered_steps = recipe_params[:steps_attributes].to_unsafe_h
+
+    reordered_steps.delete_if do |_, step_hash|
+      empty_step?(step_hash)
+    end
+
     reordered_steps.each_with_index do |array, index|
       key = array.first
       reordered_steps[key][:position] = (index + 1)
     end
+  end
+
+  def empty_measure?(measure_hash)
+    measure_hash['ingredient'].empty? &&
+      measure_hash['quantity'].empty? &&
+      measure_hash['unit_id'].empty?
   end
 
   def reordered_measures
