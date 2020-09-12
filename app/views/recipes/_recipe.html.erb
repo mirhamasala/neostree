@@ -1,7 +1,10 @@
 <li>
   <div class="panel">
+    <% if recipe.photo.attached? %>
+      <picture><%= cl_image_tag recipe.photo.key, crop: :fill %></picture>
+    <% end %>
     <div class="panel__container">
-      <%= link_to recipe.title.titleize, recipe_path(recipe), class: "text-sea-800 hover:text-sea-300" %>
+      <%= link_to recipe.title.titleize, recipe_path(recipe), class: "text-sea-800 hover:text-sea-300 whitespace-nowrap" %>
     </div>
   </div>
 </li>
