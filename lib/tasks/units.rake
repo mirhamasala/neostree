@@ -7,7 +7,7 @@ namespace :units do
       Measure.find_or_create_by(unit_id: unit.id,
                                 recipe: recipe, ingredient: 'ingredient')
 
-      puts "Creatinng #{unit_name.blue}"
+      puts "Creating #{unit_name.blue}"
     end
 
     Measure.find_or_create_by(unit: nil, recipe: recipe, ingredient: 'ingredient')

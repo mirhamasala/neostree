@@ -29,9 +29,13 @@ class Measure < ApplicationRecord
   belongs_to :recipe
 
   def unit=(value)
-    new_value = value.to_s.downcase.singularize
+    if value.present?
+      new_value = value.to_s.downcase.singularize
 
-    raise "Invalid unit '#{new_value}'" unless UNITS.include?(new_value)
+      raise "Invalid unit '#{new_value}'" unless UNITS.include?(new_value)
+    else
+      new_value = nil
+    end
 
     write_attribute(:unit, new_value)
   end
