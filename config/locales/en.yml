@@ -67,6 +67,7 @@ en:
       link_delete: delete
   shared:
     navbar:
+      app_title: Neo's
       link_log_in: Log in
       link_log_out: Log out
       link_new_recipe: Add recipe
