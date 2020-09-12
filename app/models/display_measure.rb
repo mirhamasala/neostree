@@ -1,15 +1,17 @@
 class DisplayMeasure
-  def initialize(quantity, unit, ingredient)
+  def initialize(quantity, unit, ingredient, prep_method)
     @quantity = quantity
     @unit = unit
     @ingredient = ingredient
+    @prep_method = prep_method
   end
 
   def to_s
     [
       quantity,
       unit,
-      ingredient
+      ingredient,
+      prep_method
     ].reject(&:blank?).join(' ')
   end
 
@@ -29,5 +31,9 @@ class DisplayMeasure
 
   def ingredient
     @ingredient
+  end
+
+  def prep_method
+    "(#{@prep_method})" if @prep_method
   end
 end

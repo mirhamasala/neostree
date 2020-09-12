@@ -7,7 +7,7 @@ class Measure < ApplicationRecord
   belongs_to :recipe
 
   def to_s
-    DisplayMeasure.new(quantity, unit, ingredient).to_s
+    DisplayMeasure.new(quantity, unit, ingredient, prep_method).to_s
   end
 end
 
