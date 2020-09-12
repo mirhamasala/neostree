@@ -4,6 +4,7 @@ en:
     label:
       measure:
         ingredient: Ingredient
+        prep_method: Prep method
         quantity: Quantity
         unit: Unit
       recipe:
@@ -13,6 +14,18 @@ en:
         delete: delete
       unit:
         name: Name
+    placeholder:
+      measure:
+        ingredient: avocado, egg, etc.
+        prep_method: diced, thawed, etc.
+        quantity: 1/4, 2, 300, etc.
+      recipe:
+        title: What's the title of your recipe?
+        source: Not your recipe? Add a link here, or leave it blank
+      step:
+        description: Add your instructions one by one
+      unit:
+        name: cup, tablespoon, etc.
     submit:
       measure:
         create: Add ingredient
