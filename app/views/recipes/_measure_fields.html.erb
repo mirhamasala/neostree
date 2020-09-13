@@ -10,7 +10,7 @@
       <%= f.hidden_field :id %>
       <%= f.label :unit %>
       <%= f.collection_select :unit, Unit.all, :value, :to_s,
-           { include_blank: true, selected: ->(u) { u == f.object.unit }} %>
+            { include_blank: true, selected: ->(u) { u == f.object.unit }} %>
     </div>
 
     <div class="mr-4">

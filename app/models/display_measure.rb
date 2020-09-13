@@ -1,4 +1,6 @@
 class DisplayMeasure
+  attr_reader :quantity, :ingredient
+
   def initialize(quantity, unit, ingredient, prep_method)
     @quantity = quantity
     @unit = unit
@@ -15,10 +17,6 @@ class DisplayMeasure
     ].reject(&:blank?).join(' ')
   end
 
-  def quantity
-    @quantity
-  end
-
   def unit
     return if @unit.blank?
 
@@ -27,10 +25,6 @@ class DisplayMeasure
     else
       @unit.name
     end
-  end
-
-  def ingredient
-    @ingredient
   end
 
   def prep_method

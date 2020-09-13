@@ -1,27 +1,26 @@
 class Unit
-
-  ALL=%w[
+  ALL = %w[
+    bunch
+    can
     cup
-    teaspoon
-    tablespoon
+    dash
+    drop
+    gram
+    handful
     liter
     milliliter
-    handful
-    splash
-    sprig
-    dash
-    bunch
-    drop
     packet
     piece
     pinch
     shot
-    gram
-    tin
-    can
+    splash
+    sprig
     stick
+    tablespoon
+    teaspoon
     thumb
-  ]
+    tin
+  ].freeze
 
   attr_reader :name
 
