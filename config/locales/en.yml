@@ -46,6 +46,7 @@ en:
       link_edit_profile: Edit profile
       link_logout: Log out
       link_unit: Add unit
+      subheading_recipes: All Recipes
       subheading_units: All Units
   recipes:
     edit:
