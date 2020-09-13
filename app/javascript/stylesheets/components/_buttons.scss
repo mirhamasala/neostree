@@ -31,19 +31,19 @@
 }
 
 .button--secondary {
-  @apply bg-sea-100;
-}
-
-.button--secondary:hover {
-  @apply bg-sea-200;
-}
-
-.button--white {
   @apply bg-stone-100 text-stone-900;
 }
 
-.button--white:hover {
+.button--secondary:hover {
   @apply bg-white;
+}
+
+.button--white {
+  @apply bg-white text-stone-900 shadow-xs;
+}
+
+.button--white:hover {
+  @apply shadow-none;
 }
 
 .button--lg {
