@@ -11,7 +11,6 @@
 #  position    :integer
 #  ingredient  :string
 #  prep_method :string
-#  unit        :string
 #
 require 'rails_helper'
 

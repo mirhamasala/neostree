@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_12_224333) do
+ActiveRecord::Schema.define(version: 2020_09_12_082424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2020_09_12_224333) do
     t.integer "position"
     t.string "ingredient"
     t.string "prep_method"
-    t.string "unit"
     t.index ["recipe_id"], name: "index_measures_on_recipe_id"
     t.index ["unit_id"], name: "index_measures_on_unit_id"
   end
