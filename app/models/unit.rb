@@ -1,21 +1,55 @@
-class Unit < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
+class Unit
+  ALL = %w[
+    bunch
+    can
+    cup
+    dash
+    drop
+    gram
+    handful
+    liter
+    milliliter
+    packet
+    piece
+    pinch
+    shot
+    splash
+    sprig
+    stick
+    tablespoon
+    teaspoon
+    thumb
+    tin
+  ].freeze
 
-  def name=(new_name)
-    return unless new_name
+  attr_reader :name
 
-    write_attribute(:name, new_name.downcase.singularize)
+  def initialize(name)
+    @name = name.downcase.singularize
   end
 
-  scope :alphabetize, -> { order(:name) }
-end
+  def self.all
+    @all ||= ALL.map { |name| Unit.new(name) }
+  end
 
-# == Schema Information
-#
-# Table name: units
-#
-#  id         :bigint           not null, primary key
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
+  def to_s
+    I18n.t("units.#{value}")
+  end
+
+  def value
+    name
+  end
+
+  def ==(other)
+    case other
+    when Unit
+      value == other.value
+    when String
+      value == other
+    end
+  end
+
+  def <=>(other)
+    name <=> other.name
+  end
+end
