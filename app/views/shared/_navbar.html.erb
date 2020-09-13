@@ -4,14 +4,10 @@
       <%= link_to t('.app_title'), root_path, class: "font-serif text-3xl text-forrest-500" %>
       <div>
         <% if user_signed_in? %>
-          <% if current_user.admin? %>
-            <%= link_to t('.link_new_recipe'), new_recipe_path, class: "button button--secondary" %>
-            <%= link_to t('.link_dashboard'), dashboard_path, class: "ml-4 text-sea-800 hover:text-sea-300" %>
-          <% else %>
-            <%= link_to t('.link_log_out'), destroy_user_session_path, method: :delete, class: "text-sea-800 hover:text-sea-300" %>
-          <% end %>
+          <%= link_to t('.link_new_recipe'), new_recipe_path, class: "button button--white" %>
+          <%= link_to t('.link_dashboard'), dashboard_path, class: "ml-4 text-sea-800 hover:text-sea-300" %>
         <% else %>
-          <%= link_to t('.link_log_in'), new_user_session_path, class: "button button--secondary" %>
+          <%= link_to t('.link_log_in'), new_user_session_path, class: "button button--white" %>
         <% end %>
       </div>
     </div>
