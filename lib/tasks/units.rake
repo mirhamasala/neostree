@@ -17,12 +17,12 @@ namespace :units do
 
   task :migrate => :environment do
     Measure.all.each do |measure|
-      print '.'.green
+      print '.'
       next if measure.unit_id.blank?
 
       unit_name = Unit.find(measure.unit_id).name
       measure.update(unit: unit_name)
     end
-    puts "\nDone!".blue
+    puts "\nDone!"
   end
 end
