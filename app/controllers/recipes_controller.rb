@@ -65,7 +65,7 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:title, :source, :photo, :notes, :prep_time, :cook_time, :servings,
                                    :step_id, :measure_id, :intro,
                                    measures_attributes: %i[id position ingredient prep_method quantity
-                                                           unit_id recipe_id _destroy],
+                                                           unit recipe_id _destroy],
                                    steps_attributes: %i[id position description _destroy])
   end
 
@@ -91,7 +91,7 @@ class RecipesController < ApplicationController
   def empty_measure?(measure_hash)
     measure_hash['ingredient'].empty? &&
       measure_hash['quantity'].empty? &&
-      measure_hash['unit_id'].empty?
+      measure_hash['unit'].empty?
   end
 
   def reordered_measures

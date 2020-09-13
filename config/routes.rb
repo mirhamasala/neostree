@@ -10,6 +10,5 @@ Rails.application.routes.draw do
       resource :measure_position, only: :update
     end
   end
-  resources :units, only: %i[new create destroy]
   resource :dashboard, only: :show, as: :dashboard
 end

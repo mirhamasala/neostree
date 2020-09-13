@@ -1,38 +1,22 @@
 class Measure < ApplicationRecord
   acts_as_list scope: :recipe
 
-  UNITS=%w[
-    cup
-    teaspoon
-    tablespoon
-    liter
-    milliliter
-    handful
-    splash
-    sprig
-    dash
-    bunch
-    drop
-    packet
-    piece
-    pinch
-    shot
-    gram
-    tin
-    can
-    stick
-    thumb
-  ]
 
   validates :ingredient, presence: true
 
   belongs_to :recipe
 
+  def unit
+    return unless read_attribute(:unit)
+
+    Unit.new(read_attribute(:unit))
+  end
+
   def unit=(value)
     if value.present?
       new_value = value.to_s.downcase.singularize
 
-      raise "Invalid unit '#{new_value}'" unless UNITS.include?(new_value)
+      raise "Invalid unit '#{new_value}'" unless Unit::ALL.include?(new_value)
     else
       new_value = nil
     end

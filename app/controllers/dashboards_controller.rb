@@ -3,6 +3,6 @@ class DashboardsController < ApplicationController
     authorize :dashboard
 
     @recipes = Recipe.all.alphabetize
-    @units = Unit.all.alphabetize
+    @units = Unit.all.sort
   end
 end

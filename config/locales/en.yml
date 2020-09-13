@@ -78,5 +78,23 @@ en:
       link_new_recipe: Add recipe
       link_dashboard: Dashboard
   units:
-    new:
-      heading: Add a new unit
+    cup: CUP
+    teaspoon: TEASPOON
+    tablespoon: TABLESPOON
+    liter: LITER
+    milliliter: MILLILITER
+    handful: HANDFUL
+    splash: SPLASH
+    sprig: SPRIG
+    dash: DASH
+    bunch: BUNCH
+    drop: DROP
+    packet: PACKET
+    piece: PIECE
+    pinch: PINCH
+    shot: SHOT
+    gram: GRAM
+    tin: TIN
+    can: CAN
+    stick: STICK
+    thumb: THUMB
