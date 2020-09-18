@@ -13,7 +13,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  intro      :text
-#  user_id    :bigint
+#  user_id    :bigint           not null
 #
 require 'rails_helper'
 
