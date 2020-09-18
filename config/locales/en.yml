@@ -14,8 +14,6 @@ en:
         title: Title
       step:
         delete: delete
-      unit:
-        name: Name
     placeholder:
       measure:
         ingredient: avocado, egg, etc.
@@ -31,12 +29,8 @@ en:
       unit:
         name: cup, tablespoon, etc.
     submit:
-      measure:
-        create: Add ingredient
       recipe:
         create: Add recipe
-      unit:
-        create: Add unit
       update: Update
   dashboards:
     show:
@@ -45,9 +39,7 @@ en:
       link_delete: delete
       link_edit_profile: Edit profile
       link_logout: Log out
-      link_unit: Add unit
-      subheading_recipes: All Recipes
-      subheading_units: All Units
+      subheading_recipes: All recipes
   recipes:
     edit:
       heading: Edit recipe

@@ -3,6 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :recoverable,
          :registerable, :rememberable, :validatable
+
+  has_many :recipes
+
+  validates :first_name, presence: true
+  validates :username, presence: true
 end
 
 # == Schema Information
@@ -18,4 +23,7 @@ end
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  admin                  :boolean
+#  username               :string
+#  first_name             :string
+#  last_name              :string
 #

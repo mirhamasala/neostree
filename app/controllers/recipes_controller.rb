@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :authenticate_user!
 
   def index
-    @recipes = policy_scope(Recipe).alphabetize
+    @recipes = policy_scope(Recipe).author?(current_user).alphabetize
   end
 
   def new
@@ -20,6 +20,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
     authorize @recipe
 
     if @recipe.save
@@ -63,7 +64,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :source, :photo, :notes, :prep_time, :cook_time, :servings,
-                                   :step_id, :measure_id, :intro,
+                                   :step_id, :measure_id, :intro, :user_id,
                                    measures_attributes: %i[id position ingredient prep_method quantity
                                                            unit recipe_id _destroy],
                                    steps_attributes: %i[id position description _destroy])

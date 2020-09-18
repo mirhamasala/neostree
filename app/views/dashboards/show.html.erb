@@ -8,15 +8,19 @@
       class: "text-sand-400 text-right hover:text-sand-500" %>
   </div>
 </div>
-<div class="mb-6">
-  <h2 class="subheading"><%= t('.subheading_recipes') %></h2>
-  <ul class="mb-4">
-    <% @recipes.each do |recipe| %>
-      <li class="py-0.5 last:pb-0">
-        <%= link_to recipe.title, recipe_path(recipe), class: "text-sea-800 hover:text-sea-300 hover:underline" %>
-        <%= link_to t('.link_delete'), recipe_path(recipe), method: :delete,
-          class: "text-sm text-sand-500 text-right hover:text-sand-400 hover:underline" %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<% if current_user.recipes.present? %>
+  <div class="mb-6">
+    <h2 class="subheading"><%= t('.subheading_recipes') %></h2>
+    <ul class="mb-4">
+      <% @recipes.each do |recipe| %>
+        <li class="py-0.5 last:pb-0">
+          <%= link_to recipe.title, recipe_path(recipe), class: "text-sea-800 hover:text-sea-300 hover:underline" %>
+          <%= link_to t('.link_delete'), recipe_path(recipe), method: :delete,
+            class: "text-sm text-sand-500 text-right hover:text-sand-400 hover:underline" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <p>Let's <%= link_to "add your first recipe", new_recipe_path, class: "text-sea-800 hover:text-sea-300 underline" %>.</p>
+<% end %>

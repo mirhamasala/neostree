@@ -1,5 +1,9 @@
-<h1 class="heading"><%= t('.heading') %></h1>
-
-<ul class="card-grid">
-  <%= render partial: "recipe", collection: @recipes %>
-</ul>
+<% if current_user.recipes.present? %>
+  <h1 class="heading"><%= t('.heading') %></h1>
+  <ul class="card-grid">
+    <%= render partial: "recipe", collection: @recipes %>
+  </ul>
+<% else %>
+  <p>This is where we'll show all your recipes.</p>
+  <p>Let's <%= link_to "add one to start", new_recipe_path, class: "text-sea-800 hover:text-sea-300 underline" %>.</p>
+<% end %>
