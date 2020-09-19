@@ -1,5 +1,13 @@
 <%= form_with model: @recipe do |f| %>
   <div class="form-grid">
+    <% if @recipe.persisted? %>
+      <div class="mb-4">
+        <%= f.collection_radio_buttons(:status, human_attribute_status, :first, :second, checked: @recipe.status) do |b| %>
+          <%= b.label(class: "inline-flex items-center mr-2 text-base") { b.radio_button(class: "mr-1") + b.text } %>
+        <% end %>
+      </div>
+    <% end %>
+
     <!-- Recipe Details -->
     <div class="mb-6">
       <div class="mb-4">

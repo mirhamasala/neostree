@@ -46,6 +46,10 @@
   @apply shadow-none;
 }
 
+.button--sm {
+  @apply py-1 px-2 text-sm;
+}
+
 .button--lg {
   @apply px-6;
 }

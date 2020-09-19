@@ -8,6 +8,10 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :username, presence: true
+
+  def author_of?(recipe)
+    recipes.include?(recipe)
+  end
 end
 
 # == Schema Information

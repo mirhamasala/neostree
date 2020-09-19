@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_19_072203) do
+ActiveRecord::Schema.define(version: 2020_09_19_075321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 2020_09_19_072203) do
     t.bigint "user_id", null: false
     t.integer "yield"
     t.integer "yield_type"
+    t.integer "status"
+    t.index ["status"], name: "index_recipes_on_status"
     t.index ["user_id"], name: "index_recipes_on_user_id"
     t.index ["yield_type"], name: "index_recipes_on_yield_type"
   end

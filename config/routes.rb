@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :measures do
       resource :measure_position, only: :update
     end
+    resources :recipe_statuses, only: [:update], as: :status
   end
   resource :dashboard, only: :show, as: :dashboard
 end
