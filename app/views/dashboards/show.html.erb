@@ -16,6 +16,7 @@
         <li class="py-0.5 last:pb-0">
           <%= link_to recipe.title, recipe_path(recipe), class: "text-sea-800 hover:text-sea-300 hover:underline" %>
           <%= link_to t('.link_delete'), recipe_path(recipe), method: :delete,
+            data: { confirm: "Are you sure you want to delete the recipe #{recipe.title}?" },
             class: "text-sm text-sand-500 text-right hover:text-sand-400 hover:underline" %>
         </li>
       <% end %>
