@@ -13,6 +13,14 @@ class User < ApplicationRecord
     recipes.include?(recipe)
   end
 
+  def admin=(value)
+    if value
+      self.admin_since = Time.current
+    else
+      self.admin_since = nil
+    end
+  end
+
   def admin?
     !! admin_since
   end
@@ -30,7 +38,6 @@ end
 #  remember_created_at    :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  admin                  :boolean
 #  username               :string
 #  first_name             :string
 #  last_name              :string
