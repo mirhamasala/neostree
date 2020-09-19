@@ -38,7 +38,7 @@ en:
     submit:
       recipe:
         create: Add recipe
-      update: Update
+      update: Save changes
   dashboards:
     show:
       heading: Dashboard
