@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recipes = policy_scope(Recipe).author?(current_user).alphabetize
+    @recipes = policy_scope(Recipe).author?(current_user).status_published.alphabetize
   end
 
   def new
@@ -64,7 +64,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :source, :photo, :notes, :prep_time, :cook_time, :yield_type, :yield,
-                                   :step_id, :measure_id, :intro, :user_id,
+                                   :step_id, :measure_id, :intro, :user_id, :status,
                                    measures_attributes: %i[id position ingredient prep_method quantity
                                                            unit recipe_id _destroy],
                                    steps_attributes: %i[id position description _destroy])

@@ -14,4 +14,8 @@ class RecipePolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def update_status?
+    record.user == user
+  end
 end
