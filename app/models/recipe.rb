@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   enum yield_type: { makes: 0, serves: 1 }, _suffix: true
+  enum status: { draft: 0, published: 1 }, _prefix: :status
 
   has_one_attached :photo
 

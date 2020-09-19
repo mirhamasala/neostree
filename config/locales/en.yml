@@ -5,6 +5,9 @@ en:
       recipe/yield_type:
         makes: Makes
         serves: Serves
+      recipe/status:
+        draft: Draft
+        published: Published
   helpers:
     label:
       measure:
