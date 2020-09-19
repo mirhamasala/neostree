@@ -13,6 +13,8 @@
 #  updated_at :datetime         not null
 #  intro      :text
 #  user_id    :bigint           not null
+#  yield      :integer
+#  yield_type :integer
 #
 require 'rails_helper'
 
