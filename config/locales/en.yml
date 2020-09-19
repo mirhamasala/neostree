@@ -40,16 +40,18 @@ en:
         name: cup, tablespoon, etc.
     submit:
       recipe:
-        create: Add recipe
+        create: Preview recipe
       update: Save changes
   dashboards:
     show:
       heading: Dashboard
       link_cancel: Cancel
-      link_delete: delete
+      link_publish: publish
       link_edit_profile: Edit profile
       link_logout: Log out
-      subheading_recipes: All recipes
+      subheading_recipes_published: Published recipes
+      subheading_recipes_unpublished: Drafts
+      text_no_published_recipes: You haven't published any recipes yet.
   recipes:
     edit:
       heading: Edit recipe
@@ -65,6 +67,8 @@ en:
     new:
       heading: Add a new recipe
     show:
+      button_edit: Edit
+      button_publish: Publish
       link_edit: edit
       link_delete: delete
       source_recipe: source

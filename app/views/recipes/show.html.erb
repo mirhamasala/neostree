@@ -1,4 +1,11 @@
-<h1 class="heading"><%= @recipe.title.titleize %></h1>
+<% if current_user.author_of?(@recipe) && @recipe.status_draft?  %>
+  <div class="block mb-4 sm:flex sm:items-baseline sm:justify-between">
+    <h1 class="heading"><%= @recipe.title.titleize %></h1>
+    <%= link_to t('.button_publish'), recipe_status_path(@recipe), method: :put, class: "button button--primary button--sm" %>
+  </div>
+<% else %>
+  <h1 class="heading"><%= @recipe.title.titleize %></h1>
+<% end %>
 
 <div class="mb-6">
   <div class="mb-1">
@@ -39,34 +46,46 @@
 <% end %>
 
 <!-- Ingredients -->
-<div class="mb-4">
-  <h2 class="subheading"><%= t('.subheading_measures') %></h2>
-  <ul>
-    <% @recipe.measures.order(position: :asc).each do |measure| %>
-      <li data-id="<%= measure.id %>" class="py-0.5 last:pb-0">
-        <%= measure %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<% if @recipe.measures.present? %>
+  <div class="mb-4">
+    <h2 class="subheading"><%= t('.subheading_measures') %></h2>
+    <ul>
+      <% @recipe.measures.order(position: :asc).each do |measure| %>
+        <li data-id="<%= measure.id %>" class="py-0.5 last:pb-0">
+          <%= measure %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <!-- Directions -->
-<div class="mb-4">
-  <h2 class="subheading"><%= t('.subheading_steps') %></h2>
-  <ol class="steps">
-    <% @recipe.steps.ordered.each do |step| %>
-      <li class="py-1 last:pb-0">
-        <%= "#{step.position}." %>
-        <span class="whitespace-pre-wrap"><%= step.description %></span>
-      </li>
-    <% end %>
-  </ol>
-</div>
+<% if @recipe.steps.present? %>
+  <div class="mb-4">
+    <h2 class="subheading"><%= t('.subheading_steps') %></h2>
+    <ol class="steps">
+      <% @recipe.steps.ordered.each do |step| %>
+        <li class="py-1 last:pb-0">
+          <%= "#{step.position}." %>
+          <span class="whitespace-pre-wrap"><%= step.description %></span>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+<% end %>
 
 <!-- Recipe Notes -->
 <% if @recipe.notes.present? %>
-  <div class="mb-4">
+  <div class="mb-6">
     <h2 class="subheading"><%= t('.subheading_notes') %></h2>
     <p class="whitespace-pre-wrap"><%= @recipe.notes %></p>
+  </div>
+<% end %>
+
+<% if current_user.author_of?(@recipe) %>
+  <div class="mt-6 sm:flex">
+    <%= link_to t('.button_publish'), recipe_status_path(@recipe), method: :put,
+      class: "button button--primary button--xl sm:mr-2" if @recipe.status_draft? %>
+    <%= link_to t('.button_edit'), edit_recipe_path(@recipe), class: "button button--secondary button--xl" %>
   </div>
 <% end %>
