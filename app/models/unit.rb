@@ -7,6 +7,7 @@ class Unit
     drop
     gram
     handful
+    kilogram
     liter
     milliliter
     packet
