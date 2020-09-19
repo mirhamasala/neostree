@@ -12,6 +12,10 @@ class User < ApplicationRecord
   def author_of?(recipe)
     recipes.include?(recipe)
   end
+
+  def admin?
+    !! admin_since
+  end
 end
 
 # == Schema Information
@@ -30,4 +34,5 @@ end
 #  username               :string
 #  first_name             :string
 #  last_name              :string
+#  admin_since            :datetime
 #
