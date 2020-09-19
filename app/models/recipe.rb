@@ -27,7 +27,6 @@ end
 #  notes      :text
 #  prep_time  :integer
 #  cook_time  :integer
-#  servings   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  intro      :text
