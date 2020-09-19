@@ -1,4 +1,6 @@
 class Recipe < ApplicationRecord
+  enum yield_type: { makes: 0, serves: 1 }, _suffix: true
+
   has_one_attached :photo
 
   validates :title, presence: true, uniqueness: { scope: :user_id }
@@ -27,9 +29,10 @@ end
 #  notes      :text
 #  prep_time  :integer
 #  cook_time  :integer
-#  servings   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  intro      :text
 #  user_id    :bigint           not null
+#  yield      :integer
+#  yield_type :integer
 #

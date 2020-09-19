@@ -1,5 +1,10 @@
 ---
 en:
+  activerecord:
+    attributes:
+      recipe/yield_type:
+        makes: Makes
+        serves: Serves
   helpers:
     label:
       measure:
@@ -12,6 +17,7 @@ en:
         link: Source
         photo: Photo
         title: Title
+        yield: This recipe
       step:
         delete: delete
     placeholder:
@@ -24,6 +30,7 @@ en:
         notes: Add any notes you may have
         title: What's the title of your recipe?
         source: Not your recipe? Add a link here, or leave it blank
+        yield: 0
       step:
         description: Add your instructions one by one
       unit:
