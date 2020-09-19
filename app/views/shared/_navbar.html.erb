@@ -5,7 +5,8 @@
       <div>
         <% if user_signed_in? %>
           <%= link_to t('.link_new_recipe'), new_recipe_path, class: "button button--white" %>
-          <%= link_to t('.link_dashboard'), dashboard_path, class: "ml-4 text-sea-800 hover:text-sea-300" %>
+          <%= link_to t('.link_dashboard'), dashboard_path,
+              class: "ml-4 text-sea-800 hover:text-sea-300" %>
         <% else %>
           <%= link_to t('.link_log_in'), new_user_session_path, class: "button button--white" %>
         <% end %>

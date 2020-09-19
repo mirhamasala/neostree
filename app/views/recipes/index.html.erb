@@ -5,5 +5,10 @@
   </ul>
 <% else %>
   <p>This is where we'll show all your recipes.</p>
-  <p>Let's <%= link_to "add one to start", new_recipe_path, class: "text-sea-800 hover:text-sea-300 underline" %>.</p>
+  <p>
+    <span>Let's </span>
+    <%= link_to "add one to start", new_recipe_path,
+        class: "text-sea-800 hover:text-sea-300 underline" %>
+    <span>.</span>
+  </p>
 <% end %>

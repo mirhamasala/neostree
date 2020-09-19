@@ -1,13 +1,12 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :recoverable,
-         :registerable, :rememberable, :validatable
-
-  has_many :recipes
+  devise :database_authenticatable, :recoverable, :registerable, :rememberable, :validatable
 
   validates :first_name, presence: true
   validates :username, presence: true
+
+  has_many :recipes
 
   def author_of?(recipe)
     recipes.include?(recipe)
@@ -22,7 +21,7 @@ class User < ApplicationRecord
   end
 
   def admin?
-    !! admin_since
+    !!admin_since
   end
 end
 

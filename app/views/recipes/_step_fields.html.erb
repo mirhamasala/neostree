@@ -1,4 +1,5 @@
-<%= content_tag :div, class: "nested-fields mb-4", data: { new_record: f.object.new_record?, id: f.object.id } do %>
+<%= content_tag :div, data: { new_record: f.object.new_record?, id: f.object.id },
+                      class: "nested-fields mb-4" do %>
   <div class="flex">
     <div class="flex-grow mr-4">
       <%= f.hidden_field :id %>
@@ -6,7 +7,8 @@
     </div>
 
     <%= link_to t('.link_delete'), "#", data: { action: "click->new-fields#removeField" },
-          class:"self-end block text-sm text-sand-500 text-right hover:text-sand-400 hover:underline" %>
+                                        class: "self-end block text-sm text-sand-500 text-right
+                                                hover:text-sand-400 hover:underline" %>
     <%= f.hidden_field :_destroy %>
   </div>
 <% end %>
