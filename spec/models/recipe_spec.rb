@@ -15,6 +15,7 @@
 #  user_id    :bigint           not null
 #  yield      :integer
 #  yield_type :integer
+#  status     :integer
 #
 require 'rails_helper'
 
