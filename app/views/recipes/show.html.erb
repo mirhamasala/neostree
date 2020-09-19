@@ -28,6 +28,14 @@
   </div>
 <% end %>
 
+<!-- Yield -->
+<% if @recipe.yield_type.present? && @recipe.yield.present? %>
+  <div class="mb-4">
+    <%= Recipe.human_attribute_name(@recipe.yield_type) %>
+    <%= @recipe.yield %>
+  </div>
+<% end %>
+
 <!-- Ingredients -->
 <div class="mb-4">
   <h2 class="subheading"><%= t('.subheading_measures') %></h2>

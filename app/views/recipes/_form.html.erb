@@ -17,9 +17,17 @@
         <%= f.text_area :intro, placeholder: true %>
       </div>
 
-      <div>
+      <div class="mb-4">
         <%= f.label :source %>
         <%= f.text_field :source, placeholder: true %>
+      </div>
+
+      <div>
+        <%= f.label :yield %>
+        <div class="inline-flex">
+          <%= f.collection_select :yield_type, human_attribute_yield_types, :first, :second %>
+          <%= f.number_field :yield, class: "ml-4" %>
+        </div>
       </div>
     </div>
 

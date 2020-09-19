@@ -1,5 +1,10 @@
 ---
 en:
+  activerecord:
+    attributes:
+      recipe/yield_type:
+        makes: Makes
+        serves: Serves
   helpers:
     label:
       measure:
@@ -12,6 +17,7 @@ en:
         link: Source
         photo: Photo
         title: Title
+        yield: This recipe
       step:
         delete: delete
     placeholder:
