@@ -50,7 +50,7 @@
 <!-- Ingredients -->
 <% if @recipe.measures.present? %>
   <div class="mb-4">
-    <h2 class="subheading"><%= t('.subheading_measures') %></h2>
+    <h2 class="subheading subheading--lg"><%= t('.subheading_ingredients') %></h2>
     <ul>
       <% @recipe.measures.order(position: :asc).each do |measure| %>
         <li data-id="<%= measure.id %>" class="py-0.5 last:pb-0">
@@ -64,7 +64,7 @@
 <!-- Directions -->
 <% if @recipe.steps.present? %>
   <div class="mb-4">
-    <h2 class="subheading"><%= t('.subheading_steps') %></h2>
+    <h2 class="subheading subheading--lg"><%= t('.subheading_steps') %></h2>
     <ol class="steps">
       <% @recipe.steps.ordered.each do |step| %>
         <li class="py-1 last:pb-0">
@@ -79,7 +79,7 @@
 <!-- Recipe Notes -->
 <% if @recipe.notes.present? %>
   <div class="mb-6">
-    <h2 class="subheading"><%= t('.subheading_notes') %></h2>
+    <h2 class="subheading subheading--lg"><%= t('.subheading_notes') %></h2>
     <p class="whitespace-pre-wrap"><%= @recipe.notes %></p>
   </div>
 <% end %>

@@ -3,8 +3,7 @@
     <% if @recipe.persisted? %>
       <div class="mb-4">
         <%= f.collection_radio_buttons(:status, human_attribute_status, :first, :second) do |b| %>
-          <%= b.label(class: "inline-flex items-center mr-2 text-base")
-              { b.radio_button(class: "mr-1") + b.text } %>
+          <%= b.label(class: "inline-flex items-center mr-2 text-base") { b.radio_button(class: "mr-1") + b.text } %>
         <% end %>
       </div>
     <% end %>
@@ -41,7 +40,7 @@
     </div>
 
     <!-- Ingredients -->
-    <h2 class="subheading"><%= t('.subheading_measures') %></h2>
+    <h2 class="subheading subheading--lg"><%= t('.subheading_ingredients') %></h2>
     <div class="mb-6" data-controller="new-fields">
       <template data-target="new-fields.template">
         <%= f.fields_for :measures, Measure.new, child_index: 'NEW_RECORD' do |measure| %>
@@ -65,13 +64,13 @@
       </div>
 
       <button type="button" data-action="new-fields#addNewField"
-                            class="text-sea-800 underline hover:text-sea-300">
-        Add an ingredient
+                            class="text-sea-800 hover:text-sea-300 underline">
+        <%= t('.link_add_ingredient') %>
       </button>
     </div>
 
     <!-- Directions -->
-    <h2 class="subheading"><%= t('.subheading_steps') %></h2>
+    <h2 class="subheading subheading--lg"><%= t('.subheading_steps') %></h2>
     <div class="mb-6" data-controller="new-fields">
       <template data-target="new-fields.template">
         <%= f.fields_for :steps, Step.new, child_index: 'NEW_RECORD' do |step| %>
@@ -93,13 +92,13 @@
       </div>
 
       <button type="button" data-action="new-fields#addNewField"
-                            class="text-sea-800 underline hover:text-sea-300">
-        Add a step
+                            class="text-sea-800 hover:text-sea-300 underline">
+        <%= t('.link_add_step') %>
       </button>
     </div>
 
     <!-- Recipe Notes -->
-    <h2 class="subheading"><%= t('.subheading_notes') %></h2>
+    <h2 class="subheading subheading--lg"><%= t('.subheading_notes') %></h2>
     <div class="mb-6">
       <div class="mb-4">
         <%= f.text_area :notes, placeholder: true %>

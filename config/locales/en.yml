@@ -2,12 +2,28 @@
 en:
   activerecord:
     attributes:
-      recipe/yield_type:
-        makes: Makes
-        serves: Serves
       recipe/status:
         draft: Draft
         published: Published
+      recipe/yield_type:
+        makes: Makes
+        serves: Serves
+  dashboards:
+    show:
+      heading: Dashboard
+      link_edit_profile: Edit profile
+      link_logout: Log out
+      link_publish: publish
+      link_unpublish: unpublish
+      subheading_recipes: Your Recipes
+      subheading_recipes_published: Published
+      subheading_recipes_unpublished: Drafts
+      text_add_first_recipe_href: add your first recipe
+      text_add_first_recipe_html: 'Let''s %{href}.'
+      text_no_published_recipes: You haven't published any recipes yet.
+      text_page_visibility: This page is only visible to you.
+      text_page_visibility_others_href: your public page
+      text_page_visibility_others_html: 'Here''s what others can see: %{href}.'
   helpers:
     label:
       measure:
@@ -21,48 +37,40 @@ en:
         photo: Photo
         title: Title
         yield: This recipe
-      step:
-        delete: delete
     placeholder:
       measure:
-        ingredient: avocado, egg, etc.
-        prep_method: diced, thawed, etc.
-        quantity: 1/4, 2, 300, etc.
+        ingredient: 'avocado, egg, etc.'
+        prep_method: 'diced, thawed, etc.'
+        quantity: '1/4, 2, 300, etc.'
       recipe:
         intro: What's the story behind your recipe?
         notes: Add any notes you may have
+        source: 'Not your recipe? Add a link here, or leave it blank'
         title: What's the title of your recipe?
-        source: Not your recipe? Add a link here, or leave it blank
         yield: 0
       step:
         description: Add your instructions one by one
       unit:
-        name: cup, tablespoon, etc.
+        name: 'cup, tablespoon, etc.'
     submit:
       recipe:
         create: Preview recipe
       update: Save changes
-  dashboards:
-    show:
-      heading: Dashboard
-      link_cancel: Cancel
-      link_publish: publish
-      link_unpublish: unpublish
-      link_edit_profile: Edit profile
-      link_logout: Log out
-      subheading_recipes_published: Published recipes
-      subheading_recipes_unpublished: Drafts
-      text_no_published_recipes: You haven't published any recipes yet.
   recipes:
     edit:
       heading: Edit recipe
     form:
+      link_add_ingredient: Add an ingredient
+      link_add_step: Add a step
       link_cancel: Cancel
-      subheading_measures: Ingredients
+      subheading_ingredients: Ingredients
       subheading_notes: Recipe Notes
       subheading_steps: Cooking Steps
     index:
       heading: Recipes
+      text_add_first_recipe_href: add one to start
+      text_add_first_recipe_html: 'Let''s %{href}.'
+      text_show_recipes: This is where we'll show all your recipes.
     measure_fields:
       link_delete: delete
     new:
@@ -70,21 +78,20 @@ en:
     show:
       button_edit: Edit
       button_publish: Publish
-      link_edit: edit
       link_delete: delete
+      link_edit: edit
       source_recipe: source
+      subheading_ingredients: Ingredients
       subheading_notes: Notes
-      subheading_measures: Ingredients
       subheading_steps: Directions
     step_fields:
       link_delete: delete
   shared:
     navbar:
       app_title: Neo's
-      link_log_in: Log in
-      link_log_out: Log out
-      link_new_recipe: Add recipe
       link_dashboard: Dashboard
+      link_log_in: Log in
+      link_new_recipe: Add recipe
   units:
     bunch: bunch
     can: can

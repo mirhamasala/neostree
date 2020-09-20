@@ -1,39 +1,48 @@
-<div class="flex justify-between">
-  <h1 class="heading"><%= t('.heading') %></h1>
-  <div>
+<div class="sm:flex sm:justify-between">
+  <div class="sm:order-2 mb-3">
     <%= link_to t('.link_edit_profile'), edit_user_registration_path,
         class: "text-sand-400 text-right hover:text-sand-500" %>
     <span class="text-stone-200">&#124</span>
     <%= link_to t('.link_logout'), destroy_user_session_path, method: :delete,
         class: "text-sand-400 text-right hover:text-sand-500" %>
   </div>
+  <div class="mb-4">
+    <h1 class="heading"><%= t('.heading') %></h1>
+    <p class="text-sm mb-1"><%= t('.text_page_visibility') %></p>
+    <p class="text-sm">
+      <%= t('.text_page_visibility_others_html',
+        href: link_to(t('.text_page_visibility_others_href'), root_path,
+        class: "text-sea-800 hover:text-sea-300 underline")) %>
+    </p>
+  </div>
 </div>
 
+<h2 class="subheading subheading--lg mb-4"><%= t('.subheading_recipes') %></h2>
 <% if @recipes.present? %>
   <div class="mb-6">
     <% if @recipes.status_draft.present? %>
-      <h2 class="subheading"><%= t('.subheading_recipes_unpublished') %></h2>
+      <h3 class="subheading subheading--base"><%= t('.subheading_recipes_unpublished') %></h3>
       <ul class="mb-4">
         <% @recipes.status_draft.each do |recipe| %>
-          <li class="py-0.5 last:pb-0">
+          <li class="py-1 first:pt-0 last:pb-0">
             <%= link_to recipe.title, recipe_path(recipe),
-                class: "text-sea-800 hover:text-sea-300 hover:underline" %>
-            <%= link_to <%= t('.link_publish') %>, recipe_status_path(recipe), method: :put,
-                class: "text-sea-800 hover:text-sea-300 hover:underline" %>
+                class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+            <%= link_to t('.link_publish'), recipe_status_path(recipe), method: :put,
+                class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
           </li>
         <% end %>
       </ul>
     <% end %>
 
-    <h2 class="subheading"><%= t('.subheading_recipes_published') %></h2>
+    <h3 class="subheading subheading--base"><%= t('.subheading_recipes_published') %></h3>
     <% if @recipes.status_published.present? %>
       <ul class="mb-4">
         <% @recipes.status_published.each do |recipe| %>
-          <li class="py-0.5 last:pb-0">
+          <li class="py-1 first:pt-0 last:pb-0">
             <%= link_to recipe.title, recipe_path(recipe),
-                class: "text-sea-800 hover:text-sea-300 hover:underline" %>
-            <%= link_to <%= t('.link_unpublish') %>, recipe_status_path(recipe), method: :put,
-                class: "text-sea-800 hover:text-sea-300 hover:underline" %>
+                class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+            <%= link_to t('.link_unpublish'), recipe_status_path(recipe), method: :put,
+                class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
           </li>
         <% end %>
       </ul>
@@ -42,10 +51,10 @@
     <% end %>
   </div>
 <% else %>
-  <p>
-    <span>Let's </span>
-      <%= link_to "add your first recipe", new_recipe_path,
-          class: "text-sea-800 hover:text-sea-300 underline" %>
-    <span>.</span>
+    <p>
+      <%= t('.text_add_first_recipe_html',
+        href: link_to(t('.text_add_first_recipe_href'), new_recipe_path,
+        class: "text-sea-800 hover:text-sea-300 underline")) %>
+    </p>
   </p>
 <% end %>
