@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
+# git_source(:github) { |repo| 'htgsttps://github.com/#{repo}.git' }
 
 ruby '2.7.1'
 
@@ -13,7 +13,7 @@ gem 'cloudinary'
 gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+gem 'rails', github: 'rails/rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
