@@ -1,7 +1,7 @@
 class DisplayMeasure
   attr_reader :quantity, :ingredient
 
-  def initialize(quantity, unit, ingredient, prep_method)
+  def initialize(ingredient, quantity: nil, unit: nil, prep_method: nil)
     @quantity = quantity
     @unit = unit
     @ingredient = ingredient

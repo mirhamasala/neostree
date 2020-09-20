@@ -19,6 +19,10 @@ input[type="radio"] {
   appearance-none;
 }
 
+textarea {
+  @apply h-32;
+}
+
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
   @apply bg-forrest-500;

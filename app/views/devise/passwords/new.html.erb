@@ -1,6 +1,7 @@
 <h1 class="heading">Forgot your password?</h1>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name),
+                                          html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="mb-6">
@@ -12,5 +13,6 @@
     <%= f.submit "Send me reset password instructions", class: "button button--primary" %>
   </div>
 
-  <%= link_to "Log in", new_session_path(resource_name), class: "text-sea-800 hover:text-sea-300" %>
+  <%= link_to "Log in", new_session_path(resource_name),
+      class: "text-sea-800 hover:text-sea-300" %>
 <% end %>

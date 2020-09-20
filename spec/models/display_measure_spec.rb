@@ -1,49 +1,45 @@
 require 'rails_helper'
 
 RSpec.describe DisplayMeasure do
-  it 'should display measure with no quantity, no unit, and ingredient' do
-    measure = DisplayMeasure.new(nil, nil, 'sea salt')
+  it 'displays measure given an ingredient' do
+    measure = DisplayMeasure.new('sea salt')
 
     expect(measure.to_s).to eql('sea salt')
   end
 
-  it 'should display measure with no quantity, no unit, and ingredient' do
-    measure = DisplayMeasure.new('', '', 'sea salt')
+  it 'ignores empty strings' do
+    measure = DisplayMeasure.new('sea salt', quantity: '', unit: '', prep_method: '')
 
     expect(measure.to_s).to eql('sea salt')
   end
 
-  it 'should display measure with quantity, no unit, and ingredient' do
-    measure = DisplayMeasure.new(1, '', 'avocado')
+  it 'displays measure given an ingredient and quantity' do
+    measure = DisplayMeasure.new('avocado', quantity: 1)
 
     expect(measure.to_s).to eql('1 avocado')
   end
 
-  it 'should display measure with quantity, unit, and ingredient' do
-    unit = Unit.new(name: 'cup')
-    measure = DisplayMeasure.new(1, unit, 'coconut milk')
+  it 'displays measure given an ingredient, quantity, and unit' do
+    measure = DisplayMeasure.new('coconut milk', quantity: 1, unit: Unit.new('cup'))
 
     expect(measure.to_s).to eql('1 cup coconut milk')
   end
 
-  it 'should display measure with quantity, pluralized unit, and ingredient' do
-    unit = Unit.new(name: 'cup')
-    measure = DisplayMeasure.new(2, unit, 'coconut milk')
+  it 'displays measure given an ingredient, quantity, and singular unit' do
+    measure = DisplayMeasure.new('coconut milk', quantity: 2, unit: Unit.new('cup'))
 
     expect(measure.to_s).to eql('2 cups coconut milk')
   end
 
-  it 'should display measure with quantity, unit, and ingredient' do
-    unit = Unit.new(name: 'tablespoon')
-    measure = DisplayMeasure.new(1, unit, 'raw cacao powder')
+  it 'displays measure given an ingredient, quantity, and pluralized unit' do
+    measure = DisplayMeasure.new('raw cacao powder', quantity: 1, unit: Unit.new('tablespoons'))
 
     expect(measure.to_s).to eql('1 tablespoon raw cacao powder')
   end
 
-  it 'should display measure with quantity, pluralized unit, and ingredient' do
-    unit = Unit.new(name: 'tablespoon')
-    measure = DisplayMeasure.new(2, unit, 'raw cacao powder')
+  it 'displays measure given an ingredient, quantity, unit, and prep method' do
+    measure = DisplayMeasure.new('almonds', quantity: 100, unit: Unit.new('gram'), prep_method: 'soaked overnight')
 
-    expect(measure.to_s).to eql('2 tablespoons raw cacao powder')
+    expect(measure.to_s).to eql('100 grams almonds - soaked overnight')
   end
 end

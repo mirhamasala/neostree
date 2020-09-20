@@ -4,6 +4,11 @@
     <%= render partial: "recipe", collection: @recipes %>
   </ul>
 <% else %>
-  <p>This is where we'll show all your recipes.</p>
-  <p>Let's <%= link_to "add one to start", new_recipe_path, class: "text-sea-800 hover:text-sea-300 underline" %>.</p>
+  <p><%= t('.text_show_recipes') %></p>
+  <p>
+    <%= t('.text_add_first_recipe_html',
+      href: link_to(t('.text_add_first_recipe_href'), new_recipe_path,
+      class: "text-sea-800 hover:text-sea-300 underline")) %>
+  </p>
 <% end %>
+

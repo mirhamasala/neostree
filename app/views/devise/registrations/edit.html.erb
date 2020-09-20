@@ -1,6 +1,7 @@
 <h1 class="heading"><%= t('.profile') %></h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+                                          html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="mb-4">
@@ -47,4 +48,6 @@
   </div>
 <% end %>
 
-<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "bg-white text-sea-800 hover:text-sea-300" %>
+<%= button_to "Cancel my account", registration_path(resource_name),
+    data: { confirm: "Are you sure?" }, method: :delete,
+    class: "bg-white text-sea-800 hover:text-sea-300" %>
