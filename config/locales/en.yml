@@ -47,6 +47,7 @@ en:
       heading: Dashboard
       link_cancel: Cancel
       link_publish: publish
+      link_unpublish: unpublish
       link_edit_profile: Edit profile
       link_logout: Log out
       subheading_recipes_published: Published recipes

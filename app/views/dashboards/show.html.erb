@@ -18,9 +18,7 @@
           <li class="py-0.5 last:pb-0">
             <%= link_to recipe.title, recipe_path(recipe),
                 class: "text-sea-800 hover:text-sea-300 hover:underline" %>
-            <%= link_to recipe.title, recipe_path(recipe),
-                class: "text-sea-800 hover:text-sea-300 hover:underline" %>
-            <%= link_to "publish", recipe_status_path(recipe), method: :put,
+            <%= link_to <%= t('.link_publish') %>, recipe_status_path(recipe), method: :put,
                 class: "text-sea-800 hover:text-sea-300 hover:underline" %>
           </li>
         <% end %>
@@ -34,6 +32,8 @@
           <li class="py-0.5 last:pb-0">
             <%= link_to recipe.title, recipe_path(recipe),
                 class: "text-sea-800 hover:text-sea-300 hover:underline" %>
+            <%= link_to <%= t('.link_unpublish') %>, recipe_status_path(recipe), method: :put,
+                class: "text-sea-800 hover:text-sea-300 hover:underline" %>
           </li>
         <% end %>
       </ul>
@@ -44,8 +44,8 @@
 <% else %>
   <p>
     <span>Let's </span>
-      <%= link_to add your first recipe, new_recipe_path,
+      <%= link_to "add your first recipe", new_recipe_path,
           class: "text-sea-800 hover:text-sea-300 underline" %>
-    <span> .</span>
+    <span>.</span>
   </p>
 <% end %>
