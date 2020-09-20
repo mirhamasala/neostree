@@ -24,7 +24,7 @@ class Measure < ApplicationRecord
   end
 
   def to_s
-    DisplayMeasure.new(quantity, unit, ingredient, prep_method).to_s
+    DisplayMeasure.new(ingredient, quantity: quantity, unit: unit, prep_method: prep_method).to_s
   end
 end
 
