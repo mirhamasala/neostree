@@ -78,6 +78,7 @@ en:
     show:
       button_edit: Edit
       button_publish: Publish
+      button_unpublish: Convert to draft
       link_delete: delete
       link_edit: edit
       source_recipe: source
