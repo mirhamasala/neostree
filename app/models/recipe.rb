@@ -1,6 +1,6 @@
 class Recipe < ApplicationRecord
   enum yield_type: { makes: 0, serves: 1 }, _suffix: true
-  enum status: { draft: 0, published: 1 }, _prefix: :status
+  enum status: { draft: 0, published: 1 }, _prefix: :status, _default: 0
 
   validates :title, presence: true, uniqueness: { scope: :user_id }
 
