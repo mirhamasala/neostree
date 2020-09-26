@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: 'pages#home'
 
   resources :recipes, except: :index do
     resources :steps do
