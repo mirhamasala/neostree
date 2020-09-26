@@ -4,7 +4,7 @@ class RecipePolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    true
   end
 
   def update?
