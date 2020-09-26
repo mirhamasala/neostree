@@ -1,0 +1,4 @@
+<h1 class="heading"><%= t('.heading',  username: @user.username) %></h1>
+<ul class="card-grid">
+  <%= render partial: "recipes/recipe", collection: @recipes %>
+</ul>
