@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
 
   describe 'admin' do
     it 'starts as a regular user' do
-      user = User.new
+      user = build(:user)
 
       expect(user.admin?).to eql(false)
       expect(user.admin_since).to eql(nil)
@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
 
     it 'becomes an admin' do
       freeze_time do
-        user = User.new(admin: true)
+        user = build(:admin)
 
         expect(user.admin?).to eql(true)
         expect(user.admin_since).to eql(Time.current)
@@ -38,7 +38,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'switches back to a regular user' do
-      user = User.new(admin: true)
+      user = build(:admin)
       user.admin = false
 
       expect(user.admin?).to eql(false)
@@ -48,10 +48,10 @@ RSpec.describe User, type: :model do
 
   describe 'author of recipe' do
     it 'is owner of recipe' do
-      user = User.new
+      user = build(:user)
 
-      recipe1 = Recipe.new(title: 'avocado smoothie', user: user)
-      recipe2 = Recipe.new(title: 'soup', user: user)
+      recipe1 = build(:recipe)
+      recipe2 = build(:recipe)
 
       user.recipes = [recipe1, recipe2]
 
@@ -59,13 +59,12 @@ RSpec.describe User, type: :model do
     end
 
     it 'is not owner of recipe' do
-      user = User.new
+      user = build(:user)
 
-      recipe1 = Recipe.new(title: 'avocado smoothie', user: user)
-      recipe2 = Recipe.new(title: 'soup', user: user)
+      recipe1 = build(:recipe)
+      recipe2 = build(:recipe)
 
       user.recipes = [recipe2]
-
       expect(user.author_of?(recipe1)).to eql(false)
     end
   end

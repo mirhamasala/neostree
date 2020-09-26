@@ -4,10 +4,10 @@ class Recipe < ApplicationRecord
 
   validates :title, presence: true, uniqueness: { scope: :user_id }
 
-  has_one_attached :photo
+  belongs_to :user
   has_many :steps, dependent: :destroy, inverse_of: :recipe
   has_many :measures, dependent: :destroy, inverse_of: :recipe
-  belongs_to :user
+  has_one_attached :photo
 
   accepts_nested_attributes_for :measures, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :steps, reject_if: :all_blank, allow_destroy: true
