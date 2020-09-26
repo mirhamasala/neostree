@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'recipes#index'
+  root to: 'pages#home'
 
   resources :recipes, except: :index do
     resources :steps do
@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     resource :recipe_status, only: [:update], as: :status
   end
   resource :dashboard, only: :show, as: :dashboard
+  resources :users, param: :username, only: :show
 end

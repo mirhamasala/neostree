@@ -1,0 +1,10 @@
+<h1 class="heading">Featuring</h1>
+<ul>
+  <li><%= link_to "Mirha's Recipes", user_path("mirha"), class: "block" %></li>
+  <li><%= link_to "Devon's Recipes", user_path("epicfriedrice"), class: "block" %></li>
+  <li><%= link_to "Silvia's Recipes", user_path("mirhamasala"), class: "block" %></li>
+</ul>
+<br />
+<br />
+<h2 class="subheading">Want to publish your own recipes?</h2>
+<%= link_to "Login or signup here", new_user_session_path %>

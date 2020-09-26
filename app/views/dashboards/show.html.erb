@@ -11,7 +11,7 @@
     <p class="text-sm mb-1"><%= t('.text_page_visibility') %></p>
     <p class="text-sm">
       <%= t('.text_page_visibility_others_html',
-        href: link_to(t('.text_page_visibility_others_href'), root_path,
+        href: link_to(t('.text_page_visibility_others_href'), user_path(current_user.username),
         class: "text-sea-800 hover:text-sea-300 underline")) %>
     </p>
   </div>
