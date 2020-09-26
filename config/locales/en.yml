@@ -66,11 +66,6 @@ en:
       subheading_ingredients: Ingredients
       subheading_notes: Recipe Notes
       subheading_steps: Cooking Steps
-    index:
-      heading: Recipes
-      text_add_first_recipe_href: add one to start
-      text_add_first_recipe_html: 'Let''s %{href}.'
-      text_show_recipes: This is where we'll show all your recipes.
     measure_fields:
       link_delete: delete
     new:
@@ -115,3 +110,6 @@ en:
     teaspoon: teaspoon
     thumb: thumb
     tin: tin
+  users:
+    show:
+      heading: "Recipes by %{username}"
