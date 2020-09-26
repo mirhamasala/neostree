@@ -18,5 +18,55 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  include ActiveSupport::Testing::TimeHelpers
+
+  describe 'admin' do
+    it 'starts as a regular user' do
+      user = User.new
+
+      expect(user.admin?).to eql(false)
+      expect(user.admin_since).to eql(nil)
+    end
+
+    it 'becomes an admin' do
+      freeze_time do
+        user = User.new(admin: true)
+
+        expect(user.admin?).to eql(true)
+        expect(user.admin_since).to eql(Time.current)
+      end
+    end
+
+    it 'switches back to a regular user' do
+      user = User.new(admin: true)
+      user.admin = false
+
+      expect(user.admin?).to eql(false)
+      expect(user.admin_since).to eql(nil)
+    end
+  end
+
+  describe 'author of recipe' do
+    it 'is owner of recipe' do
+      user = User.new
+
+      recipe1 = Recipe.new(title: 'avocado smoothie', user: user)
+      recipe2 = Recipe.new(title: 'soup', user: user)
+
+      user.recipes = [recipe1, recipe2]
+
+      expect(user.author_of?(recipe1)).to eql(true)
+    end
+
+    it 'is not owner of recipe' do
+      user = User.new
+
+      recipe1 = Recipe.new(title: 'avocado smoothie', user: user)
+      recipe2 = Recipe.new(title: 'soup', user: user)
+
+      user.recipes = [recipe2]
+
+      expect(user.author_of?(recipe1)).to eql(false)
+    end
+  end
 end
