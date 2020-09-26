@@ -14,7 +14,7 @@ class Recipe < ApplicationRecord
 
   scope :alphabetize, -> { order(:title) }
 
-  def self.author?(user)
+  def self.author(user)
     where(user: user)
   end
 end

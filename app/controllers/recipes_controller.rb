@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recipes = policy_scope(Recipe).author?(current_user).status_published.alphabetize
+    @recipes = policy_scope(Recipe).author(current_user).status_published.alphabetize
   end
 
   def new
