@@ -36,6 +36,9 @@ module.exports = {
       flexShrink: {
         '2': 2,
       },
+      height: {
+        '128': '32rem',
+      },
       spacing: {
         '0.5': '.125rem',
         '2.5': '.625rem',
