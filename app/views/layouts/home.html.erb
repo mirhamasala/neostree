@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neo's</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag "favicon.png" %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="flex flex-col h-screen text-stone-900">
+    <%= render "shared/navbar" %>
+    <div class="flex-grow flex flex-col justify-between">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
+  </body>
+</html>
