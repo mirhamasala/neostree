@@ -11,14 +11,18 @@
   </head>
 
   <body class="flex flex-col h-screen text-stone-900">
-    <%= render "shared/navbar" %>
+    <div class="mb-6">
+      <%= render "shared/navbar" %>
+    </div>
     <div class="flex-grow">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-12 lg:px-16">
         <div class="max-w-3xl mx-auto">
           <%= yield %>
         </div>
       </div>
     </div>
-    <%= render "shared/footer" %>
+    <div class="mt-16">
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>
