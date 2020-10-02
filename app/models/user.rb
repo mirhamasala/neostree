@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :username, presence: true
 
-  has_many :recipes
+  has_many :recipes, dependent: :destroy
 
   def author_of?(recipe)
     recipes.include?(recipe)
