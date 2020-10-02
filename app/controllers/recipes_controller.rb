@@ -20,8 +20,10 @@ class RecipesController < ApplicationController
     authorize @recipe
 
     if @recipe.save
+      flash[:notice] = t('.success')
       redirect_to recipe_path(@recipe)
     else
+      flash.now[:alert] = t('.failure')
       render :new
     end
   end
@@ -41,8 +43,10 @@ class RecipesController < ApplicationController
     authorize @recipe
 
     if @recipe.update(merge_recipe_params!)
+      flash[:notice] = t('.success')
       redirect_to recipe_path(@recipe)
     else
+      flash.now[:alert] = t('.failure')
       render :edit
     end
   end
@@ -51,8 +55,13 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
 
-    @recipe.destroy
-    redirect_to :root
+    if @recipe.destroy
+      flash[:notice] = t('.success', recipe: @recipe.title)
+      redirect_to user_path(current_user.username)
+    else
+      flash[:alert] = t('.failure')
+      redirect_back(fallback_location: user_path(current_user.username))
+    end
   end
 
   private

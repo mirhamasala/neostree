@@ -58,12 +58,18 @@ en:
       update: Save changes
   pages:
     home:
-      featuring: "Silvia is a photographer, storyteller, mountain lover, and foodie. Have a look at her collection of plant-based recipes."
+      featuring: 'Silvia is a photographer, storyteller, mountain lover, and foodie. Have a look at her collection of plant-based recipes.'
       heading: It All Started..
-      intro_pt_1: "..with a wish to put every single family recipe that was passed down from generation to generation in one place. It was a personal project, until we realized there would be other people just like us who would want to preserve the legacy of their family kitchen."
-      intro_pt_2: "So here you have it: Neo's is the place where you can store your nan's pie recipe, add your own chilli dish, and share it all with your soon-to-be-big-ones, media naranja, friends, and the rest of us."
-      subheading_featuring: "Featuring: Silvia Falcomer"
+      intro_pt_1: '..with a wish to put every single family recipe that was passed down from generation to generation in one place. It was a personal project, until we realized there would be other people just like us who would want to preserve the legacy of their family kitchen.'
+      intro_pt_2: 'So here you have it: Neo''s is the place where you can store your nan''s pie recipe, add your own chilli dish, and share it all with your soon-to-be-big-ones, media naranja, friends, and the rest of us.'
+      subheading_featuring: 'Featuring: Silvia Falcomer'
   recipes:
+    create:
+      failure: Oops, something went wrong. Please try again.
+      success: 'This is a preview of your recipe. Hit publish when you''re ready.'
+    destroy:
+      failure: Oops, something went wrong. Please try again.
+      success: 'You deleted %{recipe}'
     edit:
       heading: Edit recipe
     form:
@@ -77,6 +83,9 @@ en:
       link_delete: delete
     new:
       heading: Add a new recipe
+    update:
+      failure: Oops, something went wrong. Please try again.
+      success: 'You''ve successfully updated your recipe.'
     show:
       button_edit: Edit
       button_publish: Publish
@@ -91,7 +100,7 @@ en:
       link_delete: delete
   shared:
     navbar:
-      app_title: Neo's
+      app_title: 'Neo''s'
       link_dashboard: Dashboard
       link_log_in: Log in
       link_new_recipe: Add recipe
@@ -119,4 +128,4 @@ en:
     tin: tin
   users:
     show:
-      heading: "Recipes by %{username}"
+      heading: 'Recipes by %{username}'
