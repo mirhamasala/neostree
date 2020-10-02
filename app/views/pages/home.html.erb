@@ -1,21 +1,23 @@
-<%= image_tag "marieke_verdenius_1.png", class: "md:hidden h-96 object-cover object-center" %>
-<section class="flex justify-between max-h-full py-12 px-4 sm:px-12 xl:px-16">
-  <div class="hidden md:flex sm:flex-col lg:flex-row lg:h-128 ">
-    <%= image_tag "marieke_verdenius_2.png", class: "lg:w-1/2 object-cover object-center" %>
-    <%= image_tag "marieke_verdenius_1.png", class: "hidden lg:block lg:w-1/2 object-cover object-center" %>
-  </div>
-  <div class="self-center md:pl-12 xl:pl-16">
-    <h1 class="heading"><%= t('.heading') %></h1>
-    <p class="mb-4"><%= t('.intro_pt_1') %></p>
-    <p><%= t('.intro_pt_2') %></p>
-  </div>
-</section>
-<section class="flex-grow justify-self-end flex justify-between h-128 bg-stone-100">
-  <div class="flex flex-col justify-center px-4 sm:px-12 xl:px-16">
-    <%= link_to user_path("mirha") do %>
-      <h2 class="subheading"><%= t('.subheading_featuring') %></h2>
-      <p><%= t('.featuring') %></p>
-    <% end %>
-  </div>
-  <%= image_tag "marieke_verdenius_3.png", class:"h-full w-3/5 object-cover object-bottom" %>
-</section>
+<div class="flex flex-col justify-between h-full">
+  <%= image_tag "marieke_verdenius_1.png", class: "md:hidden h-96 object-cover object-center" %>
+  <section class="flex justify-between py-6 px-4 sm:py-12 sm:px-12 xl:px-16">
+    <div class="hidden md:flex md:flex-col lg:flex-row lg:h-128">
+      <%= image_tag "marieke_verdenius_2.png", class: "lg:w-1/2 object-cover object-center" %>
+      <%= image_tag "marieke_verdenius_1.png", class: "hidden lg:block lg:w-1/2 object-cover object-center" %>
+    </div>
+    <div class="md:self-center md:pl-12 xl:pl-16">
+      <h1 class="heading"><%= t('.heading') %></h1>
+      <p class="mb-4"><%= t('.intro_pt_1') %></p>
+      <p><%= t('.intro_pt_2') %></p>
+    </div>
+  </section>
+  <section class="flex-grow flex justify-between h-128 bg-stone-100">
+    <div class="flex flex-col justify-center py-6 px-4 sm:py-12 sm:px-12 xl:px-16">
+      <%= link_to user_path("mirha") do %>
+        <h2 class="subheading"><%= t('.subheading_featuring') %></h2>
+        <p><%= t('.featuring') %></p>
+      <% end %>
+    </div>
+    <%= image_tag "marieke_verdenius_3.png", class:"w-1/2 sm:w-3/5 max-h-full object-cover object-bottom" %>
+  </section>
+</div>
