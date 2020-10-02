@@ -9,6 +9,11 @@ module.exports = {
         'stone-100': '0 0 0 2px #eaeaea',
       },
       colors: {
+        berries: {
+          '100': '##edd3d7',
+          '200': '#e8bebe',
+          '900': '#482830',
+        },
         forrest: {
           '500': '#57696d',
         },
@@ -41,6 +46,7 @@ module.exports = {
       },
       spacing: {
         '0.5': '.125rem',
+        '1.5': '.375rem',
         '2.5': '.625rem',
       },
     },
