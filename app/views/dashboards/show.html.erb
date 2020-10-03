@@ -18,9 +18,9 @@
 </div>
 
 <h2 class="subheading subheading--lg mb-4"><%= t('.subheading_recipes') %></h2>
-<% if @recipes.present? %>
+<% if @recipes.any? %>
   <div class="mb-6">
-    <% if @recipes.status_draft.present? %>
+    <% if @recipes.status_draft.any? %>
       <h3 class="subheading subheading--base"><%= t('.subheading_recipes_unpublished') %></h3>
       <ul class="mb-4">
         <% @recipes.status_draft.each do |recipe| %>
@@ -35,7 +35,7 @@
     <% end %>
 
     <h3 class="subheading subheading--base"><%= t('.subheading_recipes_published') %></h3>
-    <% if @recipes.status_published.present? %>
+    <% if @recipes.status_published.any? %>
       <ul class="mb-4">
         <% @recipes.status_published.each do |recipe| %>
           <li class="py-1 first:pt-0 last:pb-0">

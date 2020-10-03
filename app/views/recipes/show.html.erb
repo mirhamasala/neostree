@@ -55,7 +55,7 @@
 <% end %>
 
 <!-- Ingredients -->
-<% if @recipe.measures.present? %>
+<% if @recipe.measures.any? %>
   <div class="mb-4">
     <h2 class="subheading subheading--lg"><%= t('.subheading_ingredients') %></h2>
     <ul>
@@ -69,7 +69,7 @@
 <% end %>
 
 <!-- Directions -->
-<% if @recipe.steps.present? %>
+<% if @recipe.steps.any? %>
   <div class="mb-4">
     <h2 class="subheading subheading--lg"><%= t('.subheading_steps') %></h2>
     <ol class="steps">
