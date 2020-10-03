@@ -15,15 +15,28 @@
         <%= f.text_field :title, placeholder: true %>
       </div>
 
-      <div class="mb-4">
-        <%= f.label :photo %>
-        <%= f.file_field :photo, as: :file %>
-      </div>
+      <% if @recipe.photo.attached? %>
+        <div class="mb-4">
+          <%= f.label :photo %>
+          <picture>
+            <%= cl_image_tag @recipe.photo.key, height: 400, crop: :fill %>
+          </picture>
+        </div>
+        <div class="mb-4">
+          <%= f.label :photo_update %>
+          <%= f.file_field :photo, as: :file %>
+        </div>
+        <% else %>
+          <div class="mb-4">
+            <%= f.label :photo %>
+            <%= f.file_field :photo, as: :file %>
+          </div>
+        <% end %>
 
-      <div class="mb-4">
-        <%= f.label :intro %>
-        <%= f.text_area :intro, placeholder: true %>
-      </div>
+        <div class="mb-4">
+          <%= f.label :intro %>
+          <%= f.text_area :intro, placeholder: true %>
+        </div>
 
       <div class="mb-4">
         <%= f.label :source %>

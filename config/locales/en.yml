@@ -35,6 +35,7 @@ en:
         intro: Intro
         link: Source
         photo: Photo
+        photo_update: Change photo
         title: Title
         yield: This recipe
     placeholder:
