@@ -55,13 +55,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
 
-    if @recipe.destroy
-      flash[:notice] = t('.success', recipe: @recipe.title)
-      redirect_to user_path(current_user.username)
-    else
-      flash[:alert] = t('.failure')
-      redirect_back(fallback_location: user_path(current_user.username))
-    end
+    @recipe.destroy
+    flash[:notice] = t('.success', recipe: @recipe.title)
+    redirect_to user_path(current_user.username)
   end
 
   private

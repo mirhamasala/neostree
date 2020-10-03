@@ -68,7 +68,6 @@ en:
       failure: Oops, something went wrong. Please try again.
       success: 'This is a preview of your recipe. Hit publish when you''re ready.'
     destroy:
-      failure: Oops, something went wrong. Please try again.
       success: 'You deleted %{recipe}'
     edit:
       heading: Edit recipe
