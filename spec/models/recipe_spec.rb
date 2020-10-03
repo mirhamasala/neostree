@@ -31,4 +31,29 @@ RSpec.describe Recipe, type: :model do
     expect(Recipe.author(user1)).to eq([recipe1, recipe2])
     expect(Recipe.author(user2)).to eq([recipe3])
   end
+
+  it 'starts as a draft' do
+    recipe = Recipe.new
+
+    expect(recipe.status).to eq('draft')
+    expect(recipe.status_draft?).to eq(true)
+  end
+
+  it 'becomes published' do
+    recipe = build(:draft_recipe)
+
+    recipe.status_published!
+
+    expect(recipe.status).to eq('published')
+    expect(recipe.status_published?).to eq(true)
+  end
+
+  it 'becomes a draft' do
+    recipe = build(:published_recipe)
+
+    recipe.status_draft!
+
+    expect(recipe.status).to eq('draft')
+    expect(recipe.status_draft?).to eq(true)
+  end
 end
