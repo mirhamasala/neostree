@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     resource :recipe_status, only: [:update], as: :status
   end
   resource :dashboard, only: :show, as: :dashboard
-  resources :users, param: :username, only: :show
+  resources :u, param: :username, only: :show, controller: :users, as: :user
 end
