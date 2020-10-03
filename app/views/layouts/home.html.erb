@@ -12,7 +12,11 @@
 
   <body class="flex flex-col h-screen text-stone-900">
     <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+    <% if notice || alert %>
+      <div class="absolute w-full mt-16">
+        <%= render "shared/flashes" %>
+      </div>
+    <% end %>
     <div class="flex-grow">
       <%= yield %>
     </div>
