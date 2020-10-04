@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :recoverable, :registerable, :rememberable, :validatable
 
   validates :name, presence: true
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true, length: 1..30
 
   has_many :recipes, dependent: :destroy
 
@@ -39,6 +39,5 @@ end
 #  updated_at             :datetime         not null
 #  username               :string
 #  name                   :string
-#  last_name              :string
 #  admin_since            :datetime
 #
