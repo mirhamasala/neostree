@@ -11,8 +11,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  username               :string
-#  first_name             :string
-#  last_name              :string
+#  name                   :string
 #  admin_since            :datetime
 #
 require 'rails_helper'
