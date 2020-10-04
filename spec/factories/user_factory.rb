@@ -12,7 +12,6 @@
 #  updated_at             :datetime         not null
 #  username               :string
 #  name                   :string
-#  last_name              :string
 #  admin_since            :datetime
 #
 require 'faker'
