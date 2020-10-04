@@ -10,7 +10,7 @@
     <div class="mr-4">
       <%= f.hidden_field :id %>
       <%= f.label :unit %>
-      <%= f.collection_select :unit, Unit.all, :value, :to_s,
+      <%= f.collection_select :unit, Unit.all.sort, :value, :name,
             { include_blank: true, selected: ->(u) { u == f.object.unit }} %>
     </div>
 

@@ -21,7 +21,7 @@ class DisplayMeasure
     return if @unit.blank?
 
     if @quantity.to_i > 1
-      @unit.name.pluralize(@quantity.to_i)
+      @unit.pluralize(@quantity.to_i)
     else
       @unit.name
     end

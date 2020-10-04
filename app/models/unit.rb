@@ -33,8 +33,8 @@ class Unit
     @all ||= ALL.map { |name| Unit.new(name) }
   end
 
-  def to_s
-    I18n.t("units.#{value}")
+  def pluralize(count = 1)
+    I18n.t("units.#{value}", count: count)
   end
 
   def value

@@ -105,27 +105,69 @@ en:
       link_log_in: Log in
       link_new_recipe: Add recipe
   units:
-    bunch: bunch
-    can: can
-    cup: cup
-    dash: dash
-    drop: drop
-    gram: gram
-    handful: handful
-    kilogram: kilogram
-    liter: liter
-    milliliter: milliliter
-    packet: packet
-    piece: piece
-    pinch: pinch
-    shot: shot
-    splash: splash
-    sprig: sprig
-    stick: stick
-    tablespoon: tablespoon
-    teaspoon: teaspoon
-    thumb: thumb
-    tin: tin
+    bunch:
+      one: bunch
+      other: bunches
+    can:
+      one: can
+      others: cans
+    cup:
+      one: cup
+      other: cups
+    dash:
+      one: dash
+      other: dashes
+    drop:
+      one: drop
+      other: drops
+    gram:
+      one: gram
+      other: grams
+    handful:
+      one: handful
+      other: handfuls
+    kilogram:
+      one: kilogram
+      other: kilograms
+    liter:
+      one: liter
+      other: liters
+    milliliter:
+      one: milliliter
+      other: milliliters
+    packet:
+      one: packet
+      other: packets
+    piece:
+      one: piece
+      other: pieces
+    pinch:
+      one: pinch
+      other: pinches
+    shot:
+      one: shot
+      other: shots
+    splash:
+      one: splash
+      other: splashes
+    sprig:
+      one: sprig
+      other: sprigs
+    stick:
+      one: stick
+      other: sticks
+    tablespoon:
+      one: tablespoon
+      other: tablespoons
+    teaspoon:
+      one: teaspoon
+      other: teaspoons
+    thumb:
+      one: thumb
+      other: thumbs
+    tin:
+      one: tin
+      other: tins
   users:
     show:
       heading: 'Recipes by %{username}'
