@@ -11,13 +11,18 @@
       <p><%= t('.intro_pt_2') %></p>
     </div>
   </section>
-  <section class="flex-grow flex justify-between h-128 bg-stone-100">
+  <section class="flex-grow sm:flex sm:justify-between sm:h-128 bg-stone-100">
     <div class="flex flex-col justify-center py-6 px-4 sm:py-12 sm:px-12 xl:px-16">
-      <%= link_to user_path("mirhamasala") do %>
-        <h2 class="subheading"><%= t('.subheading_featuring') %></h2>
-        <p><%= t('.featuring') %></p>
+      <h2 class="subheading"><%= t('.subheading_featuring') %></h2>
+      <%= link_to user_path("silviafalcomer"), class: "mb-6" do %>
+        <h3 class="subheading subheading--base">Silvia Falcomer</h3>
+        <p><%= t('.about_1') %></p>
+      <% end %>
+      <%= link_to user_path("arjen") do %>
+        <h3 class="subheading subheading--base">Arjen Calter</h3>
+        <p><%= t('.about_2') %></p>
       <% end %>
     </div>
-    <%= image_tag "marieke_verdenius_3.png", class:"w-1/2 sm:w-3/5 max-h-full object-cover object-bottom" %>
+    <%= image_tag "marieke_verdenius_3.png", class:"sm:w-6/12 lg:w-10/12 xl:11/12 max-h-full object-cover object-bottom" %>
   </section>
 </div>
