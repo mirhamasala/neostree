@@ -8,6 +8,12 @@ en:
       recipe/yield_type:
         makes: Makes
         serves: Serves
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              invalid: "can only contain letters (a-z) in lowercase, numbers (0-9), and underscores. Check to make sure you're not using any symbols, dashes, or spaces."
   dashboards:
     show:
       heading: Dashboard
