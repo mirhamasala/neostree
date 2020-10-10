@@ -1,5 +1,18 @@
 <% content_for(:title) { @user.name.titleize } %>
-<h1 class="heading mb-6"><%= @user.name.titleize %></h1>
+<div class="flex mb-6">
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, class: "w-20 h-20 mr-6 rounded-full object-cover object-center" %>
+  <% end %>
+  <div>
+    <h1 class="heading mb-1"><%= @user.name.titleize %></h1>
+    <div class="mb-6">
+      <% if @user.bio.present? %>
+        <p class="font-medium"><%= @user.bio %></p>
+      <% end %>
+      <%= link_to @user.website, @user.website, target: "_blank", class: "text-sea-800 hover:text-sea-300" if @user.website.present? %>
+    </div>
+  </div>
+</div>
 <ul class="card-grid">
   <%= render partial: "recipes/recipe", collection: @recipes %>
 </ul>

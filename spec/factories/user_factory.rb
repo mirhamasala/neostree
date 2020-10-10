@@ -13,6 +13,9 @@
 #  username               :string
 #  name                   :string
 #  admin_since            :datetime
+#  bio                    :text
+#  website                :string
+#  photo                  :string
 #
 require 'faker'
 

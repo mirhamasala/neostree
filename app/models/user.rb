@@ -8,8 +8,10 @@ class User < ApplicationRecord
                        uniqueness: true,
                        length: 1..15,
                        format: { with: /\A[a-z0-9]+(?:[_][a-z0-9]+)*\z/, message: :invalid }
+  validates :bio, length: 1..160
 
   has_many :recipes, dependent: :destroy
+  has_one_attached :photo
 
   def author_of?(recipe)
     recipes.include?(recipe)
@@ -43,4 +45,7 @@ end
 #  username               :string
 #  name                   :string
 #  admin_since            :datetime
+#  bio                    :text
+#  website                :string
+#  photo                  :string
 #
