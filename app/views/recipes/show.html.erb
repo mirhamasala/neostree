@@ -1,3 +1,4 @@
+<% content_for(:title) { @recipe.title.titleize } %>
 <% if user_signed_in? && current_user.author_of?(@recipe) %>
   <div class="block mb-4 sm:flex sm:items-baseline sm:justify-between">
     <h1 class="heading"><%= @recipe.title.titleize %></h1>

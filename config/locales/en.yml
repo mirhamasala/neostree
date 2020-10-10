@@ -13,7 +13,7 @@ en:
         user:
           attributes:
             username:
-              invalid: "can only contain letters (a-z) in lowercase, numbers (0-9), and underscores. Check to make sure you're not using any symbols, dashes, or spaces."
+              invalid: can only contain letters (a-z) in lowercase, numbers (0-9), and underscores. Check to make sure you're not using any symbols, dashes, or spaces.
   dashboards:
     show:
       heading: Dashboard
@@ -25,11 +25,11 @@ en:
       subheading_recipes_published: Published
       subheading_recipes_unpublished: Drafts
       text_add_first_recipe_href: add your first recipe
-      text_add_first_recipe_html: 'Let''s %{href}.'
+      text_add_first_recipe_html: "Let's %{href}."
       text_no_published_recipes: You haven't published any recipes yet.
       text_page_visibility: This page is only visible to you.
       text_page_visibility_others_href: your public page
-      text_page_visibility_others_html: 'Here''s what others can see: %{href}.'
+      text_page_visibility_others_html: "Here's what others can see: %{href}."
   helpers:
     label:
       measure:
@@ -46,37 +46,37 @@ en:
         yield: This recipe
     placeholder:
       measure:
-        ingredient: 'avocado, egg, etc.'
-        prep_method: 'diced, thawed, etc.'
-        quantity: '1/4, 2, 300, etc.'
+        ingredient: avocado, egg, etc.
+        prep_method: diced, thawed, etc.
+        quantity: 1/4, 2, 300, etc.
       recipe:
         intro: What's the story behind your recipe?
         notes: Add any notes you may have
-        source: 'Not your recipe? Add a link here, or leave it blank'
+        source: Not your recipe? Add a link here, or leave it blank
         title: What's the title of your recipe?
         yield: 0
       step:
         description: Add your instructions one by one
       unit:
-        name: 'cup, tablespoon, etc.'
+        name: cup, tablespoon, etc.
     submit:
       recipe:
         create: Preview recipe
       update: Save changes
   pages:
     home:
-      about_1: 'Silvia is a photographer, storyteller, mountain lover, and foodie. Dive into her vegetarian recipes and find hidden treasures from her Italian heritage.'
-      about_2: 'Arjen is a life coach, poet, blogger, and one of the last few people on earth who values play above all. You wouldn''t want to miss his campfire and foraging recipes.'
+      about_1: Silvia is a photographer, storyteller, mountain lover, and foodie. Dive into her vegetarian recipes and find hidden treasures from her Italian heritage.
+      about_2: Arjen is a life coach, poet, blogger, and one of the last few people on earth who values play above all. You wouldn't want to miss his campfire and foraging recipes.
       heading: It All Started..
-      intro_pt_1: '..with a wish to put every single family recipe that was passed down from generation to generation in one place. It was a personal project, until we realized there would be other people just like us who would want to preserve the legacy of their family kitchen.'
-      intro_pt_2: 'So here you have it: Neo''s is the place where you can store your nan''s pie recipe, add your own chilli dish, and share it all with your soon-to-be-big-ones, media naranja, friends, and the rest of us.'
+      intro_pt_1: ..with a wish to put every single family recipe that was passed down from generation to generation in one place. It was a personal project, until we realized there would be other people just like us who would want to preserve the legacy of their family kitchen.
+      intro_pt_2: "So here you have it: Neo's is the place where you can store your nan's pie recipe, add your own chilli dish, and share it all with your soon-to-be-big-ones, media naranja, friends, and the rest of us."
       subheading_featuring: Featuring
   recipes:
     create:
       failure: Oops, something went wrong. Please try again.
-      success: 'This is a preview of your recipe. Hit publish when you''re ready.'
+      success: This is a preview of your recipe. Hit publish when you're ready.
     destroy:
-      success: 'You deleted %{recipe}'
+      success: "You deleted %{recipe}"
     edit:
       heading: Edit recipe
     form:
@@ -92,7 +92,7 @@ en:
       heading: Add a new recipe
     update:
       failure: Oops, something went wrong. Please try again.
-      success: 'You''ve successfully updated your recipe.'
+      success: You've successfully updated your recipe.
     show:
       button_edit: Edit
       button_publish: Publish
@@ -107,7 +107,6 @@ en:
       link_delete: delete
   shared:
     navbar:
-      app_title: 'Neo''s'
       link_dashboard: Dashboard
       link_log_in: Log in
       link_new_recipe: Add recipe

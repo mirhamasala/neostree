@@ -1,3 +1,4 @@
+<% content_for(:title) { @user.name.titleize } %>
 <h1 class="heading mb-6"><%= @user.name.titleize %></h1>
 <ul class="card-grid">
   <%= render partial: "recipes/recipe", collection: @recipes %>

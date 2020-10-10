@@ -1,3 +1,4 @@
+<% content_for(:title) { @recipe.title.titleize } %>
 <%= form_with model: @recipe do |f| %>
   <div class="form-grid">
     <% if @recipe.persisted? %>
@@ -14,35 +15,29 @@
         <%= f.label :title %>
         <%= f.text_field :title, placeholder: true %>
       </div>
-
       <% if @recipe.photo.attached? %>
         <div class="mb-4">
           <%= f.label :photo %>
-          <picture>
-            <%= cl_image_tag @recipe.photo.key, height: 400, crop: :fill %>
-          </picture>
+          <picture><%= cl_image_tag @recipe.photo.key, height: 400, crop: :fill %></picture>
         </div>
         <div class="mb-4">
           <%= f.label :photo_update %>
           <%= f.file_field :photo, as: :file %>
         </div>
-        <% else %>
-          <div class="mb-4">
-            <%= f.label :photo %>
-            <%= f.file_field :photo, as: :file %>
-          </div>
-        <% end %>
-
+      <% else %>
         <div class="mb-4">
-          <%= f.label :intro %>
-          <%= f.text_area :intro, placeholder: true %>
+          <%= f.label :photo %>
+          <%= f.file_field :photo, as: :file %>
         </div>
-
+      <% end %>
+      <div class="mb-4">
+        <%= f.label :intro %>
+        <%= f.text_area :intro, placeholder: true %>
+      </div>
       <div class="mb-4">
         <%= f.label :source %>
         <%= f.text_field :source, placeholder: true %>
       </div>
-
       <div>
         <%= f.label :yield %>
         <div class="inline-flex">
@@ -60,14 +55,12 @@
           <%= render "measure_fields", f: measure %>
         <% end %>
       </template>
-
       <div class="mb-4" data-target="new-fields.fieldsContainer" data-controller="sortable"
                         data-sortable-url="/recipes/:recipe_id/measures/:id/measure_position">
         <%= f.fields_for :measures, @recipe.measures.order(position: :asc),
                                     include_id: false do |measure| %>
           <%= render "measure_fields", f: measure %>
         <% end %>
-
         <% @new_measures.to_i.times do |index| %>
           <%= f.fields_for :measures, Measure.new,
                                       child_index: Time.current.to_i + index do |measureField| %>
@@ -90,7 +83,6 @@
           <%= render "step_fields", f: step %>
         <% end %>
       </template>
-
       <div class="mb-4" data-target="new-fields.fieldsContainer" data-controller="sortable"
                         data-sortable-url="/recipes/:recipe_id/steps/:id/step_position">
         <%= f.fields_for :steps, @recipe.steps.ordered, include_id: false do |step| %>
@@ -103,7 +95,6 @@
           <% end %>
         <% end %>
       </div>
-
       <button type="button" data-action="new-fields#addNewField"
                             class="text-sea-800 hover:text-sea-300 underline">
         <%= t('.link_add_step') %>
@@ -118,7 +109,6 @@
       </div>
     </div>
   </div>
-
   <div class="flex">
     <%= f.submit class: "button button--primary button--xl mr-2" %>
     <%= link_to t('.link_cancel'), user_path(current_user.username), class: "button button--secondary" %>
