@@ -5,6 +5,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="mb-4">
+    <%= f.label :photo %>
+    <%= f.file_field :photo, as: :file %>
+  </div>
+
+  <div class="mb-4">
     <%= f.label :username %>
     <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
   </div>
@@ -12,6 +17,16 @@
   <div class="mb-4">
     <%= f.label :name %>
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :website %>
+    <%= f.text_field :website, autofocus: true %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :bio %>
+    <%= f.text_area :bio, autofocus: true %>
   </div>
 
   <div class="mb-4">
