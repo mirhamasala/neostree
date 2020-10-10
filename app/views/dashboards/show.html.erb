@@ -9,8 +9,8 @@
   </div>
   <div class="mb-4">
     <h1 class="heading"><%= t('.heading') %></h1>
-    <p class="text-sm mb-1"><%= t('.text_page_visibility') %></p>
-    <p class="text-sm">
+    <p class="mb-1 text-sm font-semibold"><%= t('.text_page_visibility') %></p>
+    <p class="text-sm font-semibold">
       <%= t('.text_page_visibility_others_html',
         href: link_to(t('.text_page_visibility_others_href'), user_path(current_user.username),
         class: "text-sea-800 hover:text-sea-300 underline")) %>
