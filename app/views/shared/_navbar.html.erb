@@ -1,7 +1,7 @@
 <nav class="border-b border-sand-100">
   <div class="mx-auto px-4 sm:px-12 lg:px-16">
     <div class="flex items-center justify-between h-16">
-      <%= link_to t('.app_title'), root_path, class: "font-serif text-3xl text-forrest-500" %>
+      <%= link_to "Neo's Tree", root_path, class: "font-serif text-3xl text-forrest-500" %>
       <div>
         <% if user_signed_in? %>
           <%= link_to t('.link_new_recipe'), new_recipe_path, class: "button button--white" %>

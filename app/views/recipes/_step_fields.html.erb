@@ -5,7 +5,6 @@
       <%= f.hidden_field :id %>
       <%= f.text_area :description, placeholder: true %>
     </div>
-
     <%= link_to t('.link_delete'), "#", data: { action: "click->new-fields#removeField" },
                                         class: "self-end block text-sm text-sand-500 text-right
                                                 hover:text-sand-400 hover:underline" %>
