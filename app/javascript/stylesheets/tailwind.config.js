@@ -60,5 +60,7 @@ module.exports = {
     margin: ['responsive', 'first', 'last'],
 
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/ui'),
+  ],
 };
