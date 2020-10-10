@@ -1,4 +1,3 @@
-<% content_for(:title) { @recipe.title.titleize } %>
 <%= form_with model: @recipe do |f| %>
   <div class="form-grid">
     <% if @recipe.persisted? %>
