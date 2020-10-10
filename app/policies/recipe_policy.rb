@@ -8,14 +8,14 @@ class RecipePolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    user.admin? || record.user == user
   end
 
   def destroy?
-    record.user == user
+    user.admin? || record.user == user
   end
 
   def update_status?
-    record.user == user
+    user.admin? || record.user == user
   end
 end
