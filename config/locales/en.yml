@@ -30,6 +30,17 @@ en:
       text_page_visibility: This page is only visible to you.
       text_page_visibility_others_href: your public page
       text_page_visibility_others_html: "Here's what others can see: %{href}."
+  errors:
+    show:
+      button_home: Take me home
+      error_message:
+        404: Oops, it looks like something went wrong. Please check the spelling of the URL you want to visit and try again, or let us take you home.
+        422: Oops, it looks like something went wrong. Please try again, or let us take you home.
+        500: Oops, we messed up. Please let us take you home.
+      error_status:
+        404: "%{code} Not Found"
+        422: "%{code} Unprocessable Entity"
+        500: "%{code} Internal Server Error"
   helpers:
     label:
       measure:
