@@ -1,6 +1,27 @@
 # Neo's 🥑
 
-## Built With
+[https://neostree.com/](neostree.com)
+
+## Project Resources
+
+- [Database Schema](https://kitt.lewagon.com/db/9884)
+
+### Useful Tools & Gems
+
+- [table_print](http://tableprintgem.com/)
+
+- [SVG Optimization Tool](https://jakearchibald.github.io/svgomg/)
+
+### Other Resources
+
+- [Switching to asdf Version Manager](https://sidneyliebrand.io/blog/switching-to-asdf-version-manager)
+
+- [Visual Studio Code CSS linting with Tailwind](https://www.meidev.co/blog/visual-studio-code-css-linting-with-tailwind/)
+
+## Setup
+
+### Built With
+
 - Ruby 2.7.1
 
 - Rails 6.0
@@ -17,24 +38,6 @@
 
 - Postgres
 
-## Project Resources
-
-- [Database Schema](https://kitt.lewagon.com/db/9884)
-
-- https://neos-brunches.herokuapp.com/
-
-### Useful Tools & Gems
-
-- [table_print](http://tableprintgem.com/)
-
-- [SVG Optimization Tool](https://jakearchibald.github.io/svgomg/)
-
-## Setup
+### Setup
 
 `asdf install`
-
-## Resources
-
-- [Switching to asdf Version Manager](https://sidneyliebrand.io/blog/switching-to-asdf-version-manager)
-
-- [Visual Studio Code CSS linting with Tailwind](https://www.meidev.co/blog/visual-studio-code-css-linting-with-tailwind/)
