@@ -1,4 +1,6 @@
+<% content_for :meta_title, "Recipe collection from #{@user.name.titleize} on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for(:title) { @user.name.titleize } %>
+
 <div class="flex mb-6">
   <% if @user.photo.attached? %>
     <%= cl_image_tag @user.photo.key, class: "w-20 h-20 mr-6 rounded-full object-cover object-center" %>
