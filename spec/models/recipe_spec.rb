@@ -40,7 +40,7 @@ RSpec.describe Recipe, type: :model do
   end
 
   it 'becomes published' do
-    recipe = build(:draft_recipe)
+    recipe = create(:draft_recipe)
 
     recipe.status_published!
 
@@ -49,7 +49,7 @@ RSpec.describe Recipe, type: :model do
   end
 
   it 'becomes a draft' do
-    recipe = build(:published_recipe)
+    recipe = create(:published_recipe)
 
     recipe.status_draft!
 
