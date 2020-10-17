@@ -7,6 +7,9 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("channels")
 
+// Font Awesome
+import '@fortawesome/fontawesome-pro/css/all.css';
+
 // Tailwind CSS
 import "stylesheets/application";
 

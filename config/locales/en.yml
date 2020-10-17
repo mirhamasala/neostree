@@ -50,9 +50,9 @@ en:
         unit: Unit
       recipe:
         intro: Intro
-        link: Source
         photo: Photo
         photo_update: Change photo
+        source: Original source
         title: Title
         yield: This recipe
     placeholder:
@@ -107,9 +107,9 @@ en:
       button_edit: Edit
       button_publish: Publish
       button_unpublish: Convert to draft
-      link_delete: delete
-      link_edit: edit
-      source_recipe: source
+      link_delete: Delete
+      link_edit: Edit
+      original_source: Original source
       subheading_ingredients: Ingredients
       subheading_notes: Notes
       subheading_steps: Directions
