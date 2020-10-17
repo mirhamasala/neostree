@@ -2,10 +2,10 @@
 <div class="sm:flex sm:justify-between">
   <div class="sm:order-2 mb-3">
     <%= link_to t('.link_edit_profile'), edit_user_registration_path,
-        class: "text-sand-400 text-right hover:text-sand-500" %>
+        class: "text-sand-500 text-right underline hover:text-sand-400" %>
     <span class="text-stone-200">&#124</span>
     <%= link_to t('.link_logout'), destroy_user_session_path, method: :delete,
-        class: "text-sand-400 text-right hover:text-sand-500" %>
+        class: "text-sand-500 text-right underline hover:text-sand-400" %>
   </div>
   <div class="mb-4">
     <h1 class="heading"><%= t('.heading') %></h1>
