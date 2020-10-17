@@ -6,7 +6,7 @@
 
 <div class="mb-4">
   <% if user_signed_in? && (current_user.author_of?(@recipe) || current_user.admin?) %>
-    <div class="block sm:flex sm:items-baseline sm:justify-between">
+    <div class="mb-4 sm:mb-0 sm:flex sm:items-baseline sm:justify-between">
       <h1 class="heading"><%= @recipe.title.titleize %></h1>
       <% if @recipe.status_draft? %>
         <%= link_to t('.button_publish'), recipe_status_path(@recipe),
@@ -103,7 +103,7 @@
 <% end %>
 
 <% if user_signed_in? && (current_user.author_of?(@recipe) || current_user.admin?) %>
-  <div class="mt-6 sm:flex">
+  <div class="mt-6 flex flex-col sm:flex-row">
     <% if @recipe.status_draft? %>
       <%= link_to t('.button_publish'), recipe_status_path(@recipe), method: :put,
           class: "button button--primary button--xl sm:mr-2" %>
@@ -112,6 +112,6 @@
           class: "button button--primary button--xl sm:mr-2" %>
     <% end %>
     <%= link_to t('.button_edit'), edit_recipe_path(@recipe),
-        class: "button button--secondary button--xl" %>
+        class: "button button--secondary button--xl mt-2 sm:mt-0" %>
   </div>
 <% end %>

@@ -108,8 +108,9 @@
       </div>
     </div>
   </div>
-  <div class="flex">
-    <%= f.submit class: "button button--primary button--xl mr-2" %>
-    <%= link_to t('.link_cancel'), user_path(current_user.username), class: "button button--secondary" %>
+
+  <div class="flex flex-col sm:flex-row">
+    <%= f.submit class: "button button--primary button--xl sm:mr-2" %>
+    <%= link_to t('.link_cancel'), user_path(current_user.username), class: "mt-2 sm:mt-0 button button--secondary" %>
   </div>
 <% end %>

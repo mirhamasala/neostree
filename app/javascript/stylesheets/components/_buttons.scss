@@ -1,8 +1,9 @@
 .button {
   @apply py-2 px-3
-  border border-stone-100 rounded-md
-  bg-stone-100
+  text-center whitespace-no-wrap
   cursor-pointer
+  bg-stone-100
+  border border-stone-100 rounded-md
   transition ease-in-out duration-150;
 }
 
@@ -31,7 +32,7 @@
 }
 
 .button--secondary {
-  @apply bg-stone-100 text-stone-900;
+  @apply text-stone-900 bg-stone-100;
 }
 
 .button--secondary:hover {
@@ -39,7 +40,7 @@
 }
 
 .button--white {
-  @apply bg-white text-stone-900 shadow-xs;
+  @apply text-stone-900 bg-white shadow-xs;
 }
 
 .button--white:hover {
