@@ -16,12 +16,13 @@
   </head>
 
   <body class="flex flex-col h-screen text-stone-900">
-    <% if flash.any? %>
-      <div class="mb-6">
+    <div class="mb-6">
+      <%= render "shared/navbar" %>
+      <% if flash.any? %>
         <%= render "shared/flashes", flash_type: :notice, color: "sea" %>
         <%= render "shared/flashes", flash_type: :alert, color: "berries" %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
     <div class="flex-grow">
       <div class="max-w-6xl mx-auto px-4 sm:px-12 lg:px-16">
         <div class="max-w-3xl mx-auto">
