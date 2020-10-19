@@ -122,6 +122,7 @@ en:
       link_dashboard: Dashboard
       link_log_in: Log in
       link_new_recipe: Add recipe
+      link_sign_up: Sign up
   units:
     bunch:
       one: bunch
