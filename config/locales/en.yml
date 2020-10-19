@@ -80,6 +80,8 @@ en:
       heading: It All Started..
       intro_pt_1: ..with a wish to put every single family recipe that was passed down from generation to generation in one place. It was a personal project, until we realized there would be other people just like us who would want to preserve the legacy of their family kitchen.
       intro_pt_2: "So here you have it: Neo's is the place where you can store your nan's pie recipe, add your own chilli dish, and share it all with your soon-to-be-big-ones, media naranja, friends, and the rest of us."
+      intro_sign_up_href: sign up here
+      intro_sign_up_html: "To add your first recipe, %{href}."
       subheading_featuring: Featuring
   recipes:
     create:
@@ -120,6 +122,7 @@ en:
       link_dashboard: Dashboard
       link_log_in: Log in
       link_new_recipe: Add recipe
+      link_sign_up: Sign up
   units:
     bunch:
       one: bunch
