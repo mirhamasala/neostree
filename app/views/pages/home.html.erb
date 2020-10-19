@@ -9,7 +9,13 @@
       <div class="md:self-center md:pl-12 xl:pl-16">
         <h1 class="heading"><%= t('.heading') %></h1>
         <p class="mb-4"><%= t('.intro_pt_1') %></p>
-        <p><%= t('.intro_pt_2') %></p>
+        <p class="mb-6"><%= t('.intro_pt_2') %></p>
+        <p>
+          <%= t('.intro_sign_up_html',
+            href: link_to(t('.intro_sign_up_href'), new_user_registration_path,
+            class: "text-highlight"))
+          %>
+        </p>
       </div>
     </div>
   </section>
