@@ -14,7 +14,7 @@ module.exports = {
       },
       colors: {
         berries: {
-          '100': '##edd3d7',
+          '100': '#edd3d7',
           '200': '#e8bebe',
           '900': '#482830',
         },
