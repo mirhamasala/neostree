@@ -1,10 +1,10 @@
 <div class="flex flex-col justify-between h-full">
   <section>
-    <%= cl_image_tag("homepage/102F9E85-1305-4EBC-9B49-9E6D8B01F25E-1280_twerjy.jpg", class: "w-full h-96 max-h-full md:hidden") %>
+    <%= cl_image_tag("homepage/102F9E85-1305-4EBC-9B49-9E6D8B01F25E-1280_twerjy.jpg", quality: "auto", class: "w-full h-96 max-h-full md:hidden") %>
     <div class="flex py-8 px-4 sm:py-12 sm:px-12 xl:px-16">
       <div class="hidden md:block lg:flex lg:h-128">
-        <%= cl_image_tag("homepage/9FBDF673-D0CB-43A5-9B2E-2916ED521C85-1280_bmancd.jpg", class: "lg:w-1/2") %>
-        <%= cl_image_tag("homepage/102F9E85-1305-4EBC-9B49-9E6D8B01F25E-1280_twerjy.jpg", class: "hidden lg:block lg:w-1/2") %>
+        <%= cl_image_tag("homepage/9FBDF673-D0CB-43A5-9B2E-2916ED521C85-1280_bmancd.jpg", quality: "auto", class: "lg:w-1/2") %>
+        <%= cl_image_tag("homepage/102F9E85-1305-4EBC-9B49-9E6D8B01F25E-1280_twerjy.jpg", quality: "auto", class: "hidden lg:block lg:w-1/2") %>
       </div>
       <div class="md:self-center md:pl-12 xl:pl-16">
         <h1 class="heading"><%= t('.heading') %></h1>
@@ -30,6 +30,6 @@
         </p>
       <% end %>
     </div>
-    <%= cl_image_tag("homepage/0FC61C66-09AE-406B-B720-D64D404DA041-1280_ucfram.jpg", class: "flex-grow sm:w-6/12 lg:w-8/12") %>
+    <%= cl_image_tag("homepage/0FC61C66-09AE-406B-B720-D64D404DA041-1280_ucfram.jpg", quality: "auto", class: "flex-grow sm:w-6/12 lg:w-8/12") %>
   </section>
 </div>
