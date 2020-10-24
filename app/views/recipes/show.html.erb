@@ -1,6 +1,6 @@
 <% content_for :meta_title, "#{@recipe.title.titleize} - #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @recipe.intro if @recipe.intro.present? %>
-<% content_for :meta_image, cl_image_path(@recipe.photo.key, width: 1200, quality: "auto") if @recipe.photo.attached? %>
+<% content_for :meta_image, cl_image_path(@recipe.photo.key, width: 1200, quality: "auto", crop: "fill") if @recipe.photo.attached? %>
 
 <% content_for(:title) { @recipe.title.titleize } %>
 
