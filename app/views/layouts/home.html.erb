@@ -18,7 +18,7 @@
   <body class="flex flex-col h-screen text-stone-900">
     <%= render "shared/navbar" %>
     <% if flash.any? %>
-      <div class="absolute w-full mt-16">
+      <div class="absolute w-full mt-16 sm:mt-20">
         <%= render "shared/flashes", flash_type: :notice, color: "sea" %>
         <%= render "shared/flashes", flash_type: :alert, color: "berries" %>
       </div>
