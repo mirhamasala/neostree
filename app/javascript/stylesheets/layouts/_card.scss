@@ -6,12 +6,24 @@
   @apply bg-sea-100 px-4 py-5;
 }
 
+.card__image-wrapper {
+  @apply w-full h-48;
+}
+
+.card__image {
+  @apply w-full h-full;
+}
+
 .card__main {
   @apply border-t border-gray-200 px-4 py-4;
 }
 
 .card__title {
   @apply text-sea-800 font-semibold truncate;
+}
+
+.card:hover .card__image-wrapper {
+  @apply opacity-75;
 }
 
 .card:hover .card__title {
@@ -25,5 +37,11 @@
 
   .card__main {
     @apply px-6;
+  }
+}
+
+@screen md {
+  .card__image-wrapper {
+    @apply h-40;
   }
 }
