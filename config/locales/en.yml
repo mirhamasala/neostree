@@ -106,6 +106,7 @@ en:
       failure: Oops, something went wrong. Please try again.
       success: You've successfully updated your recipe.
     show:
+      back_to_recipes: Back to all recipes
       button_edit: Edit
       button_publish: Publish
       button_unpublish: Convert to draft
