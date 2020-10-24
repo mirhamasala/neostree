@@ -18,6 +18,7 @@
         <div class="mb-4">
           <%= f.label :photo %>
           <%= cl_image_tag @recipe.photo.key, height: 400, crop: "fill" %>
+        </div>
         <div class="mb-4">
           <%= f.label :photo_update %>
           <%= f.file_field :photo, as: :file %>
