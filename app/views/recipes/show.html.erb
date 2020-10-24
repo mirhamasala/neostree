@@ -36,9 +36,7 @@
 
 <!-- Image -->
 <% if @recipe.photo.attached? %>
-  <div class="mb-4">
-    <picture><%= cl_image_tag @recipe.photo.key, height: 800, width: 1200, crop: :fill %></picture>
-  </div>
+  <%= cl_image_tag @recipe.photo.key, height: 800, width: 1200, crop: "fill", class: "mb-4" %>
 <% end %>
 
 <!-- Source -->
