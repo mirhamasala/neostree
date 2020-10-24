@@ -38,6 +38,7 @@ en:
       updated_not_active: "Your password has been changed successfully."
     registrations:
       edit:
+        change_photo: "Change photo"
         profile: "Edit your profile"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
