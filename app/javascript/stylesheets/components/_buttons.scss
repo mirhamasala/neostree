@@ -58,3 +58,13 @@
 .button--xl {
   @apply px-12;
 }
+
+.button--navbar {
+  @apply py-1 px-2 text-sm;
+}
+
+@screen sm {
+  .button--navbar {
+    @apply py-2 px-3 text-base;
+  }
+}
