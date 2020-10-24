@@ -16,6 +16,13 @@
     </div>
   </div>
 </div>
+
 <ul class="card-grid">
-  <%= render partial: "recipes/recipe", collection: @recipes %>
+  <% if all_with_images_attached?(@recipes) %>
+      <% @recipes.each do |recipe| %>
+        <%= render "recipes/recipe_with_photo", recipe: recipe %>
+      <% end %>
+  <% else %>
+    <%= render @recipes %>
+  <% end %>
 </ul>
