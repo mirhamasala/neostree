@@ -19,9 +19,7 @@
 
 <ul class="card-grid">
   <% if all_with_images_attached?(@recipes) %>
-      <% @recipes.each do |recipe| %>
-        <%= render "recipes/recipe_with_photo", recipe: recipe %>
-      <% end %>
+    <%= render partial: "recipes/recipe_with_photo", collection: @recipes, as: :recipe %>
   <% else %>
     <%= render @recipes %>
   <% end %>

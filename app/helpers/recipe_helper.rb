@@ -8,8 +8,6 @@ module RecipeHelper
   end
 
   def all_with_images_attached?(recipes)
-    recipes.each do |r|
-      return nil if r.photo.attachment.blank?
-    end
+    recipes.all? { |recipe| recipe.photo.attached? }
   end
 end
