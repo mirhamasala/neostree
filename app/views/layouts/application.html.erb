@@ -19,8 +19,14 @@
     <div class="mb-6">
       <%= render "shared/navbar" %>
       <% if flash.any? %>
-        <%= render "shared/flashes", flash_type: :notice, color: "sea" %>
-        <%= render "shared/flashes", flash_type: :alert, color: "berries" %>
+        <%= render "shared/flashes", flash_type: :notice,
+                                     background: "bg-sea-200",
+                                     background_modifier: "bg-sea-100",
+                                     text_color: "text-sea-900" %>
+        <%= render "shared/flashes", flash_type: :alert,
+                                     background: "bg-berries-200",
+                                     background_modifier: "bg-berries-100",
+                                     text_color: "text-berries-900" %>
       <% end %>
     </div>
     <div class="flex-grow">
