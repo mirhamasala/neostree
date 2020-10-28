@@ -12,7 +12,7 @@
       <% if @user.bio.present? %>
         <p class="font-medium"><%= @user.bio %></p>
       <% end %>
-      <%= link_to @user.website, url_with_protocol(@user.website), target: "_blank", class: "text-sea-800 hover:text-sea-300" if @user.website.present? %>
+      <%= link_to url_without_protocol(@user.website), url_with_protocol(@user.website), target: "_blank", class: "text-sea-800 hover:text-sea-300" if @user.website.present? %>
     </div>
   </div>
 </div>
