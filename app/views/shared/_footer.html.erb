@@ -1,8 +1,7 @@
-<div class="bg-forrest-500">
-  <div class="py-6 px-4 sm:px-6">
-      <p class="text-base text-white text-center">
-        &copy; <%= Date.current.year %> Neo's Tree, Inc. All rights reserved.
-      </p>
-    </div>
+<div class="text-base text-gray-300 bg-forrest-500">
+  <div class="sm:flex sm:justify-between sm:items-center py-6 px-4 sm:px-6">
+    <div class="hidden sm:block"></div>
+    <%= link_to "About", about_path, class: "inline-block mb-2 sm:mb-0 sm:order-1 hover:text-white transition ease-in-out duration-150" %>
+    <p>&copy; <%= Date.current.year %> Neo's Tree, Inc. All rights reserved.</p>
   </div>
 </div>

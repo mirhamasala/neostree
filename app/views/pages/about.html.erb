@@ -1,0 +1,139 @@
+<div class="max-w-6xl mx-auto px-4 sm:px-12 lg:px-16 mt-6 mb-16">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-6">
+      <h1 class="heading">The Story of Neo's Tree</h1>
+      <p class="mb-2 leading-7">
+        It all started with a wish to collect my most-loved recipes in one place.
+      </p>
+      <p class="mb-2 leading-7">
+        My mom's unwritten dishes, recipes I adapted from Jamie and others, smoothies I invented on the fly, secret scribbles given to me by chefs on travels, and all the recipes I had once tried storing, as text documents, screenshots, and whatnot.
+      </p>
+      <p class="mb-2 leading-7">
+        It was very much a personal project until my friends got involved, and we realized there would be other people just like us who would want to preserve the legacy of their family kitchen.
+      </p>
+      <p class="mb-2 leading-7">
+        And so here it is: Neo's Tree is a place where you can create and collect recipes. Preserve your family secrets, put your stamp in the kitchen, and share it with whomever you want.
+      </p>
+      <p class="mb-4 leading-7">
+        I can't wait to see what you'll cook up.
+      </p>
+      <p class="font-serif text-lg font-light italic text-sea-800 leading-7">
+        With love, <span class="block">Mirha</span>
+        <i class="fal fa-seedling text-sea-200"></i>
+      </p>
+    </div>
+    <div class="mb-6">
+      <h2 class="subheading mb-4">About the Team</h2>
+      <ul class="card-grid">
+        <li class="space-y-4">
+          <div class="w-full h-72 sm:h-52">
+            <%= cl_image_tag @mirha.photo.key, height: 864, quality: "auto", class: "w-full h-full shadow-lg rounded-md object-cover object-center" %>
+          </div>
+          <div class="text-lg text-sea-800 leading-6 space-y-1">
+            <h3><%= @mirha.name %></h3>
+            <p class="text-sea-400">Creator, Developer</p>
+          </div>
+          <p class="leading-7">
+            No stranger to following creative dreams. Mirha is passionate about bringing people together, preferably over long lunches with copious amounts of wine and laughter. Currently craving tacos, ceviche, and a killer margarita.
+          </p>
+          <div class="flex items-center" style="margin-left: -6px">
+            <%= link_to user_path(@mirha.username), class: "group" do %>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-square fa-stack-2x text-sea-100 group-hover:text-sea-200 transition ease-in-out duration-150"></i>
+                <i class="fab fa-pagelines fa-stack-1x fa-inverse text-sea-800 group-hover:text-white"></i>
+              </span>
+            <% end %>
+            <%= link_to "https://www.mirhamasala.com", target: "_blank", class: "group" do %>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-square fa-stack-2x text-sea-100 group-hover:text-sea-200 transition ease-in-out duration-150"></i>
+                <i class="fal fa-link fa-stack-1x fa-inverse text-sea-800 group-hover:text-white"></i>
+              </span>
+            <% end %>
+          </div>
+        </li>
+        <li class="space-y-4">
+          <div class="w-full h-72 sm:h-52">
+            <%= cl_image_tag("08a68e74-3a29-43fc-b27d-7359706b109f_jvw8pm.jpg", height: 864, quality: "auto", crop: "fill", class: "w-full h-full shadow-lg rounded-md object-cover object-center") %>
+          </div>
+          <div class="text-lg text-sea-800 leading-6 space-y-1">
+            <h3><%= @devon.name %></h3>
+            <p class="text-sea-400">Marketing Consultant, Copywriter</p>
+          </div>
+          <p class="leading-7">
+            A dreamer of recipes and menus, a tinkerer in the kitchen, and a conjurer of words. Devon loves combining her expertise in branding, copywriting, and design with her love of baked goods and grilled cheese sandwiches.
+          </p>
+          <div class="flex items-center" style="margin-left: -6px">
+            <%= link_to user_path(@devon.username), class: "group" do %>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-square fa-stack-2x text-sea-100 group-hover:text-sea-200 transition ease-in-out duration-150"></i>
+                <i class="fab fa-pagelines fa-stack-1x fa-inverse text-sea-800 group-hover:text-white"></i>
+              </span>
+            <% end %>
+          </div>
+        </li>
+        <li class="space-y-4">
+          <div class="w-full h-72 sm:h-52">
+            <%= cl_image_tag @silvia.photo.key, height: 864, quality: "auto", crop: "fill", class: "w-full h-full shadow-lg rounded-md object-cover object-center" %>
+          </div>
+          <div class="text-lg text-sea-800 leading-6 space-y-1">
+            <h3><%= @silvia.name %></h3>
+            <p class="text-sea-400">Resident Photographer, Recipe Creator</p>
+          </div>
+          <p class="leading-7">
+            Wedding photographer by trade, foodie at heart. Silvia lives for capturing those moments of raw emotion and anything pumpkin. She used to have a food blog. You should ask her about it.
+          </p>
+          <div class="flex items-center" style="margin-left: -6px">
+            <%= link_to user_path(@silvia.username), class: "group" do %>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-square fa-stack-2x text-sea-100 group-hover:text-sea-200 transition ease-in-out duration-150"></i>
+                <i class="fab fa-pagelines fa-stack-1x fa-inverse text-sea-800 group-hover:text-white"></i>
+              </span>
+            <% end %>
+            <%= link_to "https://www.silviafalcomer.com", target: "_blank", class: "group" do %>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-square fa-stack-2x text-sea-100 group-hover:text-sea-200 transition ease-in-out duration-150"></i>
+                <i class="fal fa-link fa-stack-1x fa-inverse text-sea-800 group-hover:text-white"></i>
+              </span>
+            <% end %>
+            <%= link_to "https://www.instagram.com/soakuptheworld", target: "_blank", class: "group" do %>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-square fa-stack-2x text-sea-100 group-hover:text-sea-200 transition ease-in-out duration-150"></i>
+                <i class="fab fa-instagram fa-stack-1x fa-inverse text-sea-800 group-hover:text-white"></i>
+              </span>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="subheading">Our Journey So Far</h2>
+      <h3 class="subheading subheading--lg mb-3">2020</h3>
+      <ul class="grid grid-col-2 leading-7 space-y-4">
+        <li>
+          <span class="font-medium">June 19</span>
+          <p>Mirha commits the first code to GitHub</p>
+        </li>
+        <li>
+          <span class="font-medium">September 19</span>
+          <p>First user interview with Devon (and boyfriend)</p>
+        </li>
+        <li>
+          <span class="font-medium">October 5</span>
+          <p>Silvia publishes the first recipe, <%= link_to "Homemade Gnocchi", recipe_path(id: 21), class: "text-sea-800 hover:text-sea-300 underline" %></p>
+        </li>
+        <li>
+          <span class="font-medium">October 11</span>
+          <p><%= link_to "neostree.com", root_path, class: "text-sea-800 hover:text-sea-300 underline" %> goes live</p>
+        </li>
+        <li>
+          <span class="font-medium">October 12</span>
+          <p><%= link_to "Laura", "https://www.instagram.com/lacromp/", target: "_blank", class: "text-sea-800 hover:text-sea-300 underline" %> suprises Mirha with a logo</p>
+        </li>
+        <li>
+          <span class="font-medium">November 1</span>
+          <p>We share the first version of Neo's Tree in the <%= link_to "November issue of Paper Planes & Packets", "https://www.mirhamasala.com/paper-planes-packets-1120/", target: "_blank", class: "text-sea-800 hover:text-sea-300 underline" %></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
