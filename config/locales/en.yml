@@ -76,12 +76,11 @@ en:
       update: Save changes
   pages:
     home:
-      about_silvia: Silvia is a photographer, storyteller, mountain lover, and foodie. Dive into her vegetarian recipes and find hidden treasures from her Italian heritage
-      heading: It All Started..
-      intro_pt_1: ..with a wish to put every single family recipe that was passed down from generation to generation in one place. It was a personal project, until we realized there would be other people just like us who would want to preserve the legacy of their family kitchen.
-      intro_pt_2: "So here you have it: Neo's is the place where you can store your nan's pie recipe, add your own chilli dish, and share it all with your soon-to-be-big-ones, media naranja, friends, and the rest of us."
+      about_silvia: Silvia is a photographer, storyteller, and foodie at heart. Dive into her vegetarian recipes and find hidden treasures from her Italian heritage
+      heading: Save Your Most Loved Recipes in One Place
       intro_sign_up_href: sign up here
       intro_sign_up_html: "To add your first recipe, %{href}."
+      intro: "Neo's Tree is the place where you can store your nan's pie recipe, add your own chili dish, and share it all with your soon-to-be-big-ones, media naranja, friends, and the rest of us."
       subheading_featuring: Featuring
   recipes:
     create:

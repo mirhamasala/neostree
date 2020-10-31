@@ -8,9 +8,8 @@
       </div>
       <div class="md:self-center md:pl-12 xl:pl-16">
         <h1 class="heading"><%= t('.heading') %></h1>
-        <p class="mb-4"><%= t('.intro_pt_1') %></p>
-        <p class="mb-6"><%= t('.intro_pt_2') %></p>
-        <p>
+        <p class="mb-6 leading-7"><%= t('.intro') %></p>
+        <p class="font-medium">
           <%= t('.intro_sign_up_html',
             href: link_to(t('.intro_sign_up_href'), new_user_registration_path,
             class: "text-highlight"))
@@ -23,10 +22,10 @@
     <div class="flex flex-col justify-center py-8 px-4 sm:py-12 sm:px-12 xl:px-16">
       <h2 class="subheading"><%= t('.subheading_featuring') %></h2>
       <%= link_to user_path("silviafalcomer") do %>
-        <h3 class="subheading subheading--base text-highlight inline-block">Silvia Falcomer</h3>
-        <p>
+        <h3 class="subheading subheading--base inline-block border-solid border-b-2 border-sea-100">Silvia Falcomer</h3>
+        <p class="mt-2 leading-7">
           <span><%= t('.about_silvia') %></span>
-          <i class="fal fa-angle-double-right text-sea-400 text-xl align-text-top"></i>
+          <i class="fal fa-angle-double-right text-xl text-sea-400 align-text-top"></i>
         </p>
       <% end %>
     </div>
