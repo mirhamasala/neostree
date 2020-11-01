@@ -18,19 +18,17 @@
       </div>
     </div>
   </section>
-  <section class="flex-grow bg-stone-100">
-    <div class="flex flex-col sm:flex-row h-full">
-      <div class="flex flex-col justify-center py-8 px-4 sm:py-12 sm:px-12 xl:px-16">
-        <h2 class="subheading"><%= t('.subheading_featuring') %></h2>
-        <%= link_to user_path("silviafalcomer") do %>
-          <h3 class="subheading subheading--base inline-block border-solid border-b-2 border-sea-100">Silvia Falcomer</h3>
-          <p class="mt-2 leading-7">
-            <span><%= t('.about_silvia') %></span>
-            <i class="fal fa-angle-double-right text-xl text-sea-400 align-text-top"></i>
-          </p>
-        <% end %>
-      </div>
-      <%= cl_image_tag("homepage/0FC61C66-09AE-406B-B720-D64D404DA041-1280_ucfram.jpg", quality: "auto", class: "flex-grow sm:w-6/12 lg:w-8/12") %>
+  <section class="flex-grow sm:flex sm:h-96 sm:max-h-full bg-stone-100">
+    <div class="flex flex-col justify-center py-8 px-4 sm:py-12 sm:px-12 xl:px-16">
+      <h2 class="subheading"><%= t('.subheading_featuring') %></h2>
+      <%= link_to user_path("silviafalcomer") do %>
+        <h3 class="subheading subheading--base inline-block border-solid border-b-2 border-sea-100">Silvia Falcomer</h3>
+        <p class="mt-2 leading-7">
+          <span><%= t('.about_silvia') %></span>
+          <i class="fal fa-angle-double-right text-xl text-sea-400 align-text-top"></i>
+        </p>
+      <% end %>
     </div>
+    <%= cl_image_tag("homepage/0FC61C66-09AE-406B-B720-D64D404DA041-1280_ucfram.jpg", quality: "auto", class: "flex-grow sm:w-6/12 lg:w-8/12") %>
   </section>
 </div>
