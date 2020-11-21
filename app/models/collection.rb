@@ -5,6 +5,8 @@ class Collection < ApplicationRecord
   has_many :recipe_collections, dependent: :destroy
   has_many :recipes, through: :recipe_collections
 
+  scope :alphabetize, -> { order(:title) }
+
   def self.owner(user)
     where(user: user)
   end
