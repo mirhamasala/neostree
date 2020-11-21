@@ -4,6 +4,10 @@ class Collection < ApplicationRecord
   belongs_to :user
   has_many :recipe_collections, dependent: :destroy
   has_many :recipes, through: :recipe_collections
+
+  def self.owner(user)
+    where(user: user)
+  end
 end
 
 # == Schema Information
