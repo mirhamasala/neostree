@@ -1,0 +1,37 @@
+<% content_for :meta_title, "#{@collection.title.titleize} - #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Recipe collection: #{@collection.title}" %>
+<% content_for :meta_image, cl_image_path(@collection.recipes.first&.photo.key, width: 1200, quality: "auto", crop: "fill") if @collection.recipes.first&.photo&.attached? %>
+
+<% content_for(:title) { @collection.title.titleize } %>
+
+<% if @collection.recipes.any? %>
+  <h1 class="heading"><%= @collection.title.titleize %></h1>
+  <% if user_signed_in? && (current_user.author_of?(@recipe) || current_user.admin?) %>
+    <div class="mb-4">
+      <%= link_to edit_user_collection_path(current_user.username, @collection),
+        class: "inline-flex items-baseline mr-2" do %>
+        <i class="fal fa-pencil mr-2 text-sea-400"></i>
+        <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_edit') %></span>
+      <% end %>
+      <%= link_to user_collection_path(current_user.username, @collection), method: :delete,
+        data: { confirm: "Are you sure you want to delete the collection #{@collection.title}?" },
+        class: "inline-flex items-baseline" do %>
+        <i class="fal fa-trash-alt mr-2 text-sea-400"></i>
+        <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_delete') %></span>
+      <% end %>
+    </div>
+  <% end %>
+  <ul class="mb-4">
+    <% @collection.recipes.each do |recipe| %>
+      <li class="py-1 first:pt-0 last:pb-0">
+        <%= link_to recipe.title, recipe_path(recipe), class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p class="text-sm font-semibold">
+    <%= t('.text_include_recipes_html',
+      href: link_to(t('.text_include_recipes_href'), edit_user_collection_path(current_user.username, @collection),
+      class: "text-sea-800 hover:text-sea-300 underline")) %>
+  </p>
+<% end %>
