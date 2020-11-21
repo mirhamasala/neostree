@@ -2,7 +2,7 @@ class Collection < ApplicationRecord
   enum status: { private: 0, public: 1 }, _prefix: :status, _default: 1
 
   belongs_to :user
-  has_many :recipe_collections
+  has_many :recipe_collections, dependent: :destroy
   has_many :recipes, through: :recipe_collections
 end
 
