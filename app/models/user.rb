@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :bio, length: 0..160, allow_blank: true
 
   has_many :recipes, dependent: :destroy
+  has_many :collections, dependent: :destroy
   has_one_attached :photo
 
   def author_of?(recipe)
