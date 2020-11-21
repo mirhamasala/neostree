@@ -5,6 +5,6 @@ class UsersController < ApplicationController
     authorize :user
 
     @user = User.find_by(username: params[:username])
-    @recipes = Recipe.author(@user).status_published.alphabetize
+    @recipes = @user.recipes.status_published.alphabetize
   end
 end
