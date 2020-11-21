@@ -1,0 +1,12 @@
+<% content_for(:title) { t('.heading') } %>
+
+<h1 class="heading"><%= @collection.title %></h1>
+
+<ul class="mb-4">
+  <% @collection.recipes.each do |recipe| %>
+    <li class="py-1 first:pt-0 last:pb-0">
+      <%= link_to recipe.title, recipe_path(recipe),
+        class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+    </li>
+  <% end %>
+</ul>
