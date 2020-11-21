@@ -75,9 +75,23 @@ en:
       unit:
         name: cup, tablespoon, etc.
     submit:
+      collection:
+        create: Save collection
       recipe:
         create: Preview recipe
-      update: Save changes
+        update: Save changes
+  collections:
+    create:
+      failure: Oops, something went wrong. Please try again.
+      success: You've successfully created a new recipe collection.
+    index:
+      heading: Your Recipe Collections
+      link_new_collection: Add new collection
+    new:
+      heading: Create a new recipe collection
+      link_cancel: Cancel
+    show:
+      back_to_collections: Back to all collections
   pages:
     home:
       about_silvia: Silvia is a photographer, storyteller, and foodie at heart. Dive into her vegetarian recipes and find hidden treasures from her Italian heritage
