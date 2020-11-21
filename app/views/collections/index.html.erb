@@ -1,0 +1,15 @@
+<% content_for(:title) { t('.heading') } %>
+
+<h1 class="heading"><%= t('.heading') %></h1>
+
+<ul class="mb-6">
+  <% @collections.each do |collection| %>
+    <li class="py-1 first:pt-0 last:pb-0">
+      <%= link_to collection.title, user_collection_path(collection.user.username, collection),
+        class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+      <span>· <%= collection.recipes.size %></span>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to t('.link_new_collection'), new_user_collection_path(current_user.username), class: "button button--white" %>
