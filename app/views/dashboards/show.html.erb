@@ -17,6 +17,11 @@
     </p>
   </div>
 </div>
+
+<div class="mb-4">
+  <%= link_to "Your Collections", user_collections_path(current_user.username), class: "text-sea-800 hover:text-sea-300 underline" %>
+</div>
+
 <h2 class="subheading subheading--lg mb-4"><%= t('.subheading_recipes') %></h2>
 <% if @recipes.any? %>
   <div class="mb-6">
