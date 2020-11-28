@@ -8,7 +8,7 @@ class CollectionPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.status_public? || (user&.admin? || record.user == user)
   end
 
   def destroy?

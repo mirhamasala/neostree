@@ -10,7 +10,7 @@
       </div>
       <div>
         <%= f.label :recipes %>
-        <%= f.collection_check_boxes :recipe_ids, @recipes, :id, :title, multiple: true %>
+        <%= f.collection_select :recipe_ids, @recipes, :id, :title, {}, multiple: true %>
       </div>
     </div>
     <div class="flex flex-col sm:flex-row">

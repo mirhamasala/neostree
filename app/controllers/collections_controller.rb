@@ -21,7 +21,7 @@ class CollectionsController < ApplicationController
   end
 
   def create
-    @collection = collections.build(collection_params)
+    @collection = policy_scope(current_user.collections).build(collection_params)
     authorize @collection
 
     if @collection.save
@@ -48,7 +48,7 @@ class CollectionsController < ApplicationController
   private
 
   def collection_params
-    params.require(:collection).permit(:title, :user_id)
+    params.require(:collection).permit(:title, :user_id, recipe_ids: [])
   end
 
   def collections
