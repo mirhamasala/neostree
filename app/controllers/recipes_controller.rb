@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
+  skip_after_action :verify_policy_scoped, only: :new
 
   def new
     @recipe = Recipe.new
@@ -15,8 +16,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
-    @recipe.user = current_user
+    @recipe = recipes.build(recipe_params)
     authorize @recipe
 
     if @recipe.save
@@ -29,17 +29,17 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = policy_scope(Recipe).find(params[:id])
     authorize @recipe
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
+    @recipe = recipes.find(params[:id])
     authorize @recipe
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
+    @recipe = recipes.find(params[:id])
     authorize @recipe
 
     if @recipe.update(merge_recipe_params!)
@@ -52,7 +52,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = Recipe.find(params[:id])
+    @recipe = recipes.find(params[:id])
     authorize @recipe
 
     @recipe.destroy
@@ -70,6 +70,10 @@ class RecipesController < ApplicationController
       measures_attributes: %i[id position ingredient unit quantity prep_method recipe_id _destroy],
       steps_attributes: %i[id position description _destroy]
     )
+  end
+
+  def recipes
+    policy_scope(current_user.recipes)
   end
 
   def merge_recipe_params!
