@@ -2,6 +2,6 @@ class DashboardsController < ApplicationController
   def show
     authorize :dashboard
 
-    @recipes = Recipe.author(current_user).alphabetize
+    @recipes = policy_scope(current_user.recipes)
   end
 end
