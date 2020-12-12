@@ -1,7 +1,16 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :recoverable, :registerable, :rememberable, :validatable, :masqueradable
+  def self.devise_plugins
+    # Include default devise modules. Others available are:
+    # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+    plugins = %i[database_authenticatable recoverable registerable rememberable validatable]
+
+    plugins << :masqueradable if ENV['IMPERSONATE'] == 'true'
+
+    plugins
+  end
+
+  devise(*devise_plugins)
 
   validates :name, presence: true, length: 1..50, format: /\A[^0-9`!@#\$%\^&*+_=]+\z/
   validates :username, presence: true,
@@ -28,6 +37,10 @@ class User < ApplicationRecord
   def admin?
     !!admin_since
   end
+
+  private
+
+  private_class_method :devise_plugins
 end
 
 # == Schema Information
