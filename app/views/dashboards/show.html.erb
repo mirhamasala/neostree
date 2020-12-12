@@ -58,23 +58,25 @@
   </p>
 <% end %>
 
-<% if current_user.admin? || user_masquerade? %>
-  <hr class="my-4" />
-  <h2 class="subheading subheading--lg mb-2"><%= t('.subheading_admin') %></h2>
-  <% if user_masquerade? %>
-    <div class="mb-6">
-      <p class="mb-2"><%= t('.text_signed_in_as', user: current_user.username) %></p>
-      <%= link_to "Sign out", back_masquerade_path(current_user),
-          class: "text-sand-500 underline hover:text-sand-400" %>
-    </div>
-  <% end %>
-  <h3 class="subheading subheading--base"><%= t('.subheading_switch_users') %></h3>
-  <ul>
-    <% User.all.each do |user| %>
-      <li class="inline-block pb-4">
-        <%= link_to "#{user.username}", masquerade_path(user),
-            class: "button button--white button--sm" %>
-      </li>
+<% if ENV['IMPERSONATE'] == 'true' %>
+  <% if current_user.admin? || user_masquerade? %>
+    <hr class="my-4" />
+    <h2 class="subheading subheading--lg mb-2"><%= t('.subheading_admin') %></h2>
+    <% if user_masquerade? %>
+      <div class="mb-6">
+        <p class="mb-2"><%= t('.text_signed_in_as', user: current_user.username) %></p>
+        <%= link_to "Sign out", back_masquerade_path(current_user),
+            class: "text-sand-500 underline hover:text-sand-400" %>
+      </div>
     <% end %>
-  </ul>
+    <h3 class="subheading subheading--base"><%= t('.subheading_switch_users') %></h3>
+    <ul>
+      <% User.all.each do |user| %>
+        <li class="inline-block pb-4">
+          <%= link_to "#{user.username}", masquerade_path(user),
+              class: "button button--white button--sm" %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 <% end %>
