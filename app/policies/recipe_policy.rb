@@ -4,7 +4,7 @@ class RecipePolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.status_published? || (user&.admin? || record.user == user)
   end
 
   def update?
