@@ -20,16 +20,20 @@ en:
       link_edit_profile: Edit profile
       link_logout: Log out
       link_publish: publish
+      link_sign_out: Sign out
       link_unpublish: unpublish
-      subheading_recipes: Your Recipes
+      subheading_admin: Admin
       subheading_recipes_published: Published
       subheading_recipes_unpublished: Drafts
+      subheading_recipes: Your Recipes
+      subheading_switch_users: Switch Users
       text_add_first_recipe_href: add your first recipe
       text_add_first_recipe_html: "Let's %{href}."
       text_no_published_recipes: You haven't published any recipes yet.
-      text_page_visibility: This page is only visible to you.
       text_page_visibility_others_href: your public page
       text_page_visibility_others_html: "Here's what others can see: %{href}."
+      text_page_visibility: This page is only visible to you.
+      text_signed_in_as: "You are signed in as %{user}"
   errors:
     show:
       button_home: Take me home
