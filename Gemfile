@@ -12,6 +12,8 @@ gem 'cloudinary'
 
 gem 'devise'
 
+gem 'devise_masquerade'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', github: 'rails/rails'
 
