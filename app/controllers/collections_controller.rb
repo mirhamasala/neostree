@@ -34,10 +34,9 @@ class CollectionsController < ApplicationController
   end
 
   def show
-    collection_owner = User.find_by(username: params[:user_username])
-
-    @collection = policy_scope(collection_owner.collections).find(params[:id])
+    @collection = collections.find(params[:id])
     @recipes = policy_scope(@collection.recipes)
+
     authorize @collection
   end
 
@@ -55,7 +54,7 @@ class CollectionsController < ApplicationController
   end
 
   def collections
-    policy_scope(Collection.owner(user))
+    policy_scope(user.collections)
   end
 
   def user
