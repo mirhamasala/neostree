@@ -110,12 +110,12 @@
   <div class="mt-6 flex flex-col sm:flex-row">
     <% if @recipe.status_draft? %>
       <%= link_to t('.button_publish'), recipe_status_path(@recipe), method: :put,
-          class: "button button--primary button--xl sm:mr-2" %>
+          class: "button button--primary sm:mr-2" %>
     <% else %>
       <%= link_to t('.button_unpublish'), recipe_status_path(@recipe), method: :put,
-          class: "button button--primary button--xl sm:mr-2" %>
+          class: "button button--primary sm:mr-2" %>
     <% end %>
     <%= link_to t('.button_edit'), edit_recipe_path(@recipe),
-        class: "button button--secondary button--xl mt-2 sm:mt-0" %>
+        class: "button button--secondary mt-2 sm:mt-0" %>
   </div>
 <% end %>

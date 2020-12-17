@@ -8,15 +8,15 @@
   cursor-pointer
   border border-stone-100 rounded-md
   transition ease-in-out duration-150;
-  &:focus { @apply ring-2 ring-stone-100; }
+  &:focus { @apply border-transparent ring-2 ring-stone-100 outline-none; }
 }
 
 /**
 * BUTTON COLOR MODIFIERS */
 
 .button--primary {
-  @apply text-stone-100 bg-sea-800;
-  &:hover { @apply bg-sea-900; }
+  @apply text-stone-100 border-sea-800 bg-sea-800;
+  &:hover { @apply border-sea-900 bg-sea-900; }
 }
 
 .button--secondary {
@@ -26,22 +26,10 @@
 
 .button--white {
   @apply text-sea-800 bg-white;
-  &:hover,
-  &:focus { @apply border-sea-800; }
+  &:hover { @apply border-sea-800; }
 }
 
 /**
 * BUTTON SIZE MODIFIERS */
 
 .button--sm { @apply py-1 px-2 text-sm; }
-.button--xl { @apply px-12; }
-
-/**
-* BUTTON CUSTOM MODIFIERS */
-
-.button--navbar { @apply py-1 px-2 text-sm; }
-@screen sm {
-  .button--navbar {
-    @apply py-2 px-3 text-base;
-  }
-}
