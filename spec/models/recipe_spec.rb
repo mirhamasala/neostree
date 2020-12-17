@@ -20,18 +20,6 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-  it 'shows user\'s recipes' do
-    user1 = create(:user)
-    user2 = create(:user)
-
-    recipe1 = create(:recipe, user: user1)
-    recipe2 = create(:recipe, user: user1)
-    recipe3 = create(:recipe, user: user2)
-
-    expect(Recipe.author(user1)).to eq([recipe1, recipe2])
-    expect(Recipe.author(user2)).to eq([recipe3])
-  end
-
   it 'starts as a draft' do
     recipe = Recipe.new
 
