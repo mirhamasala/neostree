@@ -13,10 +13,6 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :steps, reject_if: :all_blank, allow_destroy: true
 
   scope :alphabetize, -> { order(:title) }
-
-  def self.author(user)
-    where(user: user)
-  end
 end
 
 # == Schema Information
