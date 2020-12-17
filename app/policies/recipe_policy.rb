@@ -4,7 +4,7 @@ class RecipePolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.status_published? || (user&.admin? || record.user == user)
   end
 
   def update?
@@ -17,5 +17,18 @@ class RecipePolicy < ApplicationPolicy
 
   def update_status?
     user.admin? || record.user == user
+  end
+
+  class Scope
+    attr_reader :user, :scope
+
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
+    def resolve
+      scope.alphabetize
+    end
   end
 end
