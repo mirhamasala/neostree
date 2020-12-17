@@ -3,10 +3,35 @@
 <h1 class="heading"><%= @collection.title %></h1>
 
 <ul class="mb-4">
-  <% @collection.recipes.each do |recipe| %>
+  <% @recipes.each do |recipe| %>
     <li class="py-1 first:pt-0 last:pb-0">
       <%= link_to recipe.title, recipe_path(recipe),
-        class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+       class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
     </li>
   <% end %>
 </ul>
+
+<div class="p-2 bg-red-50">
+  <h3 class="heading">Delete this section</h3>
+
+  <h4 class="heading text-lg">Unfiltered Recipes</h4>
+
+  <ul class="mb-4 p-4">
+      <% @collection.recipes.each do |recipe| %>
+        <li class="py-1 first:pt-0 last:pb-0">
+          <%= link_to recipe.title, recipe_path(recipe),
+           class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+        </li>
+      <% end %>
+  </ul>
+
+  <h4 class="heading text-lg">Collections</h4>
+  <ul class="mb-4 p-4">
+    <% Collection.all.each do |collection| %>
+      <li class="py-1 first:pt-0 last:pb-0">
+        <%= link_to collection.title, user_collection_path(collection.user.username, collection),
+         class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

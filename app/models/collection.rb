@@ -8,6 +8,9 @@ class Collection < ApplicationRecord
   has_many :recipes, through: :recipe_collections
 
   scope :alphabetize, -> { order(:title) }
+  scope :for_user, -> (user) {
+    where(user: user).or(where(status: :public))
+  }
 
   def self.owner(user)
     where(user: user)

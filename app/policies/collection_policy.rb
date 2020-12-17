@@ -18,4 +18,17 @@ class CollectionPolicy < ApplicationPolicy
   def update_status?
     user.admin? || record.user == user
   end
+
+  class Scope
+    attr_reader :user, :scope
+
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
+    def resolve
+      scope.for_user(user).alphabetize
+    end
+  end
 end
