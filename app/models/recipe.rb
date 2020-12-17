@@ -16,6 +16,9 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :steps, reject_if: :all_blank, allow_destroy: true
 
   scope :alphabetize, -> { order(:title) }
+  scope :for_user, -> (user) {
+    where(user: user).or(where(status: :published))
+  }
 
   def self.author(user)
     where(user: user)

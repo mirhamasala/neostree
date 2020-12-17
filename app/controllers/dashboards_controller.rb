@@ -3,6 +3,6 @@ class DashboardsController < ApplicationController
     # Don't have a dashboard class
     authorize :dashboard
 
-    @recipes = policy_scope(Recipe.author(current_user)).alphabetize
+    @recipes = policy_scope(Recipe).author(current_user)
   end
 end

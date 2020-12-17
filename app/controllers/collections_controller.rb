@@ -34,7 +34,10 @@ class CollectionsController < ApplicationController
   end
 
   def show
-    @collection = collections.find(params[:id])
+    collection_owner = User.find_by(username: params[:user_username])
+
+    @collection = policy_scope(collection_owner.collections).find(params[:id])
+    @recipes = policy_scope(@collection.recipes)
     authorize @collection
   end
 
