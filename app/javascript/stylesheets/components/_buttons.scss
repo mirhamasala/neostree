@@ -1,68 +1,45 @@
+/**
+ * BUTTON STYLES
+ * ------------------------------------------------------------------------- */
+
 .button {
   @apply py-2 px-3
-  text-center whitespace-no-wrap
+  text-center whitespace-nowrap
   cursor-pointer
-  bg-stone-100
   border border-stone-100 rounded-md
   transition ease-in-out duration-150;
+  &:focus { @apply ring-2 ring-stone-100; }
 }
 
-/*
-.button:hover {
-  @apply opacity-75;
-}
-*/
-
-.button:focus {
-  @apply outline-none shadow-stone-100;
-}
-
-/*
-.button:active {
-  @apply opacity-75;
-}
-*/
+/**
+* BUTTON COLOR MODIFIERS */
 
 .button--primary {
   @apply text-stone-100 bg-sea-800;
-}
-
-.button--primary:hover {
-  @apply bg-sea-900;
+  &:hover { @apply bg-sea-900; }
 }
 
 .button--secondary {
   @apply text-stone-900 bg-stone-100;
-}
-
-.button--secondary:hover {
-  @apply bg-white;
+  &:hover { @apply bg-white; }
 }
 
 .button--white {
-  @apply text-stone-900 bg-white shadow-xs;
+  @apply text-sea-800 bg-white;
+  &:hover,
+  &:focus { @apply border-sea-800; }
 }
 
-.button--white:hover {
-  @apply shadow-none;
-}
+/**
+* BUTTON SIZE MODIFIERS */
 
-.button--sm {
-  @apply py-1 px-2 text-sm;
-}
+.button--sm { @apply py-1 px-2 text-sm; }
+.button--xl { @apply px-12; }
 
-.button--lg {
-  @apply px-6;
-}
+/**
+* BUTTON CUSTOM MODIFIERS */
 
-.button--xl {
-  @apply px-12;
-}
-
-.button--navbar {
-  @apply py-1 px-2 text-sm;
-}
-
+.button--navbar { @apply py-1 px-2 text-sm; }
 @screen sm {
   .button--navbar {
     @apply py-2 px-3 text-base;
