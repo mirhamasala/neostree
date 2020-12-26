@@ -1,13 +1,13 @@
 <% content_for(:title) { t('.heading') } %>
-<div class="sm:flex sm:justify-between">
-  <div class="sm:order-2 mb-3">
+<div class="mb-8 sm:flex sm:justify-between">
+  <div class="mb-3 sm:order-2 sm:mb-0">
     <%= link_to t('.link_edit_profile'), edit_user_registration_path,
-        class: "text-sand-500 text-right underline hover:text-sand-400" %>
+      class: "text-sand-500 text-right underline hover:text-sand-400" %>
     <span class="text-stone-200">&#124</span>
     <%= link_to t('.link_logout'), destroy_user_session_path, method: :delete,
-        class: "text-sand-500 text-right underline hover:text-sand-400" %>
+      class: "text-sand-500 text-right underline hover:text-sand-400" %>
   </div>
-  <div class="mb-4">
+  <div>
     <h1 class="heading"><%= t('.heading') %></h1>
     <p class="mb-1 text-sm font-semibold"><%= t('.text_page_visibility') %></p>
     <p class="text-sm font-semibold">
@@ -18,35 +18,31 @@
   </div>
 </div>
 
-<div class="mb-4">
-  <%= link_to "Your Collections", user_collections_path(current_user.username), class: "text-sea-800 hover:text-sea-300 underline" %>
-</div>
-
 <h2 class="subheading subheading--lg mb-4"><%= t('.subheading_recipes') %></h2>
 <% if @recipes.any? %>
-  <div class="mb-6">
+  <div class="mb-8">
     <% if @recipes.status_draft.any? %>
       <h3 class="subheading subheading--base"><%= t('.subheading_recipes_unpublished') %></h3>
-      <ul class="mb-4">
+      <ul class="mb-6">
         <% @recipes.status_draft.each do |recipe| %>
           <li class="py-1 first:pt-0 last:pb-0">
             <%= link_to recipe.title, recipe_path(recipe),
-                class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+              class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
             <%= link_to t('.link_publish'), recipe_status_path(recipe), method: :put,
-                class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
+              class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
           </li>
         <% end %>
       </ul>
     <% end %>
     <h3 class="subheading subheading--base"><%= t('.subheading_recipes_published') %></h3>
     <% if @recipes.status_published.any? %>
-      <ul class="mb-4">
+      <ul class="mb-6">
         <% @recipes.status_published.each do |recipe| %>
           <li class="py-1 first:pt-0 last:pb-0">
             <%= link_to recipe.title, recipe_path(recipe),
-                class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
+              class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
             <%= link_to t('.link_unpublish'), recipe_status_path(recipe), method: :put,
-                class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
+              class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
           </li>
         <% end %>
       </ul>
@@ -71,7 +67,7 @@
       <div class="mb-6">
         <p class="mb-2"><%= t('.text_signed_in_as', user: current_user.username) %></p>
         <%= link_to "Sign out", back_masquerade_path(current_user),
-            class: "text-sand-500 underline hover:text-sand-400" %>
+          class: "text-sand-500 underline hover:text-sand-400" %>
       </div>
     <% end %>
     <h3 class="subheading subheading--base"><%= t('.subheading_switch_users') %></h3>
@@ -79,7 +75,7 @@
       <% User.all.each do |user| %>
         <li class="inline-block pb-4">
           <%= link_to "#{user.username}", masquerade_path(user),
-              class: "button button--white button--sm" %>
+            class: "button button--white button--sm" %>
         </li>
       <% end %>
     </ul>
