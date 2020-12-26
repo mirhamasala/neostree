@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :steps, dependent: :destroy, inverse_of: :recipe
   has_many :measures, dependent: :destroy, inverse_of: :recipe
-  has_many :recipe_collections
+  has_many :recipe_collections, dependent: :destroy
   has_many :collections, through: :recipe_collections
 
   has_one_attached :photo
