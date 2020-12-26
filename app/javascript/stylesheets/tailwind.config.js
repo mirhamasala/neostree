@@ -1,7 +1,4 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-  },
   purge: [
     './app/**/*.html.erb',
     './app/helpers/**/*.rb',
@@ -61,5 +58,9 @@ module.exports = {
     padding: ['responsive', 'first', 'last'],
     margin: ['responsive', 'first', 'last'],
   },
-  plugins: [require('@tailwindcss/ui')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 };

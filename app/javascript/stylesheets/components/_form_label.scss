@@ -1,8 +1,4 @@
 label,
 .form-label {
-  @apply block mb-1 text-sm;
-}
-
-.form-label--inline {
-  @apply mb-0;
+  @apply block text-sm;
 }
