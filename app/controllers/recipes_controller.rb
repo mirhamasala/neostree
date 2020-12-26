@@ -62,6 +62,10 @@ class RecipesController < ApplicationController
 
   private
 
+  def recipes
+    policy_scope(current_user.recipes)
+  end
+
   def recipe_params
     params.require(:recipe).permit(
       :title, :intro, :source, :notes, :photo, :status,
@@ -70,10 +74,6 @@ class RecipesController < ApplicationController
       measures_attributes: %i[id position ingredient unit quantity prep_method recipe_id _destroy],
       steps_attributes: %i[id position description _destroy]
     )
-  end
-
-  def recipes
-    policy_scope(current_user.recipes)
   end
 
   def merge_recipe_params!
