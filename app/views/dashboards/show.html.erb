@@ -18,6 +18,52 @@
   </div>
 </div>
 
+<div class="flex items-baseline justify-between">
+  <h2 class="subheading subheading--lg mb-4"><%= t('.subheading_collections') %></h2>
+  <%= link_to t('.link_new_collection'), new_user_collection_path(current_user.username),
+    class: "button button--white button--sm" %>
+</div>
+<% if @collections.any? %>
+  <div class="mb-8">
+    <% if @collections.status_private.any? %>
+      <h3 class="subheading subheading--base"><%= t('.subheading_collections_private') %></h3>
+      <ul class="mb-6">
+        <% @collections.status_private.each do |collection| %>
+          <li class="py-1 first:pt-0 last:pb-0">
+            <%= link_to collection.title, user_collection_path(current_user.username, collection),
+              class: "text-sea-800 hover:text-sea-300 hover:underline" %>
+            <span class="mr-1">· <%= collection.recipes.count %></span>
+            <%= link_to t('.link_delete'), user_collection_path(current_user.username, collection),
+              method: :delete, class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <h3 class="subheading subheading--base"><%= t('.subheading_collections_public') %></h3>
+    <% if @collections.status_public.any? %>
+      <ul class="mb-6">
+        <% @collections.status_public.each do |collection| %>
+          <li class="py-1 first:pt-0 last:pb-0">
+            <%= link_to collection.title, user_collection_path(current_user.username, collection),
+              class: "text-sea-800 hover:text-sea-300 hover:underline" %>
+            <span class="mr-1">· <%= collection.recipes.count %></span>
+            <%= link_to t('.link_delete'), user_collection_path(current_user.username, collection),
+              method: :delete, class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="mb-6"><%= t('.text_no_published_collections') %></p>
+    <% end %>
+  </div>
+<% else %>
+  <p class="mb-6">
+    <%= t('.text_create_first_collection_html',
+      href: link_to(t('.text_create_first_collection_href'), new_user_collection_path(current_user.username),
+      class: "text-sea-800 hover:text-sea-300 underline")) %>
+  </p>
+<% end %>
+
 <h2 class="subheading subheading--lg mb-4"><%= t('.subheading_recipes') %></h2>
 <% if @recipes.any? %>
   <div class="mb-8">
@@ -75,7 +121,7 @@
       <% User.all.each do |user| %>
         <li class="inline-block pb-4">
           <%= link_to "#{user.username}", masquerade_path(user),
-            class: "button button--white button--sm" %>
+            class: "button button--white button--sm ml-4" %>
         </li>
       <% end %>
     </ul>
