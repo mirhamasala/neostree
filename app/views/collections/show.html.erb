@@ -5,8 +5,17 @@
 <% content_for(:title) { @collection.title.titleize } %>
 
 <% if @collection.recipes.any? %>
-  <h1 class="heading"><%= @collection.title.titleize %></h1>
-  <% if user_signed_in? && (current_user.author_of?(@recipe) || current_user.admin?) %>
+  <% if user_signed_in? && (current_user.owner_of?(@collection) || current_user.admin?) %>
+    <div class="flex items-baseline justify-between">
+      <h1 class="heading"><%= @collection.title.titleize %></h1>
+      <% if @collection.status_private? %>
+        <%= link_to t('.button_make_public'), user_collection_status_path(current_user.name, @collection),
+          method: :put, class: "button button--primary button--sm ml-4" %>
+      <% else %>
+        <%= link_to t('.button_make_private'), user_collection_status_path(current_user.name, @collection),
+          method: :put, class: "button button--primary button--sm ml-4" %>
+      <% end %>
+  </div>
     <div class="mb-4">
       <%= link_to edit_user_collection_path(current_user.username, @collection),
         class: "inline-flex items-baseline mr-2" do %>
@@ -20,6 +29,8 @@
         <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_delete') %></span>
       <% end %>
     </div>
+  <% else %>
+    <h1 class="heading"><%= @collection.title.titleize %></h1>
   <% end %>
   <ul class="mb-4">
     <% @collection.recipes.each do |recipe| %>
@@ -34,4 +45,18 @@
       href: link_to(t('.text_include_recipes_href'), edit_user_collection_path(current_user.username, @collection),
       class: "text-sea-800 hover:text-sea-300 underline")) %>
   </p>
+<% end %>
+
+<% if user_signed_in? && (current_user.owner_of?(@collection) || current_user.admin?) %>
+  <div class="mt-6 flex flex-col sm:flex-row">
+    <% if @collection.status_private? %>
+      <%= link_to t('.button_make_public'), user_collection_status_path(current_user.name, @collection), method: :put,
+          class: "button button--primary sm:mr-2" %>
+    <% else %>
+      <%= link_to t('.button_make_private'), user_collection_status_path(current_user.name, @collection), method: :put,
+          class: "button button--primary sm:mr-2" %>
+    <% end %>
+    <%= link_to t('.button_edit'), edit_user_collection_path(current_user.name, @collection),
+        class: "button button--secondary mt-2 sm:mt-0" %>
+  </div>
 <% end %>

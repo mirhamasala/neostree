@@ -33,8 +33,8 @@
             <%= link_to collection.title, user_collection_path(current_user.username, collection),
               class: "text-sea-800 hover:text-sea-300 hover:underline" %>
             <span class="mr-1">· <%= collection.recipes.count %></span>
-            <%= link_to t('.link_delete'), user_collection_path(current_user.username, collection),
-              method: :delete, class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
+             <%= link_to t('.link_make_public'), user_collection_status_path(current_user.username, collection), method: :put,
+              class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
           </li>
         <% end %>
       </ul>
@@ -47,8 +47,8 @@
             <%= link_to collection.title, user_collection_path(current_user.username, collection),
               class: "text-sea-800 hover:text-sea-300 hover:underline" %>
             <span class="mr-1">· <%= collection.recipes.count %></span>
-            <%= link_to t('.link_delete'), user_collection_path(current_user.username, collection),
-              method: :delete, class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
+            <%= link_to t('.link_make_private'), user_collection_status_path(current_user.username, collection), method: :put,
+              class: "hidden sm:inline text-sand-500 text-sm hover:text-sand-400" %>
           </li>
         <% end %>
       </ul>

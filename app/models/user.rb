@@ -27,6 +27,10 @@ class User < ApplicationRecord
     recipes.include?(recipe)
   end
 
+  def owner_of?(collection)
+    collections.include?(collection)
+  end
+
   def admin=(value)
     if value
       self.admin_since = Time.current

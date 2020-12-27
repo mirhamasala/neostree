@@ -66,6 +66,6 @@ class CollectionsController < ApplicationController
   end
 
   def collection_params
-    params.require(:collection).permit(:title, :user_id, recipe_ids: [])
+    params.require(:collection).permit(:title, :user_id, :status, recipe_ids: [])
   end
 end

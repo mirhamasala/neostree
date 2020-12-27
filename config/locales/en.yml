@@ -2,6 +2,9 @@
 en:
   activerecord:
     attributes:
+      collection/status:
+        private: Private
+        public: Public
       recipe/status:
         draft: Draft
         published: Published
@@ -20,6 +23,8 @@ en:
       link_delete: delete
       link_edit_profile: Edit profile
       link_logout: Log out
+      link_make_private: make private
+      link_make_public: make public
       link_new_collection: Create collection
       link_publish: publish
       link_sign_out: Sign out
@@ -105,6 +110,9 @@ en:
       failure: Oops, something went wrong. Please try again.
       success: You've successfully updated your collection.
     show:
+      button_edit: Edit
+      button_make_private: Make private
+      button_make_public: Make public
       link_delete: Delete
       link_edit: Edit
       text_include_recipes_href: add some recipes to this collection

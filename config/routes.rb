@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show, as: :dashboard
 
   resources :u, param: :username, controller: :users, as: :user do
-    resources :collections, except: :index
+    resources :collections, except: :index do
+      resource :collection_status, only: :update, as: :status
+    end
   end
 end

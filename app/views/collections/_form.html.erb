@@ -1,14 +1,24 @@
 <%= form_with(model: [@user, @collection]) do |f| %>
-  <div class="mb-6">
-    <div class="mb-4">
-      <%= f.label :title %>
-      <%= f.text_field :title, placeholder: true %>
-    </div>
-    <div>
-      <%= f.label :recipes %>
-      <%= f.collection_select :recipe_ids, @recipes, :id, :title, {}, multiple: true %>
+  <div class="form-grid">
+    <% if @collection.persisted? %>
+      <div class="mb-4">
+        <%= f.collection_radio_buttons(:status, human_attribute_status(Collection), :first, :second) do |b| %>
+          <%= b.label(class: "inline-flex items-center mr-2 text-base") { b.radio_button(class: "mr-1") + b.text } %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="mb-6">
+      <div class="mb-4">
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: true %>
+      </div>
+      <div>
+        <%= f.label :recipes %>
+        <%= f.collection_select :recipe_ids, @recipes, :id, :title, {}, multiple: true %>
+      </div>
     </div>
   </div>
+
   <div class="flex flex-col sm:flex-row">
     <%= f.submit class: "button button--primary button--xl sm:mr-2" %>
     <%= link_to t('.link_cancel'), user_path(current_user.username), class: "mt-2 sm:mt-0 button button--secondary" %>
