@@ -1,5 +1,5 @@
 class Collection < ApplicationRecord
-  enum status: { private: 0, public: 1 }, _prefix: :status, _default: 1
+  enum status: { private: 0, public: 1 }, _prefix: :status, _default: 0
 
   validates :title, presence: true, uniqueness: { scope: :user_id }
 
