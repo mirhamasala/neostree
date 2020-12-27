@@ -8,10 +8,6 @@ class Collection < ApplicationRecord
   has_many :recipes, through: :recipe_collections
 
   scope :alphabetize, -> { order(:title) }
-
-  def self.owner(user)
-    where(user: user)
-  end
 end
 
 # == Schema Information
