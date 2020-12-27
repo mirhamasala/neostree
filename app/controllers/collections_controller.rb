@@ -29,7 +29,7 @@ class CollectionsController < ApplicationController
     authorize @collection
 
     @user = current_user
-    @recipes = current_user.recipes
+    @recipes = policy_scope(@user.recipes)
   end
 
   def update
