@@ -115,8 +115,10 @@ en:
       button_make_public: Make public
       link_delete: Delete
       link_edit: Edit
-      text_include_recipes_href: add some recipes to this collection
+      text_confirm_delete: "Are you sure you want to delete %{collection}?"
+      text_include_recipes_href: add some
       text_include_recipes_html: "Let's %{href}."
+      text_no_recipes: There are no recipes in this collection.
   pages:
     home:
       about_silvia: Silvia is a photographer, storyteller, and foodie at heart. Dive into her vegetarian recipes and find hidden treasures from her Italian heritage
