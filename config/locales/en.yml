@@ -2,6 +2,9 @@
 en:
   activerecord:
     attributes:
+      collection/status:
+        private: Private
+        public: Public
       recipe/status:
         draft: Draft
         published: Published
@@ -17,18 +20,28 @@ en:
   dashboards:
     show:
       heading: Dashboard
+      link_delete: delete
       link_edit_profile: Edit profile
       link_logout: Log out
+      link_make_private: make private
+      link_make_public: make public
+      link_new_collection: Create collection
       link_publish: publish
       link_sign_out: Sign out
       link_unpublish: unpublish
       subheading_admin: Admin
+      subheading_collections_private: Private
+      subheading_collections_public: Public
+      subheading_collections: Your Collections
       subheading_recipes_published: Published
       subheading_recipes_unpublished: Drafts
       subheading_recipes: Your Recipes
       subheading_switch_users: Switch Users
       text_add_first_recipe_href: add your first recipe
       text_add_first_recipe_html: "Let's %{href}."
+      text_create_first_collection_href: create your first collection
+      text_create_first_collection_html: "Let's %{href}."
+      text_no_published_collections: All your collections are still private.
       text_no_published_recipes: You haven't published any recipes yet.
       text_page_visibility_others_href: your public page
       text_page_visibility_others_html: "Here's what others can see: %{href}."
@@ -75,9 +88,37 @@ en:
       unit:
         name: cup, tablespoon, etc.
     submit:
+      collection:
+        create: Save collection
+        update: Save changes
       recipe:
         create: Preview recipe
-      update: Save changes
+        update: Save changes
+  collections:
+    create:
+      failure: Oops, something went wrong. Please try again.
+      success: You've successfully created a new recipe collection.
+    destroy:
+      success: "You deleted %{collection}."
+    edit:
+      heading: "Edit collection"
+    form:
+      link_cancel: Cancel
+    new:
+      heading: Create a new recipe collection
+    update:
+      failure: Oops, something went wrong. Please try again.
+      success: You've successfully updated your collection.
+    show:
+      button_edit: Edit
+      button_make_private: Make private
+      button_make_public: Make public
+      link_delete: Delete
+      link_edit: Edit
+      text_confirm_delete: "Are you sure you want to delete %{collection}?"
+      text_include_recipes_href: add some
+      text_include_recipes_html: "Let's %{href}."
+      text_no_recipes: There are no recipes in this collection.
   pages:
     home:
       about_silvia: Silvia is a photographer, storyteller, and foodie at heart. Dive into her vegetarian recipes and find hidden treasures from her Italian heritage
@@ -91,7 +132,7 @@ en:
       failure: Oops, something went wrong. Please try again.
       success: This is a preview of your recipe. Hit publish when you're ready.
     destroy:
-      success: "You deleted %{recipe}"
+      success: "You deleted %{recipe}."
     edit:
       heading: Edit recipe
     form:

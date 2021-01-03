@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_10_033907) do
+ActiveRecord::Schema.define(version: 2020_11_21_055444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2020_10_10_033907) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "collections", force: :cascade do |t|
+    t.string "title"
+    t.integer "status"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_collections_on_user_id"
+  end
+
   create_table "measures", force: :cascade do |t|
     t.string "quantity"
     t.bigint "unit_id"
@@ -55,6 +64,15 @@ ActiveRecord::Schema.define(version: 2020_10_10_033907) do
     t.string "unit"
     t.index ["recipe_id"], name: "index_measures_on_recipe_id"
     t.index ["unit_id"], name: "index_measures_on_unit_id"
+  end
+
+  create_table "recipe_collections", force: :cascade do |t|
+    t.bigint "recipe_id", null: false
+    t.bigint "collection_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["collection_id"], name: "index_recipe_collections_on_collection_id"
+    t.index ["recipe_id"], name: "index_recipe_collections_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -111,8 +129,11 @@ ActiveRecord::Schema.define(version: 2020_10_10_033907) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "collections", "users"
   add_foreign_key "measures", "recipes"
   add_foreign_key "measures", "units"
+  add_foreign_key "recipe_collections", "collections"
+  add_foreign_key "recipe_collections", "recipes"
   add_foreign_key "recipes", "users"
   add_foreign_key "steps", "recipes"
 end

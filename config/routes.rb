@@ -14,8 +14,14 @@ Rails.application.routes.draw do
     resources :measures do
       resource :measure_position, only: :update
     end
-    resource :recipe_status, only: [:update], as: :status
+    resource :recipe_status, only: :update, as: :status
   end
+
   resource :dashboard, only: :show, as: :dashboard
-  resources :u, param: :username, only: :show, controller: :users, as: :user
+
+  resources :u, param: :username, controller: :users, as: :user do
+    resources :collections, except: :index do
+      resource :collection_status, only: :update, as: :status
+    end
+  end
 end
