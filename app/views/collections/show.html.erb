@@ -1,6 +1,6 @@
 <% content_for :meta_title, "#{@collection.title.titleize} - #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, "Recipe collection: #{@collection.title}" %>
-<% content_for :meta_image, cl_image_path(@collection.recipes.first&.photo.key, width: 1200, quality: "auto", crop: "fill") if @collection.recipes.first&.photo&.attached? %>
+<% content_for :meta_image, cl_image_path(@recipes.first&.photo.key, width: 1200, quality: "auto", crop: "fill") if @recipes.first&.photo&.attached? %>
 
 <% content_for(:title) { @collection.title.titleize } %>
 
@@ -32,12 +32,12 @@
   <% end %>
 </div>
 
-<% if @collection.recipes.any? %>
+<% if @recipes.any? %>
   <ul class="card-grid">
-    <% if all_with_images_attached?(@collection.recipes) %>
-      <%= render partial: "recipes/recipe_with_photo", collection: @collection.recipes, as: :recipe %>
+    <% if all_with_images_attached?(@recipes) %>
+      <%= render partial: "recipes/recipe_with_photo", collection: @recipes, as: :recipe %>
     <% else %>
-      <%= render @collection.recipes %>
+      <%= render @recipes %>
     <% end %>
   </ul>
   <% if user_signed_in? && (current_user.owner_of?(@collection) || current_user.admin?) %>

@@ -7,7 +7,7 @@ class CollectionsController < ApplicationController
     authorize @collection
 
     @user = current_user
-    @recipes = @user.recipes
+    @recipes = policy_scope(@user.recipes)
     @collection.user = @user
   end
 
@@ -47,6 +47,7 @@ class CollectionsController < ApplicationController
 
   def show
     @collection = policy_scope(Collection).find(params[:id])
+    @recipes = policy_scope(@collection.recipes)
     authorize @collection
   end
 
