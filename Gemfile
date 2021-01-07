@@ -25,6 +25,8 @@ gem 'puma', '~> 4.1'
 
 gem 'pundit'
 
+gem 'rollbar'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 
