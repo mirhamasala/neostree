@@ -25,9 +25,6 @@ class CollectionsController < ApplicationController
   def edit
     @collection = collections.find(params[:id])
     authorize @collection
-
-    @user = current_user
-    @recipes = policy_scope(@user.recipes)
   end
 
   def update
