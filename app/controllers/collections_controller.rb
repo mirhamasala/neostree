@@ -6,9 +6,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.new
     authorize @collection
 
-    @user = current_user
-    @recipes = @user.recipes
-    @collection.user = @user
+    @collection.user = current_user
   end
 
   def create
