@@ -5,7 +5,7 @@ class Collection < ApplicationRecord
 
   belongs_to :user
   has_many :recipe_collections, dependent: :destroy
-  has_many :recipes, through: :recipe_collections
+  has_many :recipes, -> { alphabetize }, through: :recipe_collections
 
   scope :alphabetize, -> { order(:title) }
 end

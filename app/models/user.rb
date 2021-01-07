@@ -19,7 +19,7 @@ class User < ApplicationRecord
                        format: { with: /\A[a-z0-9]+(?:[_][a-z0-9]+)*\z/, message: :invalid }
   validates :bio, length: 0..160, allow_blank: true
 
-  has_many :recipes, dependent: :destroy
+  has_many :recipes, -> { alphabetize }, dependent: :destroy
   has_many :collections, dependent: :destroy
   has_one_attached :photo
 
