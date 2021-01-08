@@ -43,6 +43,9 @@ class CollectionsController < ApplicationController
   def show
     @collection = policy_scope(Collection).find(params[:id])
     authorize @collection
+
+    recipes = @collection.recipes
+    @recipes = current_user.owner_of?(@collection) ? recipes : recipes.status_published
   end
 
   def destroy
