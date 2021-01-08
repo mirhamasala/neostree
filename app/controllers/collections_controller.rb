@@ -6,9 +6,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.new
     authorize @collection
 
-    @user = current_user
-    @recipes = @user.recipes
-    @collection.user = @user
+    @collection.user = current_user
   end
 
   def create
@@ -27,9 +25,6 @@ class CollectionsController < ApplicationController
   def edit
     @collection = collections.find(params[:id])
     authorize @collection
-
-    @user = current_user
-    @recipes = policy_scope(@user.recipes)
   end
 
   def update

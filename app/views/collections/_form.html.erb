@@ -1,4 +1,4 @@
-<%= form_with(model: [@user, @collection]) do |f| %>
+<%= form_with(model: [current_user, @collection]) do |f| %>
   <div class="form-grid">
     <% if @collection.persisted? %>
       <div class="mb-4">
@@ -14,7 +14,7 @@
       </div>
       <div>
         <%= f.label :recipes %>
-        <%= f.collection_select :recipe_ids, @recipes, :id, :title, {}, multiple: true %>
+        <%= f.collection_select :recipe_ids, current_user.recipes, :id, :title, {}, multiple: true %>
       </div>
     </div>
   </div>

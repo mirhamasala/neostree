@@ -4,19 +4,19 @@ class CollectionPolicy < ApplicationPolicy
   end
 
   def show?
-    record.status_public? || (user&.admin? || record.user == user)
+    record.status_public? || (user&.admin? || user&.owner_of?(record))
   end
 
   def update?
-    user.admin? || record.user == user
+    user && (user.admin? || user.owner_of?(record))
   end
 
   def destroy?
-    user.admin? || record.user == user
+    update?
   end
 
   def update_status?
-    user.admin? || record.user == user
+    update?
   end
 
   class Scope

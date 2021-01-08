@@ -1,8 +1,7 @@
 class DashboardsController < ApplicationController
+  skip_after_action :verify_policy_scoped, only: :show
+
   def show
     authorize :dashboard
-
-    @recipes = policy_scope(current_user.recipes)
-    @collections = policy_scope(current_user.collections)
   end
 end

@@ -1,7 +1,7 @@
 class CollectionStatusesController < ApplicationController
   def update
     @collection = policy_scope(Collection).find(params[:collection_id])
-    authorize @collection, :update_status?
+    authorize @collection
 
     if @collection.status_private?
       @collection.status_public!

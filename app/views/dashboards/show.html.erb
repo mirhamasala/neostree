@@ -24,12 +24,12 @@
   <%= link_to t('.link_new_collection'), new_user_collection_path(current_user.username),
     class: "button button--white button--sm" %>
 </div>
-<% if @collections.any? %>
+<% if current_user.collections.any? %>
   <div class="mb-8">
-    <% if @collections.status_private.any? %>
+    <% if current_user.collections.status_private.any? %>
       <h3 class="subheading subheading--base"><%= t('.subheading_collections_private') %></h3>
       <ul class="mb-6">
-        <% @collections.status_private.each do |collection| %>
+        <% current_user.collections.status_private.each do |collection| %>
           <li class="py-1 first:pt-0 last:pb-0">
             <%= link_to collection.title, user_collection_path(current_user.username, collection),
               class: "text-sea-800 hover:text-sea-300 hover:underline" %>
@@ -41,9 +41,9 @@
       </ul>
     <% end %>
     <h3 class="subheading subheading--base"><%= t('.subheading_collections_public') %></h3>
-    <% if @collections.status_public.any? %>
+    <% if current_user.collections.status_public.any? %>
       <ul class="mb-6">
-        <% @collections.status_public.each do |collection| %>
+        <% current_user.collections.status_public.each do |collection| %>
           <li class="py-1 first:pt-0 last:pb-0">
             <%= link_to collection.title, user_collection_path(current_user.username, collection),
               class: "text-sea-800 hover:text-sea-300 hover:underline" %>
@@ -66,12 +66,12 @@
 <% end %>
 
 <h2 class="subheading subheading--lg mb-4"><%= t('.subheading_recipes') %></h2>
-<% if @recipes.any? %>
+<% if current_user.recipes.any? %>
   <div class="mb-8">
-    <% if @recipes.status_draft.any? %>
+    <% if current_user.recipes.status_draft.any? %>
       <h3 class="subheading subheading--base"><%= t('.subheading_recipes_unpublished') %></h3>
       <ul class="mb-6">
-        <% @recipes.status_draft.each do |recipe| %>
+        <% current_user.recipes.status_draft.each do |recipe| %>
           <li class="py-1 first:pt-0 last:pb-0">
             <%= link_to recipe.title, recipe_path(recipe),
               class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
@@ -82,9 +82,9 @@
       </ul>
     <% end %>
     <h3 class="subheading subheading--base"><%= t('.subheading_recipes_published') %></h3>
-    <% if @recipes.status_published.any? %>
+    <% if current_user.recipes.status_published.any? %>
       <ul class="mb-6">
-        <% @recipes.status_published.each do |recipe| %>
+        <% current_user.recipes.status_published.each do |recipe| %>
           <li class="py-1 first:pt-0 last:pb-0">
             <%= link_to recipe.title, recipe_path(recipe),
               class: "mr-1 text-sea-800 hover:text-sea-300 hover:underline" %>
