@@ -31,6 +31,19 @@ class RecipesController < ApplicationController
   def show
     @recipe = policy_scope(Recipe).find(params[:id])
     authorize @recipe
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render  pdf: @recipe.title,
+                page_size: 'A4',
+                template: 'recipes/show.html.erb',
+                layout: 'pdf.html',
+                lowquality: true,
+                zoom: 1,
+                dpi: 75
+      end
+    end
   end
 
   def edit
@@ -63,7 +76,7 @@ class RecipesController < ApplicationController
   private
 
   def recipes
-    policy_scope(current_user.recipes)
+    current_user.admin? ? policy_scope(Recipe.all) : policy_scope(current_user.recipes)
   end
 
   def recipe_params

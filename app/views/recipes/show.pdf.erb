@@ -1,0 +1,113 @@
+
+
+<% content_for(:title) { @recipe.title } %>
+
+<div class="mb-4">
+  <% if policy(@recipe).update? %>
+    <div class="mb-4 sm:mb-0 sm:flex sm:items-baseline sm:justify-between">
+      <h1 class="heading"><%= @recipe.title %></h1>
+      <% if @recipe.status_draft? %>
+        <%= link_to t('.button_publish'), recipe_status_path(@recipe),
+            method: :put, class: "button button--primary button--sm" %>
+      <% else %>
+        <%= link_to t('.button_unpublish'), recipe_status_path(@recipe),
+            method: :put, class: "button button--primary button--sm" %>
+      <% end %>
+    </div>
+    <div class="mb-4">
+      <%= link_to edit_recipe_path(@recipe), class: "inline-flex items-baseline mr-2" do %>
+        <i class="fal fa-pencil mr-2 text-sea-400"></i>
+        <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_edit') %></span>
+      <% end %>
+      <%= link_to recipe_path(@recipe), method: :delete,
+                                        data: { confirm: "Are you sure you want to delete the recipe
+                                              #{@recipe.title}?" },
+                                        class: "inline-flex items-baseline" do %>
+        <i class="fal fa-trash-alt mr-2 text-sea-400"></i>
+        <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_delete') %></span>
+      <% end %>
+    </div>
+  <% else %>
+    <h1 class="heading"><%= @recipe.title %></h1>
+  <% end %>
+</div>
+
+<!-- Image -->
+<% if @recipe.photo.attached? %>
+  <%= cl_image_tag @recipe.photo.key, height: 800, width: 1200, crop: "fill", class: "mb-4" %>
+<% end %>
+
+<!-- Source -->
+<% if @recipe.source.present?  %>
+  <div class="mb-6">
+    <%= link_to @recipe.source, target: "_blank" do %>
+      <i class="fal fa-link mr-1 text-sea-400"></i>
+      <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.original_source') %></span>
+    <% end %>
+  </div>
+<% end %>
+
+<!-- Intro -->
+<% if @recipe.intro.present? %>
+  <div class="mb-6">
+    <p class="pb-6 whitespace-pre-wrap"><%= @recipe.intro %></p>
+    <hr />
+  </div>
+<% end %>
+
+<!-- Yield -->
+<% if @recipe.yield_type.present? && @recipe.yield.present? %>
+  <div class="mb-4">
+    <%= Recipe.human_attribute_name(@recipe.yield_type) %>
+    <%= @recipe.yield %>
+  </div>
+<% end %>
+
+<!-- Ingredients -->
+<% if @recipe.measures.any? %>
+  <div class="mb-4">
+    <h2 class="subheading subheading--lg"><%= t('.subheading_ingredients') %></h2>
+    <ul>
+      <% @recipe.measures.order(position: :asc).each do |measure| %>
+        <li data-id="<%= measure.id %>" class="py-0.5 last:pb-0"><%= measure %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<!-- Directions -->
+<% if @recipe.steps.any? %>
+  <div class="mb-4">
+    <h2 class="subheading subheading--lg"><%= t('.subheading_steps') %></h2>
+    <ol>
+      <% @recipe.steps.ordered.each do |step| %>
+        <li class="py-1 last:pb-0">
+          <%= "#{step.position}." %>
+          <span class="whitespace-pre-wrap"><%= step.description %></span>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+<% end %>
+
+<!-- Recipe Notes -->
+<% if @recipe.notes.present? %>
+  <div class="mb-6">
+    <h2 class="subheading subheading--lg"><%= t('.subheading_notes') %></h2>
+    <p class="whitespace-pre-wrap"><%= @recipe.notes %></p>
+  </div>
+<% end %>
+
+<% if policy(@recipe).update? %>
+  <div class="mt-6 flex flex-col sm:flex-row">
+    <% if @recipe.status_draft? %>
+      <%= link_to t('.button_publish'), recipe_status_path(@recipe), method: :put,
+          class: "button button--primary sm:mr-2" %>
+    <% else %>
+      <%= link_to t('.button_unpublish'), recipe_status_path(@recipe), method: :put,
+          class: "button button--primary sm:mr-2" %>
+    <% end %>
+    <%= link_to t('.button_edit'), edit_recipe_path(@recipe),
+        class: "button button--secondary mt-2 sm:mt-0" %>
+  </div>
+<% end %>
