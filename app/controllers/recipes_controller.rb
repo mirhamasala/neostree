@@ -63,7 +63,7 @@ class RecipesController < ApplicationController
   private
 
   def recipes
-    policy_scope(current_user.recipes)
+    current_user.admin? ? policy_scope(Recipe.all) : policy_scope(current_user.recipes)
   end
 
   def recipe_params

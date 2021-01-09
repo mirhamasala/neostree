@@ -44,8 +44,7 @@ class CollectionsController < ApplicationController
     @collection = policy_scope(Collection).find(params[:id])
     authorize @collection
 
-    recipes = @collection.recipes
-    @recipes = current_user&.owner_of?(@collection) ? recipes : recipes.status_published
+    @recipes = recipes(current_user, @collection)
   end
 
   def destroy
@@ -60,7 +59,15 @@ class CollectionsController < ApplicationController
   private
 
   def collections
-    policy_scope(current_user.collections)
+    current_user.admin? ? policy_scope(Collection.all) : policy_scope(current_user.collections)
+  end
+
+  def recipes(user, collection)
+    if user&.admin? || user&.owner_of?(collection)
+      collection.recipes
+    else
+      collection.recipes.status_published
+    end
   end
 
   def collection_params
