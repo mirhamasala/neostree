@@ -5,7 +5,7 @@
 <% content_for(:title) { @recipe.title.titleize } %>
 
 <div class="mb-4">
-  <% if user_signed_in? && (current_user.author_of?(@recipe) || current_user.admin?) %>
+  <% if policy(@recipe).update? %>
     <div class="mb-4 sm:mb-0 sm:flex sm:items-baseline sm:justify-between">
       <h1 class="heading"><%= @recipe.title.titleize %></h1>
       <% if @recipe.status_draft? %>
@@ -100,7 +100,7 @@
   </div>
 <% end %>
 
-<% if user_signed_in? && (current_user.author_of?(@recipe) || current_user.admin?) %>
+<% if policy(@recipe).update? %>
   <div class="mt-6 flex flex-col sm:flex-row">
     <% if @recipe.status_draft? %>
       <%= link_to t('.button_publish'), recipe_status_path(@recipe), method: :put,

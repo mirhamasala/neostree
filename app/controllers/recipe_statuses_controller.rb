@@ -1,7 +1,7 @@
 class RecipeStatusesController < ApplicationController
   def update
     @recipe = policy_scope(Recipe).find(params[:recipe_id])
-    authorize @recipe, :update_status?
+    authorize @recipe
 
     if @recipe.status_draft?
       @recipe.status_published!
