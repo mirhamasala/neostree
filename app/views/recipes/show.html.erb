@@ -28,6 +28,13 @@
         <i class="fal fa-trash-alt mr-2 text-sea-400"></i>
         <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_delete') %></span>
       <% end %>
+<<<<<<< HEAD
+=======
+      <%= link_to recipe_path(@recipe, format: "pdf"), class: "inline-flex items-baseline" do %>
+        <i class="fal fa-file-pdf mr-1 text-sea-400"></i>
+        <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_convert_pdf') %></span>
+      <% end %>
+>>>>>>> a1ff537... fixup! Add PDF format to recipes controller
     </div>
   <% else %>
     <h1 class="heading"><%= @recipe.title.titleize %></h1>
