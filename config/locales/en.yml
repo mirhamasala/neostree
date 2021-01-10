@@ -153,6 +153,7 @@ en:
       button_edit: Edit
       button_publish: Publish
       button_unpublish: Convert to draft
+      link_convert_pdf: Convert to PDF
       link_delete: Delete
       link_edit: Edit
       original_source: Original source
