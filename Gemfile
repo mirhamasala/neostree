@@ -14,6 +14,8 @@ gem 'devise'
 
 gem 'devise_masquerade'
 
+gem 'grover'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', github: 'rails/rails'
 
