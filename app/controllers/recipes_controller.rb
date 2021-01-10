@@ -31,6 +31,29 @@ class RecipesController < ApplicationController
   def show
     @recipe = policy_scope(Recipe).find(params[:id])
     authorize @recipe
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        base_url = 'https://neostree.com/'
+        html_relative = render_to_string({ template: 'recipes/show',
+                                           layout: 'recipe_pdf.html',
+                                           locals: { recipe: @recipe } })
+        html_absolute = Grover::HTMLPreprocessor.process html_relative, base_url, 'http'
+        pdf = Grover.new(html_absolute, { display_url: base_url,
+                                          format: 'A4',
+                                          margin: {
+                                            top: '0.75cm',
+                                            right: '4cm',
+                                            bottom: '1cm',
+                                            left: '4cm'
+                                          } }).to_pdf
+
+        send_data pdf, type: 'application/pdf',
+                       disposition: 'inline',
+                       filename: "#{@recipe.title.parameterize(separator: '_')}.pdf"
+      end
+    end
   end
 
   def edit
