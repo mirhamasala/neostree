@@ -1,0 +1,64 @@
+<div class="recipe-pdf__spacer">
+  <h1><%= recipe.title.titleize %></h1>
+
+  <!-- Image -->
+  <% if recipe.photo.attached? %>
+    <%= cl_image_tag recipe.photo.key, height: 800, width: 1200, crop: "fill" %>
+  <% end %>
+
+  <!-- Source -->
+  <% if recipe.source.present?  %>
+    <div class="recipe-pdf__spacer">
+      <%= link_to t('.original_source'), recipe.source, target: "_blank" %>
+    </div>
+  <% end %>
+
+  <!-- Intro -->
+  <% if recipe.intro.present? %>
+    <div class="recipe-pdf__spacer">
+      <p class="recipe-pdf__spacer"><%= recipe.intro %></p>
+      <hr />
+    </div>
+  <% end %>
+
+  <!-- Yield -->
+  <% if recipe.yield_type.present? && recipe.yield.present? %>
+    <div class="recipe-pdf__spacer--sm">
+      <%= Recipe.human_attribute_name(recipe.yield_type) %>
+      <%= recipe.yield %>
+    </div>
+  <% end %>
+
+  <!-- Ingredients -->
+  <% if recipe.measures.any? %>
+    <div class="recipe-pdf__spacer--sm">
+      <h2><%= t('.subheading_ingredients') %></h2>
+      <ul>
+        <% recipe.measures.order(position: :asc).each do |measure| %>
+          <li><%= measure %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- Directions -->
+  <% if recipe.steps.any? %>
+    <div class="recipe-pdf__spacer--sm">
+      <h2><%= t('.subheading_steps') %></h2>
+      <ol>
+        <% recipe.steps.ordered.each do |step| %>
+          <li><%= step.description %></li>
+        <% end %>
+      </ol>
+    </div>
+  <% end %>
+  </div>
+
+  <!-- Recipe Notes -->
+  <% if recipe.notes.present? %>
+    <div>
+      <h2><%= t('.subheading_notes') %></h2>
+      <p><%= recipe.notes %></p>
+    </div>
+  <% end %>
+</div>
