@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resource :measure_position, only: :update
     end
     resource :recipe_status, only: :update, as: :status
+    resource :recipe_pdf, only: :show
   end
 
   resource :dashboard, only: :show, as: :dashboard

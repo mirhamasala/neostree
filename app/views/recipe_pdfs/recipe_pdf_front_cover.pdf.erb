@@ -1,4 +1,4 @@
-<h1><%= recipe.title %></h1>
+<h1><%= recipe.title.titleize %></h1>
 <% if recipe.photo.attached? %>
   <%= cl_image_tag recipe.photo.key %>
 <% end %>
