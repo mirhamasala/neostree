@@ -303,6 +303,7 @@ DEPENDENCIES
   byebug
   capybara (~> 3.32)
   cloudinary
+  combine_pdf
   database_cleaner (~> 1.8.5)
   devise
   devise_masquerade
