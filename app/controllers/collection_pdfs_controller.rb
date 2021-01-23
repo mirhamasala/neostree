@@ -11,7 +11,7 @@ class CollectionPdfsController < ApplicationController
       format.pdf do
         base_url = 'https://neostree.com'
 
-        html_absolute_front = get_html_absolute('recipe_pdfs/front_cover', base_url)
+        html_absolute_front = get_html_absolute('collection_pdfs/front_cover', base_url)
         pdf = CombinePDF.parse(get_pdf_grover(html_absolute_front, base_url, :front_cover))
 
         @collection.recipes.each do |recipe|
@@ -39,7 +39,7 @@ class CollectionPdfsController < ApplicationController
   def get_html_relative(template)
     render_to_string({ template: template,
                        layout: 'recipe_pdf.html',
-                       locals: { recipe: @collection.recipes.first } })
+                       locals: { collection: @collection } })
   end
 
   def get_html_absolute(html_relative, base_url)
@@ -65,10 +65,10 @@ class CollectionPdfsController < ApplicationController
         left: '4cm'
       },
       front_cover: {
-        top: '0.75cm',
-        right: '2.5cm',
-        bottom: '1cm',
-        left: '2.5cm'
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
       }
     }
 

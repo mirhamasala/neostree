@@ -128,6 +128,9 @@ en:
       intro_sign_up_html: "To add your first recipe, %{href}."
       intro: "Neo's Tree is the place where you can store your nan's pie recipe, add your own chili dish, and share it all with your soon-to-be-big-ones, media naranja, friends, and the rest of us."
       subheading_featuring: Featuring
+  collection_pdfs:
+    front_cover:
+      tagline: "A recipe collection by %{author}"
   recipe_pdfs:
     show:
       original_source: Original source
