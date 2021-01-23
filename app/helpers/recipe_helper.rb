@@ -9,5 +9,6 @@ module RecipeHelper
 
   def all_with_images_attached?(recipes)
     recipes.all? { |recipe| recipe.photo.attached? }
+    # recipes.all?(&:photo.attached?)
   end
 end
