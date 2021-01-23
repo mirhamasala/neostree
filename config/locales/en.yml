@@ -132,6 +132,8 @@ en:
     front_cover:
       tagline: "A recipe collection by %{author}"
   recipe_pdfs:
+    front_cover:
+      tagline: "By %{author}"
     show:
       original_source: Original source
       subheading_ingredients: Ingredients
