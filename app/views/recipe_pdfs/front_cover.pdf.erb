@@ -1,5 +1,6 @@
-<h1><%= recipe.title.titleize %></h1>
-<% if recipe.photo.attached? %>
-  <%= cl_image_tag recipe.photo.key %>
-<% end %>
-<p><%= recipe.user.name %></p>
+<div class="collection-pdf-front-cover" style="background-image: url('<%= cl_image_path recipe.photo.key %>')">
+  <div class="collection-pdf-front-cover__header">
+    <h1 class="collection-pdf-front-cover__title"><%= recipe.title %></h1>
+    <p class="collection-pdf-front-cover__tagline"><%= t('.tagline', author: recipe.user.name ) %></p>
+  </div>
+</div>

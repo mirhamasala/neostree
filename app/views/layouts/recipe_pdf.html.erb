@@ -9,7 +9,16 @@
 </html>
 
 <style>
+/**/
 /* BASE-STYLES */
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -21,12 +30,6 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  background-color: #b3c7cb;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,6 +46,10 @@ p {
 
 a { color: #2d4558 }
 
+ul, ol li { line-height: 1.625; }
+
+ul { list-style-type: circle; }
+
 img {
   width: 100%;
   height: 100%;
@@ -50,49 +57,12 @@ img {
   object-position: center;
 }
 
+/**/
 /* RECIPE-PDF-STYLES */
 .recipe-pdf {
+  color: #222;
   font-family: 'Helvetica', sans-serif;
   font-size: 1rem;
-  color: #222;
-}
-
-.recipe-pdf__intro p,
-.recipe-pdf__notes p {
-  white-space: pre-wrap;
-}
-
-.recipe-pdf__title {
-  margin-bottom: 0.5rem;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.recipe-pdf__ingredients {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style-type: none;
-}
-
-.recipe-pdf__ingredients li { line-height: 1.625; }
-
-.recipe-pdf__steps {
-  padding-left: 0;
-  list-style-type: decimal;
-  list-style-position: inside;
-}
-
-.recipe-pdf__steps li {
-  line-height: 1.75;
-}
-
-.recipe-pdf__steps li::marker {
-  font-weight: 700;
-}
-
-.recipe-pdf__subheading {
-  margin-bottom: 0.5rem;
 }
 
 .recipe-pdf__spacer {
@@ -103,6 +73,15 @@ img {
   margin-bottom: 1rem;
 }
 
+.recipe-pdf__steps li         { line-height: 1.75; }
+.recipe-pdf__steps li::marker { font-weight: 700; }
+
+.recipe-pdf__subheading       { margin-bottom: 0.5rem; }
+.recipe-pdf__spacer           { margin-bottom: 1.5rem; }
+
+.recipe-pdf__spacer--sm       { margin-bottom: 1rem; }
+
+/**/
 /* COLLECTION-PDF-STYLES */
 .collection-pdf-front-cover {
   display: flex;
@@ -119,9 +98,7 @@ img {
   text-align: center;
 }
 
-.collection-pdf-front-cover__title {
-  font-size: 3.75rem;
-}
+.collection-pdf-front-cover__title { font-size: 3.75rem; }
 
 .collection-pdf-front-cover__tagline {
   font-size: 1.125rem;

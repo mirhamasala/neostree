@@ -43,10 +43,10 @@ class RecipePdfsController < ApplicationController
         left: '2.25cm'
       },
       front_cover: {
-        top: '0.75cm',
-        right: '2.5cm',
-        bottom: '1cm',
-        left: '2.5cm'
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
       }
     }
 
