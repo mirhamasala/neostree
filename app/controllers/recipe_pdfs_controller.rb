@@ -37,10 +37,10 @@ class RecipePdfsController < ApplicationController
   def get_pdf_grover(html, base_url, page)
     styles = {
       recipe: {
-        top: '0.75cm',
-        right: '4cm',
-        bottom: '1cm',
-        left: '4cm'
+        top: '1.25cm',
+        right: '2.25cm',
+        bottom: '1.25cm',
+        left: '2.25cm'
       },
       front_cover: {
         top: '0.75cm',
