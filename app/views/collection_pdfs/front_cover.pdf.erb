@@ -1,0 +1,5 @@
+<h1><%= collection.title.titleize %></h1>
+<% if collection.recipes.first.photo.attached? %>
+  <%= cl_image_tag collection.recipes.first.photo.key %>
+<% end %>
+<p><%= collection.user.name %></p>
