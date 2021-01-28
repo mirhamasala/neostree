@@ -1,4 +1,8 @@
+<% if collection.recipes.first.photo.attached? %>
 <div class="collection-pdf-front-cover" style="background-image: url('<%= cl_image_path collection.recipes.first.photo.key %>')">
+<% else %>
+<div class="collection-pdf-front-cover">
+<% end %>
   <div class="collection-pdf-front-cover__header">
     <h1 class="collection-pdf-front-cover__title"><%= collection.title %></h1>
     <p class="collection-pdf-front-cover__tagline"><%= t('.tagline', author: collection.user.name ) %></p>
