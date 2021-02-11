@@ -5,8 +5,8 @@ class RecipePdf
   end
 
   def to_pdf
-    pdf = pdf_grover("#{model_name}_pdfs/show", :recipe)
-    pdf >> pdf_grover("#{model_name}_pdfs/front_cover", :front_cover)
+    pdf = pdf_grover('recipe_pdfs/show', :recipe)
+    pdf >> pdf_grover('recipe_pdfs/front_cover', :front_cover)
 
     pdf.to_pdf
   end
@@ -27,22 +27,22 @@ class RecipePdf
 
   private
 
-  def model_name
-    @recipe.model_name.param_key
-  end
-
   def base_url
     @controller.request.base_url
   end
 
   def html_relative(template)
     @controller.render_to_string({ template: template,
-                                   layout: "#{model_name}_pdf.html",
-                                   locals: { recipe: @recipe } })
+                                   layout: 'recipe_pdf.html',
+                                   locals: { recipe: @recipe, photo: photo_key } })
   end
 
   def html_absolute(html_relative)
     Grover::HTMLPreprocessor.process html_relative(html_relative), base_url, 'http'
+  end
+
+  def photo_key
+    @recipe.photo.key if @recipe.photo.attached?
   end
 
   def styles

@@ -5,7 +5,7 @@ class CollectionPdf
   end
 
   def to_pdf
-    pdf = pdf_grover("#{model_name}_pdfs/front_cover", :front_cover, nil)
+    pdf = pdf_grover('recipe_pdfs/front_cover', :front_cover, nil)
 
     @collection.recipes.each do |recipe|
       pdf << pdf_grover('recipe_pdfs/show', :recipe, recipe)
@@ -29,10 +29,6 @@ class CollectionPdf
   end
 
   private
-
-  def model_name
-    @collection.model_name.param_key
-  end
 
   def base_url
     @controller.request.base_url
