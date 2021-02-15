@@ -8,11 +8,15 @@ gem 'acts_as_list', '~> 1.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'combine_pdf'
+
 gem 'cloudinary'
 
 gem 'devise'
 
 gem 'devise_masquerade'
+
+gem 'grover'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', github: 'rails/rails'

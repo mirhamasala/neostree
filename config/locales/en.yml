@@ -113,6 +113,7 @@ en:
       button_edit: Edit
       button_make_private: Make private
       button_make_public: Make public
+      link_convert_pdf: Convert to PDF
       link_delete: Delete
       link_edit: Edit
       text_confirm_delete: "Are you sure you want to delete %{collection}?"
@@ -127,6 +128,17 @@ en:
       intro_sign_up_html: "To add your first recipe, %{href}."
       intro: "Neo's Tree is the place where you can store your nan's pie recipe, add your own chili dish, and share it all with your soon-to-be-big-ones, media naranja, friends, and the rest of us."
       subheading_featuring: Featuring
+  collection_pdfs:
+    front_cover:
+      tagline: "A recipe collection by %{author}"
+  recipe_pdfs:
+    front_cover:
+      tagline: "By %{author}"
+    show:
+      original_source: Original source
+      subheading_ingredients: Ingredients
+      subheading_notes: Notes
+      subheading_steps: Directions
   recipes:
     create:
       failure: Oops, something went wrong. Please try again.
@@ -153,6 +165,7 @@ en:
       button_edit: Edit
       button_publish: Publish
       button_unpublish: Convert to draft
+      link_convert_pdf: Convert to PDF
       link_delete: Delete
       link_edit: Edit
       original_source: Original source

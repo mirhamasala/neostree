@@ -17,16 +17,20 @@
       <% end %>
     </div>
     <div class="mb-4">
-      <%= link_to edit_recipe_path(@recipe), class: "inline-flex items-baseline mr-2" do %>
-        <i class="fal fa-pencil mr-2 text-sea-400"></i>
+      <%= link_to edit_recipe_path(@recipe), class: "inline-flex items-baseline mr-3" do %>
+        <i class="fal fa-pencil mr-1 text-sea-400"></i>
         <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_edit') %></span>
       <% end %>
       <%= link_to recipe_path(@recipe), method: :delete,
                                         data: { confirm: "Are you sure you want to delete the recipe
                                               #{@recipe.title}?" },
-                                        class: "inline-flex items-baseline" do %>
-        <i class="fal fa-trash-alt mr-2 text-sea-400"></i>
+                                        class: "inline-flex items-baseline mr-3" do %>
+        <i class="fal fa-trash-alt mr-1 text-sea-400"></i>
         <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_delete') %></span>
+      <% end %>
+      <%= link_to recipe_recipe_pdf_path(@recipe, format: "pdf"), class: "inline-flex items-baseline" do %>
+        <i class="fal fa-file-pdf mr-1 text-sea-400"></i>
+        <span class="text-sand-500 hover:text-sand-400 underline"><%= t('.link_convert_pdf') %></span>
       <% end %>
     </div>
   <% else %>

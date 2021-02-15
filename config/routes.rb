@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resource :measure_position, only: :update
     end
     resource :recipe_status, only: :update, as: :status
+    resource :recipe_pdf, only: :show
   end
 
   resource :dashboard, only: :show, as: :dashboard
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   resources :u, param: :username, controller: :users, as: :user do
     resources :collections, except: :index do
       resource :collection_status, only: :update, as: :status
+      resource :collection_pdf, only: :show
     end
   end
 end

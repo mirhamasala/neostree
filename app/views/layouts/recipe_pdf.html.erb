@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>
+
+<style>
+/**/
+/* BASE-STYLES */
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "Helvetica", sans-serif;
+  font-size: 1rem;
+  color: #222;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #b3c7cb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-family: "Times New Roman", serif;
+  font-weight: 500;
+  color: #1c2b36;
+}
+
+p {
+  margin-top: 0;
+  line-height: 1.5
+}
+
+a { color: #2d4558 }
+
+ul, ol li { line-height: 1.625; }
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/**/
+/* RECIPE-PDF-STYLES */
+
+.recipe-pdf { page-break-after: always; }
+
+.recipe-pdf__intro p,
+.recipe-pdf__notes p {
+  white-space: pre-wrap;
+}
+
+.recipe-pdf__ingredients {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.recipe-pdf__steps {
+  padding-left: 0;
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.recipe-pdf__steps li         { line-height: 1.75; }
+.recipe-pdf__steps li::marker { font-weight: 700; }
+
+.recipe-pdf__subheading       { margin-bottom: 0.5rem; }
+
+.recipe-pdf__spacer           { margin-bottom: 1.5rem; }
+.recipe-pdf__spacer--sm       { margin-bottom: 1rem; }
+
+/**/
+/* RECIPE-FRONT-COVER-PDF-STYLES */
+
+.recipe-pdf-front-cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.recipe-pdf-front-cover__header {
+  position: absolute;
+  padding-right: 80px;
+  padding-left: 80px;
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.recipe-pdf-front-cover__title { font-size: 3.75rem; }
+
+.recipe-pdf-front-cover__tagline {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+</style>
