@@ -1,7 +1,12 @@
 <div class="recipe-pdf-front-cover">
-  <%= cl_image_tag photo, quality: 85 if photo.present? %>
+  <% if photo.present? %>
+    <%= cl_image_tag photo, width: 2480,
+                            height: 3508,
+                            crop: "fill",
+                            quality: 85 %>
+  <% end %>
   <div class="recipe-pdf-front-cover__header">
     <h1 class="recipe-pdf-front-cover__title"><%= title %></h1>
-    <p class="recipe-pdf-front-cover__tagline"><%= t('.tagline', author: author ) %></p>
+    <p class="recipe-pdf-front-cover__tagline"><%= t('.tagline', author: author) %></p>
   </div>
 </div>

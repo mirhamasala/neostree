@@ -3,8 +3,10 @@
     <h1 class="recipe-pdf__title"><%= recipe.title %></h1>
 
     <% if recipe.photo_key %>
-      <%= cl_image_tag recipe.photo_key, height: 800, width: 1200,
-                                         crop: "fill", quality: 85,
+      <%= cl_image_tag recipe.photo_key, height: 800,
+                                         width: 1200,
+                                         crop: "fill",
+                                         quality: 85,
                                          class: "recipe-pdf__spacer" %>
     <% end %>
 
