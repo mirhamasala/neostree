@@ -5,7 +5,10 @@ class CollectionPdfsController < ApplicationController
 
     respond_to do |format|
       format.pdf do
-        collection_pdf = CollectionPdf.new(@collection, self)
+        collection_pdf = RecipePdf.new(recipes: @collection.recipes,
+                                       title: @collection.title,
+                                       author: @collection.user.name,
+                                       controller: self)
 
         send_data collection_pdf.to_pdf, type: 'application/pdf',
                                          disposition: 'inline',

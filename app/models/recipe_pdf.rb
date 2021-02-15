@@ -1,6 +1,8 @@
 class RecipePdf
-  def initialize(recipe, controller)
-    @recipe = recipe
+  def initialize(recipes:, title:, author:, controller:)
+    @recipes = recipes
+    @title = title
+    @author = author
     @controller = controller
   end
 
@@ -22,7 +24,7 @@ class RecipePdf
   end
 
   def file_name
-    "#{@recipe.title.parameterize(separator: '_')}.pdf"
+    "#{@title.parameterize(separator: '_')}.pdf"
   end
 
   private
@@ -34,15 +36,14 @@ class RecipePdf
   def html_relative(template)
     @controller.render_to_string({ template: template,
                                    layout: 'recipe_pdf.html',
-                                   locals: { recipe: @recipe, photo: photo_key } })
+                                   locals: { recipes: @recipes,
+                                             photo: @recipes.first.photo_key,
+                                             author: @author,
+                                             title: @title } })
   end
 
   def html_absolute(html_relative)
     Grover::HTMLPreprocessor.process html_relative(html_relative), base_url, 'http'
-  end
-
-  def photo_key
-    @recipe.photo.key if @recipe.photo.attached?
   end
 
   def styles

@@ -1,7 +1,0 @@
-<div class="recipe-pdf-front-cover">
-  <%= cl_image_tag collection.recipes.first.photo.key if collection.recipes.first.photo.attached? %>
-  <div class="recipe-pdf-front-cover__header">
-    <h1 class="recipe-pdf-front-cover__title"><%= collection.title %></h1>
-    <p class="recipe-pdf-front-cover__tagline"><%= t('.tagline', author: collection.user.name ) %></p>
-  </div>
-</div>
