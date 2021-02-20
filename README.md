@@ -1,6 +1,6 @@
 # Neo's Tree 🌳
 
-[Neo's Tree](neostree.com) is a clean, beautiful, user-friendly recipe app.
+[Neo's Tree](https://www.neostree.com) is a clean, beautiful, user-friendly recipe app.
 
 - Collect all your recipes in one place
 - Easily access your recipes from a personal profile page
@@ -19,7 +19,7 @@
 
 🐥 Duckie & Master PDF Converter: [G](https://github.com/dctrg)
 
-✏️ Logo: [Lauara Crompton](https://lanobilis.com/)
+✏️ Logo: [Laura Crompton](https://lanobilis.com/)
 
 ## Setup
 
@@ -56,5 +56,3 @@
 ### Other Resources
 
 - [Switching to asdf Version Manager](https://sidneyliebrand.io/blog/switching-to-asdf-version-manager)
-
-- [Visual Studio Code CSS linting with Tailwind](https://www.meidev.co/blog/visual-studio-code-css-linting-with-tailwind/)
