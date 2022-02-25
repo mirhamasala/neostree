@@ -36,9 +36,6 @@ gem 'sass-rails', '~> 6.0.0'
 
 gem 'table_print', "~> 1.5.7"
 
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5.2.1'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.11.5'
 
