@@ -19,7 +19,7 @@ gem 'devise_masquerade', "~> 1.3.9"
 gem 'grover', "~> 1.1.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', "~> 6.1.4.6"
+gem 'rails', "~> 7.0.0"
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.3.3', '< 2.0'
