@@ -66,8 +66,7 @@ group :development do
   # gem 'browser_sync_rails'
   gem 'listen', '~> 3.7.1'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring', "~> 2.1.1"
-  gem 'spring-watcher-listen', '~> 2.0.1'
+  gem 'spring', "~> 3.0.0"
   gem 'web-console', '~> 4.2.0'
 end
 
