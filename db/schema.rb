@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_055444) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_02_25_145346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_055444) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -31,8 +30,8 @@ ActiveRecord::Schema.define(version: 2020_11_21_055444) do
     t.string "content_type"
     t.text "metadata"
     t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
+    t.string "checksum"
+    t.datetime "created_at", precision: nil, null: false
     t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
@@ -47,8 +46,8 @@ ActiveRecord::Schema.define(version: 2020_11_21_055444) do
     t.string "title"
     t.integer "status"
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
@@ -56,8 +55,8 @@ ActiveRecord::Schema.define(version: 2020_11_21_055444) do
     t.string "quantity"
     t.bigint "unit_id"
     t.bigint "recipe_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "position"
     t.string "ingredient"
     t.string "prep_method"
@@ -69,8 +68,8 @@ ActiveRecord::Schema.define(version: 2020_11_21_055444) do
   create_table "recipe_collections", force: :cascade do |t|
     t.bigint "recipe_id", null: false
     t.bigint "collection_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["collection_id"], name: "index_recipe_collections_on_collection_id"
     t.index ["recipe_id"], name: "index_recipe_collections_on_recipe_id"
   end
@@ -82,8 +81,8 @@ ActiveRecord::Schema.define(version: 2020_11_21_055444) do
     t.text "notes"
     t.integer "prep_time"
     t.integer "cook_time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text "intro"
     t.bigint "user_id", null: false
     t.integer "yield"
@@ -98,28 +97,28 @@ ActiveRecord::Schema.define(version: 2020_11_21_055444) do
     t.integer "position"
     t.text "description"
     t.bigint "recipe_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_steps_on_recipe_id"
   end
 
   create_table "units", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "reset_password_sent_at", precision: nil
+    t.datetime "remember_created_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "username"
     t.string "name"
-    t.datetime "admin_since"
+    t.datetime "admin_since", precision: nil
     t.text "bio"
     t.string "website"
     t.string "photo"
