@@ -3,12 +3,9 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("channels")
-
-// Font Awesome
-import "@fortawesome/fontawesome-pro/css/all.css";
+require("@rails/ujs").start();
+require("turbolinks").start();
+require("channels");
 
 // Tailwind CSS
 import "stylesheets/application";
@@ -20,4 +17,4 @@ import "stylesheets/application";
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import "controllers"
+import "controllers";
