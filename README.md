@@ -1,6 +1,6 @@
 # Neo's Tree 🌳
 
-[Neo's Tree](https://www.neostree.com) is a clean, beautiful, user-friendly recipe app.
+Neo's Tree is a clean, beautiful, user-friendly recipe app.
 
 - Collect all your recipes in one place
 - Easily access your recipes from a personal profile page
