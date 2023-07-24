@@ -35,7 +35,7 @@ class RecipePdf
 
   def html_relative(template)
     @controller.render_to_string({ template: template,
-                                   layout: 'recipe_pdf.html',
+                                   layout: 'recipe_pdf',
                                    locals: { recipes: @recipes,
                                              photo: @recipes.first.photo_key,
                                              author: @author,
